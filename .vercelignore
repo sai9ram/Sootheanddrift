@@ -1,0 +1,7 @@
+# Vercel Configuration
+# Ignore large design source files (.ai, .eps, heavy raw images) to speed up deployment upload
+.git
+.vercel
+*.ai
+*.eps
+SOOTHE & DRIFT-02.jpg.jpeg
