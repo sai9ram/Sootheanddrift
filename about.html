@@ -1595,7 +1595,13 @@
       const discountForm = document.getElementById('discountForm');
       const discountSuccessMsg = document.getElementById('discountSuccessMessage');
 
-      if (discountPopup && !localStorage.getItem('discountPopupDismissed')) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const forcePopup = urlParams.get('testpopup') === 'true';
+      if (forcePopup) {
+        localStorage.removeItem('discountPopupDismissed');
+      }
+
+      if (discountPopup && (!localStorage.getItem('discountPopupDismissed') || forcePopup)) {
         setTimeout(() => {
           discountPopup.style.display = 'flex';
           setTimeout(() => {
