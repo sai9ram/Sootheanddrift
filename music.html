@@ -1701,13 +1701,7 @@
       const discountForm = document.getElementById('discountForm');
       const discountSuccessMsg = document.getElementById('discountSuccessMessage');
 
-      const urlParams = new URLSearchParams(window.location.search);
-      const forcePopup = urlParams.get('testpopup') === 'true';
-      if (forcePopup) {
-        localStorage.removeItem('discountPopupDismissed');
-      }
-
-      if (discountPopup && (!localStorage.getItem('discountPopupDismissed') || forcePopup)) {
+      if (discountPopup) {
         setTimeout(() => {
           discountPopup.style.display = 'flex';
           setTimeout(() => {
@@ -1722,7 +1716,6 @@
           setTimeout(() => {
             discountPopup.style.display = 'none';
           }, 500);
-          localStorage.setItem('discountPopupDismissed', 'true');
         }
       };
 
@@ -1745,7 +1738,6 @@
           if (discountSuccessMsg) {
             discountSuccessMsg.style.display = 'flex';
           }
-          localStorage.setItem('discountPopupDismissed', 'true');
           localStorage.setItem('discountClaimed', 'true');
           setTimeout(closeDiscountPopup, 4000);
         });
