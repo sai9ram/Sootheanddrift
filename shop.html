@@ -1613,9 +1613,14 @@
             discountSuccessMsg.style.display = 'flex';
           }
           localStorage.setItem('discountPopupDismissed', 'true');
+          localStorage.setItem('discountClaimed', 'true');
+          updateSummary();
           setTimeout(closeDiscountPopup, 4000);
         });
       }
+
+      // Initial calculation on load
+      updateSummary();
     });
 
     // Real-time calculator function
@@ -1659,9 +1664,16 @@
         }
       }
 
-      // Update total price display and Buy Now button
-      document.getElementById('total-price').innerText = `$${total}`;
-      document.getElementById('buy-now-btn').innerText = `Buy Now — $${total}`;
+      // Apply 15% discount if email registration is claimed
+      const isDiscountClaimed = localStorage.getItem('discountClaimed') === 'true';
+      if (isDiscountClaimed) {
+        const discountedTotal = Math.round(total * 0.85);
+        document.getElementById('total-price').innerHTML = `<span style="text-decoration: line-through; opacity: 0.5; margin-right: 8px; font-size: 0.8em; font-weight: 300;">$${total}</span>$${discountedTotal}`;
+        document.getElementById('buy-now-btn').innerText = `Buy Now — $${discountedTotal} (15% Off Applied)`;
+      } else {
+        document.getElementById('total-price').innerText = `$${total}`;
+        document.getElementById('buy-now-btn').innerText = `Buy Now — $${total}`;
+      }
     }
   </script>
 

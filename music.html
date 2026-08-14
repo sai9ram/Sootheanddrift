@@ -1746,6 +1746,7 @@
             discountSuccessMsg.style.display = 'flex';
           }
           localStorage.setItem('discountPopupDismissed', 'true');
+          localStorage.setItem('discountClaimed', 'true');
           setTimeout(closeDiscountPopup, 4000);
         });
       }
