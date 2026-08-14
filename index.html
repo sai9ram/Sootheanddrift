@@ -61,6 +61,7 @@
       position: relative;
       min-height: 100vh;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     /* Starry Background */
@@ -118,7 +119,13 @@
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 1.25rem;
+    }
+
+    @media (min-width: 576px) {
+      .container {
+        padding: 0 2rem;
+      }
     }
 
     /* Typography & Global Components */
@@ -165,6 +172,12 @@
       max-width: 600px;
     }
 
+    .section-desc.centered {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* Buttons */
     .btn {
       display: inline-flex;
@@ -178,6 +191,16 @@
       font-family: var(--font-sans);
       transition: var(--transition-smooth);
       cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .btn {
+        padding: 0.6rem 1.2rem !important;
+        font-size: 0.85rem !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-flex !important;
+      }
     }
 
     .btn-primary {
@@ -250,6 +273,28 @@
       padding: 0 2rem;
     }
 
+    @media (max-width: 768px) {
+      .site-header {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        top: 15px !important;
+      }
+      .header-container {
+        justify-content: center;
+        height: auto;
+      }
+      .logo-img {
+        height: 76px !important;
+        width: 76px !important;
+      }
+      .mobile-toggle, .nav-menu, .header-actions {
+        display: none !important;
+      }
+    }
+
     .logo-img {
       height: 48px;
       width: 48px;
@@ -258,24 +303,8 @@
       border: 1px solid rgba(229, 192, 123, 0.4);
     }
 
-    .nav-menu {
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    .nav-item {
-      color: var(--color-text-muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: var(--transition-smooth);
-    }
-
-    .nav-item:hover, .nav-item.active {
-      color: var(--color-gold);
-    }
-
     .mobile-toggle {
-      display: none;
+      display: flex;
       flex-direction: column;
       gap: 6px;
       background: none;
@@ -290,6 +319,146 @@
       transition: var(--transition-smooth);
     }
 
+    .nav-menu {
+      position: fixed;
+      top: 90px;
+      left: 5%;
+      width: 90%;
+      background: rgba(5, 11, 22, 0.98);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2.5rem 2rem;
+      transform: translateY(-20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+      z-index: 9999;
+    }
+
+    .nav-menu.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-item {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-item:hover, .nav-item.active {
+      color: var(--color-gold);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .nav-menu .mobile-shop-btn {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .header-actions .btn-primary {
+        display: none;
+      }
+      .nav-menu .mobile-shop-btn {
+        display: block;
+        text-align: center;
+        margin-top: 1rem;
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-toggle {
+        display: none;
+      }
+      .nav-menu {
+        position: static;
+        width: auto;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        flex-direction: row;
+        gap: 2.5rem;
+        padding: 0;
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+        box-shadow: none;
+        z-index: auto;
+      }
+    }
+
+    /* Mobile Bottom Navigation */
+    .mobile-bottom-nav {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 400px;
+      height: 65px;
+      background: rgba(8, 16, 32, 0.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      z-index: 99999;
+      padding: 0 10px;
+      transition: var(--transition-smooth);
+    }
+
+    .bottom-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 500;
+      gap: 4px;
+      transition: var(--transition-smooth);
+      padding: 8px 12px;
+      border-radius: 16px;
+    }
+
+    .bottom-nav-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      transition: var(--transition-smooth);
+    }
+
+    .bottom-nav-item:hover, .bottom-nav-item.active {
+      color: var(--color-gold);
+      background: rgba(229, 192, 123, 0.08);
+    }
+
+    .bottom-nav-item.active .bottom-nav-icon {
+      transform: translateY(-2px);
+    }
+
+    @media (min-width: 769px) {
+      .mobile-bottom-nav {
+        display: none;
+      }
+    }
+
     /* Hero Section */
     .hero-section {
       padding-top: 180px;
@@ -298,7 +467,7 @@
 
     .hero-container {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1fr;
       align-items: center;
       gap: 4rem;
     }
@@ -325,18 +494,23 @@
     .hero-rating {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.8rem;
+      white-space: nowrap;
+      flex-wrap: nowrap;
     }
 
     .stars-stars {
       color: var(--color-gold);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       letter-spacing: 0.1em;
+      flex-shrink: 0;
     }
 
     .rating-text {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--color-text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .moon-glow-container {
@@ -379,93 +553,243 @@
 
     /* Benefits Section */
     .benefits-section {
-      padding: 100px 0;
+      padding: 120px 0;
       background-color: var(--color-bg-deep);
+      position: relative;
+      overflow: hidden;
     }
 
-    .benefits-grid {
+    .benefits-section::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(229, 192, 123, 0.05) 0%, transparent 70%);
+      top: 20%;
+      right: -10%;
+      pointer-events: none;
+    }
+
+    .benefits-header {
+      max-width: 700px;
+      margin: 0 auto 5rem auto;
+      text-align: center;
+    }
+
+    .benefits-header .tagline {
+      margin-bottom: 1.25rem;
+    }
+
+    .benefits-header .section-desc {
+      margin: 1.5rem auto 0 auto;
+      font-size: 1.15rem;
+    }
+
+    .benefits-bento-grid {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 4rem;
-      margin-bottom: 80px;
-    }
-
-    .metric-highlight {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-
-    .metric-num {
-      font-family: var(--font-serif);
-      font-size: 4rem;
-      color: var(--color-gold);
-      line-height: 1;
-    }
-
-    .metric-lbl {
-      font-size: 0.95rem;
-      color: var(--color-text-muted);
-      max-width: 150px;
-    }
-
-    .benefits-icons-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 50px;
     }
 
     .benefit-card {
-      background: var(--color-bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
+      background: linear-gradient(135deg, rgba(11, 22, 42, 0.4) 0%, rgba(6, 12, 24, 0.6) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 24px;
+      padding: 2.5rem;
       transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(229, 192, 123, 0.08), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
+    }
+
+    .benefit-card:hover::before {
+      opacity: 1;
     }
 
     .benefit-card:hover {
-      background: var(--color-bg-card-hover);
-      transform: translateY(-5px);
-      border-color: rgba(229, 192, 123, 0.2);
+      background: linear-gradient(135deg, rgba(16, 32, 60, 0.5) 0%, rgba(8, 16, 32, 0.7) 100%);
+      transform: translateY(-8px);
+      border-color: rgba(229, 192, 123, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(229, 192, 123, 0.05);
+    }
+
+    .benefit-card.span-2 {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .benefit-card-info {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .benefit-card-visual {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      min-height: 150px;
+      border-radius: 16px;
+      background: rgba(2, 5, 11, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      overflow: hidden;
+      align-self: stretch;
     }
 
     .benefit-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(229, 192, 123, 0.1) 0%, rgba(229, 192, 123, 0.02) 100%);
+      color: var(--color-gold);
+      border: 1px solid rgba(229, 192, 123, 0.15);
+      margin-bottom: 1.8rem;
+      transition: var(--transition-smooth);
+    }
+
+    .benefit-card:hover .benefit-icon {
+      background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+      color: var(--color-bg-dark);
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 25px rgba(229, 192, 123, 0.35);
+      border-color: var(--color-gold);
+    }
+
+    .benefit-svg {
+      width: 26px;
+      height: 26px;
     }
 
     .benefit-card h3 {
       font-family: var(--font-sans);
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--color-text-bright);
+      letter-spacing: -0.01em;
     }
 
     .benefit-card p {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    /* Embedded card animations/visuals */
+    .pulse-wave {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 40px;
+    }
+
+    .pulse-bar {
+      width: 3px;
+      height: 15px;
+      background-color: var(--color-gold);
+      border-radius: 3px;
+      animation: pulseHeight 1.5s ease-in-out infinite alternate;
+      opacity: 0.7;
+    }
+
+    .pulse-bar:nth-child(2) { animation-delay: 0.2s; height: 25px; }
+    .pulse-bar:nth-child(3) { animation-delay: 0.4s; height: 35px; }
+    .pulse-bar:nth-child(4) { animation-delay: 0.1s; height: 20px; }
+    .pulse-bar:nth-child(5) { animation-delay: 0.5s; height: 30px; }
+
+    @keyframes pulseHeight {
+      0% { transform: scaleY(0.4); }
+      100% { transform: scaleY(1.2); }
+    }
+
+    .sleep-score-radial {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sleep-score-radial svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+
+    .sleep-score-circle-bg {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.05);
+      stroke-width: 8;
+    }
+
+    .sleep-score-circle-val {
+      fill: none;
+      stroke: var(--color-gold);
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-dasharray: 251.2;
+      stroke-dashoffset: 50.2; /* 80% */
+      animation: fillRadial 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .sleep-score-text {
+      position: absolute;
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--color-gold-light);
+    }
+
+    @keyframes fillRadial {
+      from { stroke-dashoffset: 251.2; }
+      to { stroke-dashoffset: 50.2; }
     }
 
     .section-divider-text {
       text-align: center;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 80px;
+      padding: 100px 0 50px 0;
     }
 
     .divider-title-main {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-top: 0.5rem;
     }
 
     /* Spotlight Section */
     .spotlight-section {
-      padding: 100px 0;
+      padding: 80px 0 120px 0;
+      position: relative;
     }
 
     .spotlight-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: 1fr;
+      gap: 3rem;
       align-items: center;
     }
 
@@ -474,293 +798,570 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 500px;
+      height: 520px;
+      border-radius: 32px;
+      background: radial-gradient(circle at 50% 50%, rgba(229, 192, 123, 0.04), transparent 70%);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      overflow: hidden;
+      box-shadow: inset 0 0 30px rgba(229, 192, 123, 0.02);
+    }
+
+    .product-showcase-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 260px;
+      height: 340px;
+      perspective: 1000px;
     }
 
     .product-glow {
       position: absolute;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(229, 192, 123, 0.03) 50%, transparent 70%);
       z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: blur(20px);
+      pointer-events: none;
     }
 
     .product-box-mock {
-      position: relative;
+      position: absolute;
       z-index: 2;
-      width: 260px;
-      height: 340px;
-      background: linear-gradient(145deg, #070e1b, #0f1c35);
-      border: 1px solid rgba(229, 192, 123, 0.3);
-      border-radius: 12px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      width: 200px;
+      height: 285px;
+      background: linear-gradient(135deg, rgba(7, 14, 27, 0.9) 0%, rgba(15, 28, 53, 0.85) 100%);
+      border: 1px solid rgba(229, 192, 123, 0.25);
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(229, 192, 123, 0.05);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
       padding: 3rem 2rem;
       text-align: center;
-      transform: rotate(-5deg);
-      transition: var(--transition-smooth);
-    }
-
-    .product-box-mock:hover {
-      transform: rotate(0deg) scale(1.03);
-    }
-
-    .box-brand {
-      font-family: var(--font-sans);
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      font-size: 0.75rem;
-      color: var(--color-gold);
-    }
-
-    .box-product-name {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      letter-spacing: 0.1em;
-      color: var(--color-text-bright);
-    }
-
-    .box-crest {
-      font-size: 1.5rem;
-      color: var(--color-gold);
+      top: 20px;
+      left: 20px;
+      transform: rotateY(-10deg) rotateX(5deg);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .product-mask-mock {
       position: absolute;
-      z-index: 3;
-      width: 280px;
-      height: 120px;
-      background: linear-gradient(135deg, #182d54, #0b1528);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 60px;
-      bottom: 80px;
-      right: 40px;
-      transform: rotate(12deg);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-      transition: var(--transition-smooth);
+      z-index: 4;
+      width: 220px;
+      height: 90px;
+      background: linear-gradient(135deg, rgba(24, 45, 84, 0.95), rgba(11, 21, 40, 0.95));
+      border: 1px solid rgba(229, 192, 123, 0.3);
+      border-radius: 55px;
+      bottom: 50px;
+      right: -15px;
+      transform: rotate(10deg) translateZ(50px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      overflow: hidden;
     }
 
-    .spotlight-visual:hover .product-mask-mock {
-      transform: rotate(5deg) translateY(-10px);
+    /* Eye cavity impressions inside mask */
+    .mask-cup-left, .mask-cup-right {
+      width: 65px;
+      height: 45px;
+      background: radial-gradient(circle, rgba(2, 5, 11, 0.9) 30%, rgba(229, 192, 123, 0.15) 100%);
+      border-radius: 50%;
+      border: 1.5px solid rgba(229, 192, 123, 0.3);
+      box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+      position: relative;
+    }
+
+    .mask-bridge {
+      width: 30px;
+      height: 12px;
+      background: rgba(229, 192, 123, 0.15);
+      border-radius: 6px;
+    }
+
+    .product-showcase-wrapper:hover .product-box-mock {
+      transform: rotateY(-3deg) rotateX(2deg) scale(1.02);
+      border-color: rgba(229, 192, 123, 0.45);
+    }
+
+    .product-showcase-wrapper:hover .product-mask-mock {
+      transform: rotate(6deg) translateY(-20px) translateX(-10px) translateZ(80px);
+      border-color: rgba(229, 192, 123, 0.5);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(229, 192, 123, 0.2);
+    }
+
+    /* Features List Improvements */
+    .spotlight-content .tagline {
+      margin-bottom: 1.25rem;
     }
 
     .features-list {
       list-style: none;
       display: grid;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+      margin-top: 2rem;
     }
 
     .features-list li {
       display: flex;
-      gap: 1rem;
+      gap: 1.25rem;
+      padding: 1.25rem;
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      transition: var(--transition-smooth);
+    }
+
+    .features-list li:hover {
+      background: rgba(229, 192, 123, 0.03);
+      border-color: rgba(229, 192, 123, 0.15);
+      transform: translateX(5px);
     }
 
     .feature-bullet {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(229, 192, 123, 0.1);
       color: var(--color-gold);
-      font-weight: bold;
+      border: 1px solid rgba(229, 192, 123, 0.25);
+      font-size: 0.8rem;
     }
 
-    .features-list p {
+    .features-list li:hover .feature-bullet {
+      background: var(--color-gold);
+      color: var(--color-bg-dark);
+      box-shadow: 0 0 10px rgba(229, 192, 123, 0.4);
+    }
+
+    .features-list div strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--color-text-bright);
+      margin-bottom: 0.25rem;
+    }
+
+    .features-list div p {
       color: var(--color-text-muted);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 577px) {
+      .product-showcase-wrapper {
+        width: 320px;
+        height: 400px;
+      }
+      .product-box-mock {
+        width: 250px;
+        height: 350px;
+      }
+      .product-mask-mock {
+        width: 280px;
+        height: 110px;
+        bottom: 60px;
+        right: -20px;
+        padding: 0 2.2rem;
+      }
     }
 
     /* Science Section */
     .science-section {
-      padding: 100px 0;
+      padding: 120px 0;
       background-color: var(--color-bg-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .science-section::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+      top: -10%;
+      left: -10%;
+      pointer-events: none;
     }
 
     .science-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 4rem;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-top: 5rem;
     }
 
     .science-card {
-      background: var(--color-bg-card);
+      background: linear-gradient(145deg, rgba(8, 16, 32, 0.5) 0%, rgba(3, 7, 15, 0.7) 100%);
       border: 1px solid rgba(255, 255, 255, 0.03);
-      border-radius: 20px;
-      padding: 3rem 2rem;
+      border-radius: 24px;
+      padding: 3rem 2.2rem;
       position: relative;
       transition: var(--transition-smooth);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .science-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(229, 192, 123, 0.3), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .science-card:hover::after {
+      transform: translateX(100%);
     }
 
     .science-card:hover {
-      background: var(--color-bg-card-hover);
-      border-color: rgba(229, 192, 123, 0.15);
-      transform: translateY(-5px);
+      background: linear-gradient(145deg, rgba(12, 24, 48, 0.6) 0%, rgba(5, 11, 22, 0.8) 100%);
+      border-color: rgba(229, 192, 123, 0.25);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(229, 192, 123, 0.05);
     }
 
-    .sci-step {
-      font-family: var(--font-serif);
-      font-size: 3rem;
-      color: rgba(229, 192, 123, 0.2);
-      margin-bottom: 1.5rem;
+    .science-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .sci-phase-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      background: rgba(229, 192, 123, 0.06);
+      border: 1px solid rgba(229, 192, 123, 0.15);
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .sci-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--color-gold);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--color-gold);
+      animation: pulseGlow 2s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+    .sci-tech-graphic {
+      width: 44px;
+      height: 44px;
+      color: var(--color-gold);
+      opacity: 0.65;
+      transition: var(--transition-smooth);
+    }
+
+    .science-card:hover .sci-tech-graphic {
+      opacity: 1;
+      transform: scale(1.1);
+      color: var(--color-gold-light);
     }
 
     .science-card h3 {
       font-family: var(--font-sans);
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
+      color: var(--color-text-bright);
+      letter-spacing: -0.01em;
     }
 
     .science-card p {
       color: var(--color-text-muted);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      line-height: 1.6;
     }
 
     /* Leak Section */
     .leak-section {
-      padding: 100px 0;
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .leak-header {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .leak-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
-      margin-top: 4rem;
+      margin-top: 5rem;
     }
 
     .leak-card {
-      background: var(--color-bg-card);
+      background: linear-gradient(135deg, rgba(11, 22, 42, 0.4) 0%, rgba(6, 12, 24, 0.6) 100%);
       border: 1px solid rgba(255, 255, 255, 0.03);
-      border-radius: 16px;
-      padding: 2.5rem;
+      border-radius: 24px;
+      padding: 2.8rem 2.2rem;
       transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .leak-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(229, 192, 123, 0.08), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
+    }
+
+    .leak-card:hover::before {
+      opacity: 1;
     }
 
     .leak-card:hover {
-      background: var(--color-bg-card-hover);
-      transform: translateY(-4px);
+      background: linear-gradient(135deg, rgba(16, 32, 60, 0.5) 0%, rgba(8, 16, 32, 0.7) 100%);
+      transform: translateY(-8px);
+      border-color: rgba(229, 192, 123, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(229, 192, 123, 0.05);
     }
 
-    .card-icon {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
+    .leak-icon-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(229, 192, 123, 0.08);
+      color: var(--color-gold);
+      border: 1px solid rgba(229, 192, 123, 0.2);
+      margin-bottom: 1.8rem;
+      transition: var(--transition-smooth);
+    }
+
+    .leak-card:hover .leak-icon-container {
+      background: var(--color-gold);
+      color: var(--color-bg-dark);
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 20px rgba(229, 192, 123, 0.4);
+      border-color: var(--color-gold);
+    }
+
+    .leak-svg {
+      width: 24px;
+      height: 24px;
     }
 
     .leak-card h3 {
       font-family: var(--font-sans);
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 600;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.8rem;
+      color: var(--color-text-bright);
     }
 
     .leak-card p {
       color: var(--color-text-muted);
       font-size: 0.9rem;
+      line-height: 1.6;
     }
 
-    /* Sleep score Matrix / Compass */
-    .compass-section {
-      padding: 100px 0;
-      background-color: var(--color-bg-deep);
-    }
-
-    .compass-container {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .compass-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .radar-glow {
+    /* Single Pricing Section */
+    .pricing-section {
+      padding: 120px 0;
       position: relative;
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      border: 1px solid rgba(229, 192, 123, 0.1);
+    }
+
+    .pricing-card-wrapper {
+      max-width: 920px;
+      margin: 5rem auto 0 auto;
+      background: linear-gradient(135deg, rgba(11, 22, 42, 0.4) 0%, rgba(6, 12, 24, 0.6) 100%);
+      border: 1px solid rgba(229, 192, 123, 0.25);
+      border-radius: 32px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(229, 192, 123, 0.05);
+      transition: var(--transition-smooth);
+    }
+
+    .pricing-card-wrapper:hover {
+      border-color: rgba(229, 192, 123, 0.45);
+      box-shadow: 0 35px 70px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(229, 192, 123, 0.08);
+    }
+
+    .pricing-card-left {
+      text-align: center;
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-right: 0;
+      padding-bottom: 3rem;
+    }
+
+    .pricing-card-right {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: rgba(229, 192, 123, 0.08);
+      border: 1px solid rgba(229, 192, 123, 0.2);
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-product-name {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--color-text-bright);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .pricing-main-value {
+      font-family: var(--font-sans);
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--color-gold);
+      margin: 1.5rem 0;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .pricing-main-value span {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-main-value {
+        font-size: 2.8rem;
+      }
+      .pricing-main-value span {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .pricing-main-value {
+        font-size: 2.2rem;
+      }
+    }
+
+    .pricing-shipping-info {
+      font-size: 0.88rem;
+      color: #10b981;
+      font-weight: 600;
+      margin-bottom: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 40px rgba(59, 130, 246, 0.05);
+      gap: 0.5rem;
     }
 
-    .radar-ring {
-      position: absolute;
-      width: 220px;
-      height: 220px;
+    .pricing-shipping-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #10b981;
       border-radius: 50%;
-      border: 1px dashed rgba(229, 192, 123, 0.15);
+      box-shadow: 0 0 8px #10b981;
     }
 
-    .radar-ring-2 {
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 1px solid rgba(229, 192, 123, 0.08);
+    .pricing-right-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-text-bright);
+      margin-bottom: 1.5rem;
     }
 
-    .radar-line {
-      position: absolute;
-      width: 50%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-gold));
-      transform-origin: left center;
-      left: 50%;
-      animation: radarRotate 6s linear infinite;
+    .pricing-whats-included {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
     }
 
-    .radar-dot {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: var(--color-gold);
-      box-shadow: 0 0 15px var(--color-gold);
-      top: 30%;
-      left: 65%;
-      animation: radarPulse 2s infinite;
-    }
-
-    @keyframes radarRotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes radarPulse {
-      0%, 100% { opacity: 0.3; transform: scale(0.9); }
-      50% { opacity: 1; transform: scale(1.15); }
-    }
-
-    .metrics-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 2rem;
-      text-align: left;
-    }
-
-    .metrics-table th, .metrics-table td {
-      padding: 1.25rem 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .metrics-table th {
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+    .pricing-whats-included li {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 0.95rem;
       color: var(--color-text-muted);
     }
 
-    .table-highlight {
+    .pricing-check {
       color: var(--color-gold);
-      font-weight: 600;
+      font-weight: bold;
+      flex-shrink: 0;
     }
+
+    @media (min-width: 992px) {
+      .pricing-card-wrapper {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 4rem;
+        padding: 4rem 3.5rem;
+      }
+      .pricing-card-left {
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: none;
+        padding-right: 4rem;
+        padding-bottom: 0;
+      }
+    }
+
 
     /* Testimonials */
     .testimonials-section {
@@ -851,25 +1452,167 @@
 
     /* Footer Spotlight Card */
     .footer-spotlight-section {
-      padding: 80px 0;
+      padding: 120px 0;
     }
 
     .footer-spotlight-container {
-      background: radial-gradient(circle at 10% 20%, rgba(11, 22, 42, 0.8) 0%, rgba(2, 5, 11, 0.95) 100%);
-      border: 1px solid rgba(229, 192, 123, 0.15);
-      border-radius: 24px;
-      padding: 4rem;
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 4rem;
+      background: radial-gradient(circle at 50% 50%, rgba(16, 32, 60, 0.45) 0%, rgba(3, 7, 15, 0.8) 100%);
+      border: 1px solid rgba(229, 192, 123, 0.2);
+      border-radius: 40px;
+      padding: 6rem 4rem;
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      text-align: center;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), inset 0 0 35px rgba(229, 192, 123, 0.05);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      transition: var(--transition-smooth);
     }
 
-    .product-box-mock.small {
-      width: 180px;
-      height: 240px;
-      padding: 1.5rem;
-      transform: rotate(-3deg);
+    .footer-spotlight-container::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(229, 192, 123, 0.04) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .footer-spotlight-container:hover {
+      border-color: rgba(229, 192, 123, 0.4);
+      box-shadow: 0 50px 100px rgba(0, 0, 0, 0.7), 0 0 60px rgba(229, 192, 123, 0.05);
+    }
+
+    .f-hud-status {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+      background: rgba(229, 192, 123, 0.05);
+      border: 1px solid rgba(229, 192, 123, 0.15);
+      border-radius: 99px;
+      margin-bottom: 2.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      z-index: 2;
+    }
+
+    .f-hud-pulse {
+      width: 8px;
+      height: 8px;
+      background-color: var(--color-gold);
+      border-radius: 50%;
+      animation: pulseGold 2s infinite;
+    }
+
+    @keyframes pulseGold {
+      0% { transform: scale(0.9); opacity: 0.4; }
+      50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 10px var(--color-gold); }
+      100% { transform: scale(0.9); opacity: 0.4; }
+    }
+
+    .f-spotlight-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+      max-width: 720px;
+    }
+
+    .f-spotlight-content .tagline {
+      margin-bottom: 1rem;
+    }
+
+    .f-spotlight-content .section-title {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .f-spotlight-content .section-desc {
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .f-grid-specs {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      width: 100%;
+      max-width: 680px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .f-grid-spec-card {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      padding: 1.5rem 1.2rem;
+      border-radius: 20px;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .f-grid-spec-card:hover {
+      background: rgba(229, 192, 123, 0.02);
+      border-color: rgba(229, 192, 123, 0.15);
+      transform: translateY(-3px);
+    }
+
+    .f-grid-spec-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(229, 192, 123, 0.05);
+      border: 1px solid rgba(229, 192, 123, 0.15);
+      color: var(--color-gold);
+      margin-bottom: 0.75rem;
+      transition: var(--transition-smooth);
+    }
+
+    .f-grid-spec-card:hover .f-grid-spec-icon {
+      background: rgba(229, 192, 123, 0.1);
+      border-color: rgba(229, 192, 123, 0.35);
+      transform: scale(1.05);
+    }
+
+    .f-grid-spec-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-text-bright);
+    }
+
+    .f-grid-spec-desc {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+    }
+
+    @media (min-width: 769px) {
+      .f-grid-specs {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
     }
 
     /* FAQ Section */
@@ -937,140 +1680,270 @@
 
     /* Final CTA Section */
     .final-cta-section {
-      padding: 120px 0;
+      padding: 140px 0;
+      position: relative;
+      overflow: hidden;
     }
 
     .final-cta-container {
       display: flex;
       justify-content: center;
+      position: relative;
     }
 
     .moon-large-glow {
       position: relative;
       width: 100%;
-      max-width: 800px;
-      aspect-ratio: 1.6;
-      border-radius: 30px;
+      max-width: 900px;
+      padding: 6rem 4rem;
+      border-radius: 40px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: linear-gradient(135deg, rgba(8, 16, 32, 0.4) 0%, rgba(3, 7, 15, 0.7) 100%);
+      border: 1px solid rgba(229, 192, 123, 0.2);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(229, 192, 123, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: var(--transition-smooth);
+    }
+
+    .moon-large-glow:hover {
+      border-color: rgba(229, 192, 123, 0.45);
+      box-shadow: 0 50px 100px rgba(0, 0, 0, 0.7), inset 0 0 40px rgba(229, 192, 123, 0.08);
     }
 
     .moon-large {
       position: absolute;
-      width: 500px;
-      height: 500px;
+      width: 480px;
+      height: 480px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(229, 192, 123, 0.15) 0%, transparent 60%);
-      filter: blur(40px);
+      background: radial-gradient(circle, rgba(229, 192, 123, 0.18) 0%, rgba(229, 192, 123, 0.04) 50%, transparent 70%);
+      filter: blur(50px);
       z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: var(--transition-smooth);
+    }
+
+    .moon-large-glow:hover .moon-large {
+      transform: translate(-50%, -50%) scale(1.15);
+      background: radial-gradient(circle, rgba(229, 192, 123, 0.24) 0%, rgba(229, 192, 123, 0.06) 55%, transparent 75%);
+    }
+
+    .cta-moon-orbit {
+      position: absolute;
+      width: 580px;
+      height: 580px;
+      border-radius: 50%;
+      border: 1px dashed rgba(229, 192, 123, 0.12);
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: rotateRings 30s linear infinite;
+      pointer-events: none;
     }
 
     .cta-inner-text {
       position: relative;
       z-index: 2;
-      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .cta-inner-text h2 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
       line-height: 1.1;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+    }
+
+    .cta-inner-text h2 .highlight {
+      text-shadow: 0 0 45px rgba(229, 192, 123, 0.4);
     }
 
     .cta-inner-text p {
       color: var(--color-text-muted);
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      max-width: 500px;
+      font-size: 1.15rem;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      line-height: 1.6;
     }
 
-    /* Site Footer */
+    /* Site Footer Overhaul */
     .site-footer {
-      background-color: #010307;
-      padding: 80px 0 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background-color: #02050b;
+      padding: 100px 0 50px;
+      border-top: 1px solid rgba(229, 192, 123, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-footer::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(229, 192, 123, 0.02) 0%, transparent 70%);
+      top: 0;
+      left: 10%;
+      pointer-events: none;
     }
 
     .footer-container {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 4rem;
-      margin-bottom: 60px;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-bottom: 80px;
     }
 
     .footer-logo {
-      height: 60px;
-      width: 60px;
+      height: 64px;
+      width: 64px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1.5rem;
-      border: 1px solid rgba(229, 192, 123, 0.4);
+      margin-bottom: 1.8rem;
+      border: 1.5px solid rgba(229, 192, 123, 0.45);
+      box-shadow: 0 0 20px rgba(229, 192, 123, 0.15);
+      transition: var(--transition-smooth);
+    }
+
+    .footer-logo:hover {
+      transform: scale(1.05) rotate(5deg);
+      border-color: var(--color-gold);
+      box-shadow: 0 0 25px rgba(229, 192, 123, 0.3);
     }
 
     .footer-brand p {
       color: var(--color-text-muted);
       font-size: 0.95rem;
+      line-height: 1.6;
       margin-bottom: 2rem;
-      max-width: 320px;
-    }
-
-    .newsletter-form {
-      display: flex;
-      gap: 0.75rem;
-      max-width: 350px;
-    }
-
-    .newsletter-input {
-      flex: 1;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 9999px;
-      padding: 0.5rem 1.25rem;
-      color: var(--color-text-bright);
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-    }
-
-    .newsletter-input:focus {
-      outline: none;
-      border-color: var(--color-gold);
+      max-width: 280px;
     }
 
     .footer-links {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.1rem;
     }
 
     .footer-links h4 {
       font-family: var(--font-sans);
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--color-gold);
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--color-gold-light);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+
+    .footer-links h4::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background-color: var(--color-gold);
+      margin-top: 0.5rem;
     }
 
     .footer-links a {
       color: var(--color-text-muted);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       transition: var(--transition-smooth);
+      display: inline-block;
+      width: fit-content;
     }
 
     .footer-links a:hover {
+      color: var(--color-gold);
+      transform: translateX(4px);
+    }
+
+    .footer-newsletter-col h4 {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--color-gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-newsletter-col h4::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background-color: var(--color-gold);
+      margin-top: 0.5rem;
+    }
+
+    .footer-newsletter-col p {
+      color: var(--color-text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 99px;
+      padding: 0.25rem 0.25rem 0.25rem 1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .newsletter-form:focus-within {
+      border-color: rgba(229, 192, 123, 0.4);
+      box-shadow: 0 0 15px rgba(229, 192, 123, 0.05);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .newsletter-input {
+      flex: 1;
+      background: transparent;
+      border: none;
       color: var(--color-text-bright);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      outline: none;
+      padding-right: 0.5rem;
+    }
+
+    .newsletter-btn {
+      background: var(--color-gold);
+      color: var(--color-bg-dark);
+      border: none;
+      border-radius: 99px;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .newsletter-btn:hover {
+      background: var(--color-text-bright);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     }
 
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 40px;
+      padding-top: 35px;
       display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
       justify-content: space-between;
       align-items: center;
       font-size: 0.85rem;
@@ -1079,12 +1952,25 @@
 
     .footer-legal {
       display: flex;
-      gap: 2rem;
+      gap: 2.2rem;
     }
 
     .footer-legal a {
       color: var(--color-text-muted);
       text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    .footer-legal a:hover {
+      color: var(--color-gold);
+    }
+
+    /* Responsive Mobile First */
+    @media (min-width: 576px) {
+      .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+      }
     }
 
     /* Animations & Motion Effects - Reveal on Scroll */
@@ -1110,81 +1996,348 @@
       transform: translate(0);
     }
 
-    /* Media Queries & Responsive Layouts */
-    @media (max-width: 1024px) {
-      .hero-container, .benefits-grid, .spotlight-container, .compass-container, .footer-spotlight-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+    /* Mobile-first base styles for spotlight/compass containers */
+    .benefits-grid, .spotlight-container, .compass-container, .footer-spotlight-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .footer-spotlight-container {
+      padding: 3rem;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .science-grid, .leak-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .product-box-mock.small {
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 0.8rem;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .hero-ctas .btn {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .hero-visual, .spotlight-visual, .compass-visual {
+      order: -1;
+      height: auto;
+    }
+
+    @media (min-width: 769px) {
+      .benefits-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
       }
-      
-      .hero-content {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .hero-ctas {
-        justify-content: center;
-      }
-      
-      .hero-visual, .spotlight-visual, .compass-visual {
-        order: -1;
-        height: auto;
-      }
-      
-      .science-grid, .leak-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      
-      .footer-spotlight-container {
-        padding: 3rem;
-        text-align: center;
-        justify-items: center;
-      }
-      
-      .product-box-mock.small {
-        margin-bottom: 1.5rem;
+
+      .benefit-card.span-2 {
+        grid-column: span 2;
       }
     }
 
-    @media (max-width: 768px) {
-      .nav-menu {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-bg-dark);
-        flex-direction: column;
+    @media (min-width: 992px) {
+      .hero-container {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .hero-content {
+        text-align: left;
+        display: block;
+        align-items: unset;
+      }
+
+      .hero-ctas {
+        justify-content: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .hero-ctas .btn {
+        padding: 0.85rem 2rem;
+        font-size: 0.95rem;
+      }
+
+      .hero-visual, .spotlight-visual, .compass-visual {
+        order: 0;
+        height: auto;
+      }
+
+      .benefits-bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .benefit-card.span-2 {
+        grid-column: span 2;
+        flex-direction: row;
+        gap: 2.5rem;
         align-items: center;
-        padding: 2rem 0;
-        gap: 1.5rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       }
-      
-      .nav-menu.active {
-        display: flex;
+
+      .benefit-card-visual {
+        width: auto;
+        min-height: unset;
       }
-      
-      .mobile-toggle {
-        display: flex;
-      }
-      
+
       .science-grid, .leak-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
       }
-      
+
       .footer-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+        gap: 5rem;
       }
-      
+
       .footer-bottom {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
+        flex-direction: row;
+        gap: 0;
+        text-align: left;
       }
+
+      .footer-spotlight-container {
+        padding: 5rem;
+        text-align: left;
+        justify-items: start;
+      }
+
+      .spotlight-container {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 6rem;
+      }
+    }
+
+    /* Discount Popup Styles */
+    .discount-popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(2, 5, 11, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      padding: 20px;
+    }
+
+    .discount-popup-overlay.active {
+      opacity: 1;
+    }
+
+    .discount-popup-card {
+      background: var(--color-bg-deep);
+      border: 1px solid rgba(229, 192, 123, 0.2);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 680px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(229, 192, 123, 0.05);
+      transform: translateY(20px) scale(0.95);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .discount-popup-overlay.active .discount-popup-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .discount-popup-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--color-text-muted);
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 10;
+      transition: var(--transition-smooth);
+      line-height: 1;
+    }
+
+    .discount-popup-close:hover {
+      color: var(--color-gold);
+      transform: rotate(90deg);
+    }
+
+    .discount-popup-content {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+    }
+
+    @media (max-width: 600px) {
+      .discount-popup-content {
+        grid-template-columns: 1fr;
+      }
+      .discount-popup-brand {
+        padding: 30px 24px 20px 24px !important;
+      }
+    }
+
+    .discount-popup-brand {
+      background: linear-gradient(135deg, #091325 0%, #030812 100%);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-right: 1px solid rgba(229, 192, 123, 0.1);
+      position: relative;
+    }
+
+    .discount-popup-brand::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(229, 192, 123, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .discount-popup-badge {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--color-gold);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .discount-popup-offer-title {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      color: var(--color-text-bright);
+      line-height: 1;
+      margin-bottom: 8px;
+      font-weight: 300;
+    }
+
+    .discount-popup-offer-subtitle {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    .discount-popup-form-container {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+      .discount-popup-form-container {
+        padding: 24px 24px 32px 24px;
+      }
+    }
+
+    .discount-popup-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--color-text-bright);
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+
+    .discount-popup-text {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+    }
+
+    .discount-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .discount-input {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(2, 5, 11, 0.5);
+      border: 1px solid rgba(229, 192, 123, 0.15);
+      border-radius: 8px;
+      color: var(--color-text-bright);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      transition: var(--transition-smooth);
+    }
+
+    .discount-input:focus {
+      outline: none;
+      border-color: var(--color-gold);
+      box-shadow: 0 0 0 2px rgba(229, 192, 123, 0.1);
+    }
+
+    .discount-submit-btn {
+      background: var(--color-gold);
+      color: #02050b;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .discount-submit-btn:hover {
+      background: var(--color-gold-light);
+      transform: translateY(-1px);
+    }
+
+    .discount-success-msg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      animation: discountFadeIn 0.4s ease forwards;
+    }
+
+    .success-icon {
+      width: 48px;
+      height: 48px;
+      stroke: var(--color-gold);
+    }
+
+    .discount-success-msg p {
+      font-size: 0.95rem;
+      color: var(--color-text-main);
+      line-height: 1.5;
+    }
+
+    @keyframes discountFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -1204,12 +2357,13 @@
       </a>
       <nav class="nav-menu" id="navMenu">
         <a href="#home" class="nav-item active">Home</a>
-        <a href="#science" class="nav-item">Science</a>
-        <a href="#shop" class="nav-item">Shop</a>
-        <a href="#about" class="nav-item">About</a>
+        <a href="shop.html" class="nav-item">Shop</a>
+        <a href="music.html" class="nav-item">Music</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="shop.html" class="btn btn-primary btn-sm mobile-shop-btn">Shop Now</a>
       </nav>
       <div class="header-actions">
-        <a href="#shop" class="btn btn-primary btn-sm">Shop Now</a>
+        <a href="shop.html" class="btn btn-primary btn-sm">Shop Now</a>
         <button class="mobile-toggle" aria-label="Toggle Menu" id="mobileToggle">
           <span></span>
           <span></span>
@@ -1229,8 +2383,8 @@
           <h1 class="hero-title">Finally,<br>a better night's sleep<br><span class="highlight">for everyone.</span></h1>
           <p class="hero-desc">Enjoy deep, natural sleep without interruptions. Our smart eye mask combines calming sounds and gentle warmth to help you relax and fall asleep quickly.</p>
           <div class="hero-ctas">
-            <a href="#shop" class="btn btn-primary">Shop Now</a>
-            <a href="#science" class="btn btn-outline">
+            <a href="shop.html" class="btn btn-primary">Shop Now</a>
+            <a href="about.html" class="btn btn-outline">
               <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
               </svg>
@@ -1263,48 +2417,112 @@
     <!-- Benefits Section -->
     <section class="benefits-section">
       <div class="container">
-        <div class="benefits-grid">
-          <div class="benefits-intro reveal-fade-up">
-            <div class="tagline">Engineered for Rest</div>
-            <h2 class="section-title">Give your eyes<br><span class="highlight">a real break.</span></h2>
-            <div class="metric-highlight">
-              <span class="metric-num">10+</span>
-              <span class="metric-lbl">Built-in sleep features</span>
+        <div class="benefits-header reveal-fade-up">
+          <div class="tagline centered">Engineered for Rest</div>
+          <h2 class="section-title centered">Give your eyes<br><span class="highlight">a real break.</span></h2>
+          <p class="section-desc centered">By blocking 100% of light and applying relaxing warmth, the Soothe & Drift mask helps soothe tired eyes and prepares your body for deep sleep.</p>
+        </div>
+        
+        <div class="benefits-bento-grid reveal-fade-up">
+          <!-- Card 1: Total Blackout (Large span-2) -->
+          <div class="benefit-card span-2">
+            <div class="benefit-card-info">
+              <div class="benefit-icon">
+                <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 3a9 9 0 1 0 9 9 9.75 9.75 0 0 0-.674-3.418 7.5 7.5 0 1 1-11.744-11.744A9.75 9.75 0 0 0 12 3Z" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-linecap="round" opacity="0.3"/>
+                </svg>
+              </div>
+              <h3>100% Total Blackout Cavity</h3>
+              <p>Engineered with deep 3D eye cavities that ensure absolute zero pressure on your eyelids and eyelashes, while blocking all ambient light to trigger natural melatonin production.</p>
             </div>
-            <p class="section-desc">By blocking 100% of light and applying relaxing warmth, the Soothe & Drift mask helps soothe tired eyes and prepares your body for deep sleep.</p>
-          </div>
-          <div class="benefits-icons-grid reveal-fade-up">
-            <div class="benefit-card">
-              <div class="benefit-icon">🚚</div>
-              <h3>Free Shipping</h3>
-              <p>On all domestic orders</p>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon">🏷️</div>
-              <h3>Best Price</h3>
-              <p>Direct from manufacturer</p>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon">🌿</div>
-              <h3>100% Organic</h3>
-              <p>Hypoallergenic cotton blend</p>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon">🌙</div>
-              <h3>Deep Sleep</h3>
-              <p>Proven REM extension</p>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon">🌍</div>
-              <h3>Eco Friendly</h3>
-              <p>Sustainable processes</p>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon">🛡️</div>
-              <h3>Warranty</h3>
-              <p>1-Year full replacement</p>
+            <div class="benefit-card-visual">
+              <!-- Beautiful Sleep Score Indicator -->
+              <div class="sleep-score-radial">
+                <svg>
+                  <circle class="sleep-score-circle-bg" cx="50" cy="50" r="40"/>
+                  <circle class="sleep-score-circle-val" cx="50" cy="50" r="40"/>
+                </svg>
+                <div class="sleep-score-text">100%</div>
+              </div>
             </div>
           </div>
+
+          <!-- Card 2: Thermal Therapy (Standard) -->
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M8 5v14M16 5v14" stroke-linecap="round" opacity="0.3"/>
+                <path d="M12 2v20" stroke-linecap="round" opacity="0.3"/>
+                <path d="M6 10c1.5-1.5 2.5-1.5 4 0s2.5 1.5 4 0 2.5-1.5 4 0" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 16c1.5-1.5 2.5-1.5 4 0s2.5 1.5 4 0 2.5-1.5 4 0" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Thermal Comfort</h3>
+            <p>Soothing warmth zones gently expand blood vessels, melting stress and fatigue away.</p>
+          </div>
+
+          <!-- Card 3: Acoustic Drift (Standard) -->
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 10v4M6 6v12M9 3v18M12 9v6M15 5v14M18 8v8M21 11v2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Acoustic Drift</h3>
+            <p>Ultra-thin speakers deliver pink noise and soundscapes to calm active brainwaves.</p>
+          </div>
+
+          <!-- Card 4: Ergonomic Fit (Standard) -->
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 10c0-1.5 2-3 5-3s5 1.5 5 3-2 3-5 3-5-1.5-5-3Z" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11 10c0-1.5 2-3 5-3s5 1.5 5 3-2 3-5 3-5-1.5-5-3Z" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 10h6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Adaptive Fit</h3>
+            <p>Micro-adjustable straps contour seamlessly to any facial structure for weightless fit.</p>
+          </div>
+
+          <!-- Card 5: Organic Materials (Standard) -->
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20.24 3.76a6 6 0 0 0-8.49 0L3 12.5V21h8.5l8.74-8.74a6 6 0 0 0 0-8.5Z" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 21l9-9M9 17h4M14 13h3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Pure Organic Cotton</h3>
+            <p>100% hypoallergenic, breathable materials that regulate skin temperature.</p>
+          </div>
+
+          <!-- Card 6: Intelligent Sleep Automation (Large span-2) -->
+          <div class="benefit-card span-2">
+            <div class="benefit-card-info">
+              <div class="benefit-icon">
+                <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 6v6l3 3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16.5 4.5l3 3M7.5 4.5l-3 3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Intelligent Automation</h3>
+              <p>As you drift off, the mask automatically detects sleep onset, fading out the audio and thermal systems to guarantee undisturbed sleep and deep cycles.</p>
+            </div>
+            <div class="benefit-card-visual">
+              <!-- Equalizer pulse bars -->
+              <div class="pulse-wave">
+                <div class="pulse-bar"></div>
+                <div class="pulse-bar"></div>
+                <div class="pulse-bar"></div>
+                <div class="pulse-bar"></div>
+                <div class="pulse-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
         
         <div class="section-divider-text reveal-fade-up">
@@ -1319,12 +2537,18 @@
       <div class="container spotlight-container">
         <div class="spotlight-visual reveal-fade-left">
           <div class="product-glow"></div>
-          <div class="product-box-mock">
-            <div class="box-brand">SOOTHE & DRIFT</div>
-            <div class="box-product-name">SOMNIFY</div>
-            <div class="box-crest">🌙</div>
+          <div class="product-showcase-wrapper">
+            <div class="product-box-mock">
+              <div class="box-brand">SOOTHE & DRIFT</div>
+              <div class="box-product-name">SOMNIFY</div>
+              <div class="box-crest">🌙</div>
+            </div>
+            <div class="product-mask-mock">
+              <div class="mask-cup-left"></div>
+              <div class="mask-bridge"></div>
+              <div class="mask-cup-right"></div>
+            </div>
           </div>
-          <div class="product-mask-mock"></div>
         </div>
         <div class="spotlight-content reveal-fade-right">
           <div class="tagline">Premium Smart Mask</div>
@@ -1333,44 +2557,60 @@
           
           <ul class="features-list">
             <li>
-              <span class="feature-bullet">✔</span>
+              <span class="feature-bullet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 12px; height: 12px;">
+                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
               <div>
                 <strong>100% Total Blackout</strong>
-                <p>Blocks out all light completely with no pressure on your eyes.</p>
+                <p>Blocks out all light completely with zero pressure on your eyes.</p>
               </div>
             </li>
             <li>
-              <span class="feature-bullet">✔</span>
+              <span class="feature-bullet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 12px; height: 12px;">
+                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
               <div>
                 <strong>Soothing Warmth</strong>
-                <p>3 heat levels to help relieve eye strain and tension.</p>
+                <p>3 regulated heat levels to relieve eye strain and muscle tension.</p>
               </div>
             </li>
             <li>
-              <span class="feature-bullet">✔</span>
+              <span class="feature-bullet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 12px; height: 12px;">
+                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
               <div>
                 <strong>Calming Audio</strong>
-                <p>Easily connect via Bluetooth to play your favorite sleep sounds.</p>
+                <p>Easily connect via Bluetooth to play your favorite soundscapes.</p>
               </div>
             </li>
             <li>
-              <span class="feature-bullet">✔</span>
+              <span class="feature-bullet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 12px; height: 12px;">
+                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
               <div>
                 <strong>Soft Breathable Fabric</strong>
-                <p>Made with high-quality silk that stays cool and clean all night.</p>
+                <p>Made with hypoallergenic organic cotton that stays cool all night.</p>
               </div>
             </li>
           </ul>
 
           <div class="spotlight-ctas">
-            <a href="#checkout" class="btn btn-primary">Buy Now — $89</a>
+            <a href="shop.html" class="btn btn-primary">Buy Now — $24</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Smart Wave Science -->
-    <section class="science-section" id="science">
+    <section class="science-section" id="music">
       <div class="container">
         <div class="science-header reveal-fade-up">
           <div class="tagline">The Sleep Laboratory</div>
@@ -1378,18 +2618,52 @@
         </div>
         
         <div class="science-grid">
+          <!-- Card 1: Phase 1 -->
           <div class="science-card reveal-fade-up">
-            <div class="sci-step">01</div>
+            <div class="science-card-header">
+              <span class="sci-phase-badge">
+                <span class="sci-dot"></span>
+                Phase 01
+              </span>
+              <svg class="sci-tech-graphic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 12h3l2-5 3 10 2-7 2 4h10" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="9" stroke-dasharray="2 4" stroke-linecap="round" opacity="0.3"/>
+              </svg>
+            </div>
             <h3>Gentle Relaxation</h3>
             <p>Soft pulses help release tension around your temples and forehead instantly.</p>
           </div>
+
+          <!-- Card 2: Phase 2 -->
           <div class="science-card reveal-fade-up">
-            <div class="sci-step">02</div>
+            <div class="science-card-header">
+              <span class="sci-phase-badge">
+                <span class="sci-dot"></span>
+                Phase 02
+              </span>
+              <svg class="sci-tech-graphic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3" />
+                <circle cx="12" cy="12" r="6" stroke-dasharray="3 3" opacity="0.6"/>
+                <circle cx="12" cy="12" r="9" opacity="0.3"/>
+                <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke-linecap="round" opacity="0.4"/>
+              </svg>
+            </div>
             <h3>Calming Sleep Sounds</h3>
             <p>Built-in speakers play audio tuned to help your mind settle down for sleep.</p>
           </div>
+
+          <!-- Card 3: Phase 3 -->
           <div class="science-card reveal-fade-up">
-            <div class="sci-step">03</div>
+            <div class="science-card-header">
+              <span class="sci-phase-badge">
+                <span class="sci-dot"></span>
+                Phase 03
+              </span>
+              <svg class="sci-tech-graphic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2a10 10 0 1 0 10 10c0-3.5-3.5-6-6-6s-4 2-4 4 1.5 3 3 3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
             <h3>Cozy Warmth Settings</h3>
             <p>Comforting warmth improves blood flow to soothe dry, tired eyes.</p>
           </div>
@@ -1405,33 +2679,73 @@
         </div>
 
         <div class="leak-grid">
+          <!-- Card 1: Zero Light Leaks -->
           <div class="leak-card reveal-fade-up">
-            <div class="card-icon">🔒</div>
+            <div class="leak-icon-container">
+              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M12 8v6M9 11h6" stroke-linecap="round"/>
+              </svg>
+            </div>
             <h3>Zero Light Leaks</h3>
             <p>Precision wing design seals completely around the nose bridge for absolute darkness.</p>
           </div>
+
+          <!-- Card 2: Pressure-Free Eyes -->
           <div class="leak-card reveal-fade-up">
-            <div class="card-icon">💆</div>
+            <div class="leak-icon-container">
+              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
             <h3>Pressure-Free Eyes</h3>
             <p>Deep eye cavities allow natural blinking without touching your eyelashes or eyelids.</p>
           </div>
+
+          <!-- Card 3: Quick Charge -->
           <div class="leak-card reveal-fade-up">
-            <div class="card-icon">⚡</div>
+            <div class="leak-icon-container">
+              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="7" width="16" height="10" rx="2" ry="2"/>
+                <line x1="22" y1="11" x2="22" y2="13"/>
+                <path d="M6 12h4l-2 3 4-4H8l2-3-4 4z" fill="currentColor"/>
+              </svg>
+            </div>
             <h3>Quick Charge</h3>
             <p>Up to 10 nights of use on a single 1-hour fast charge cycle.</p>
           </div>
+
+          <!-- Card 4: Fully Washable -->
           <div class="leak-card reveal-fade-up">
-            <div class="card-icon">🚿</div>
+            <div class="leak-icon-container">
+              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
             <h3>Fully Washable</h3>
             <p>Removable inner electronics module makes keeping the fabric fresh effortless.</p>
           </div>
+
+          <!-- Card 5: Side Sleeper Safe -->
           <div class="leak-card reveal-fade-up">
-            <div class="card-icon">💤</div>
+            <div class="leak-icon-container">
+              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                <path d="M8 13.5h5M7 10.5h7" stroke-linecap="round" opacity="0.4"/>
+              </svg>
+            </div>
             <h3>Side Sleeper Safe</h3>
             <p>Ultra-thin profile sides prevent pressure points even if you sleep directly on your side.</p>
           </div>
+
+          <!-- Card 6: Bluetooth 5.2 -->
           <div class="leak-card reveal-fade-up">
-            <div class="card-icon">📶</div>
+            <div class="leak-icon-container">
+              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 7l14 10-7 5V2l7 5L5 17" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
             <h3>Bluetooth 5.2</h3>
             <p>Ultra low energy connectivity pairs seamlessly with sleep trackers and white noise apps.</p>
           </div>
@@ -1439,48 +2753,55 @@
       </div>
     </section>
 
-    <!-- Sleep Score Matrix (Compass/Glow Ring) -->
-    <section class="compass-section">
-      <div class="container compass-container">
-        <div class="compass-visual reveal-fade-left">
-          <div class="radar-glow">
-            <div class="radar-line"></div>
-            <div class="radar-ring"></div>
-            <div class="radar-ring-2"></div>
-            <div class="radar-dot"></div>
-          </div>
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="compare">
+      <div class="container">
+        <div class="science-header reveal-fade-up">
+          <div class="tagline">Premium Package</div>
+          <h2 class="section-title centered">Start sleeping better<br><span class="highlight">tonight.</span></h2>
         </div>
-        <div class="compass-content reveal-fade-right">
-          <div class="tagline">Bio-Feedback Loop</div>
-          <h2 class="section-title">Shine bright like<br><span class="highlight">a morning star.</span></h2>
-          <p class="section-desc">Track your nightly sleep quality. Monitor how long you stay in deep sleep and wake up feeling refreshed every morning.</p>
+        
+        <div class="pricing-card-wrapper reveal-fade-up">
+          <div class="pricing-card-left">
+            <span class="pricing-badge">All-in-one suite</span>
+            <div class="pricing-product-name">Somnify Smart Mask</div>
+            <div class="pricing-main-value">$24<span> / package (15 masks)</span></div>
+            <div class="pricing-shipping-info">
+              <span class="pricing-shipping-dot"></span>
+              Free Shipping & Returns Included
+            </div>
+            <a href="shop.html" class="btn btn-primary" style="width: 100%;">Buy Now</a>
+          </div>
           
-          <table class="metrics-table">
-            <thead>
-              <tr>
-                <th>Sleep Metric</th>
-                <th>Standard</th>
-                <th>With Somnify</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Latency Time</td>
-                <td>28 mins</td>
-                <td class="table-highlight">11 mins</td>
-              </tr>
-              <tr>
-                <td>REM Duration</td>
-                <td>65 mins</td>
-                <td class="table-highlight">98 mins</td>
-              </tr>
-              <tr>
-                <td>Interrupts</td>
-                <td>4.2 / night</td>
-                <td class="table-highlight">0.8 / night</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="pricing-card-right">
+            <div class="pricing-right-title">What's in the Box</div>
+            <ul class="pricing-whats-included">
+              <li>
+                <span class="pricing-check">✔</span>
+                <span><strong>Somnify Smart Eye Mask (15 Pack)</strong> — 15 masks overall, premium 3D contour shield</span>
+              </li>
+              <li>
+                <span class="pricing-check">✔</span>
+                <span><strong>Ocular Thermal Controller</strong> — 3 built-in warmth settings</span>
+              </li>
+              <li>
+                <span class="pricing-check">✔</span>
+                <span><strong>Integrated Calming Speakers</strong> — Bluetooth stereo drivers</span>
+              </li>
+              <li>
+                <span class="pricing-check">✔</span>
+                <span><strong>Organic Cotton Travel Bag</strong> — Protective storage pouch</span>
+              </li>
+              <li>
+                <span class="pricing-check">✔</span>
+                <span><strong>Fast Charge USB-C Cable</strong> — Full battery in 1 hour</span>
+              </li>
+              <li>
+                <span class="pricing-check">✔</span>
+                <span><strong>1-Year Full Warranty</strong> & 30-Day Sleep Guarantee</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -1520,17 +2841,42 @@
     <!-- Footer Spotlight / Somnify Purchase Card -->
     <section class="footer-spotlight-section">
       <div class="container footer-spotlight-container reveal-fade-up">
-        <div class="f-spotlight-visual">
-          <div class="product-box-mock small">
-            <div class="box-brand">SOOTHE & DRIFT</div>
-            <div class="box-crest">🌙</div>
-          </div>
+        <!-- Technical HUD Status Indicator -->
+        <div class="f-hud-status">
+          <span class="f-hud-pulse"></span>
+          REST SYSTEM ACTIVE // MELATONIN COUPLING ENABLED
         </div>
+
         <div class="f-spotlight-content">
           <div class="tagline">Upgrade Your Rest</div>
           <h2 class="section-title">Soothe & Drift — <span class="highlight">Somnify</span></h2>
-          <p class="section-desc">Includes Premium Smart Mask, travel case, USB-C fast charging cable, and lifetime access to the Soothe soundscapes library.</p>
-          <a href="#checkout" class="btn btn-primary">Buy Now — $89</a>
+          <p class="section-desc">Includes Premium Smart Mask (15 masks overall), travel case, USB-C fast charging cable, and lifetime access to the Soothe soundscapes library.</p>
+          <a href="shop.html" class="btn btn-primary" style="padding: 1.25rem 3.5rem;">Buy Now — $24</a>
+          
+          <!-- Telemetry Grid Specs -->
+          <div class="f-grid-specs">
+            <div class="f-grid-spec-card">
+              <span class="f-grid-spec-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8a2.5 2.5 0 0 1 2 4.5 5 5 0 0 1-4 0A2.5 2.5 0 0 1 12 8z"/></svg>
+              </span>
+              <span class="f-grid-spec-title">Circadian Lock</span>
+              <span class="f-grid-spec-desc">100% Light Shield</span>
+            </div>
+            <div class="f-grid-spec-card">
+              <span class="f-grid-spec-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+              </span>
+              <span class="f-grid-spec-title">Binaural Audio</span>
+              <span class="f-grid-spec-desc">Integrated Stereo Drivers</span>
+            </div>
+            <div class="f-grid-spec-card">
+              <span class="f-grid-spec-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </span>
+              <span class="f-grid-spec-title">Thermal Cycle</span>
+              <span class="f-grid-spec-desc">USB-C Quick-Charge</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1580,6 +2926,60 @@
               <p>We offer a 30-day money-back guarantee. If you are not sleeping deeper, ship it back for a full refund, no questions asked.</p>
             </div>
           </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Can I use my own music or soundscapes?</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Yes, Somnify connects via standard Bluetooth, allowing you to stream from Spotify, Apple Music, YouTube, white noise apps, or your favorite meditation platform.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>How long does the battery last on a single charge?</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>The battery lasts up to 10 nights of normal use (around 8 hours per night) on a single charge. It fully recharges via USB-C in under an hour.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Is the heat therapy adjustable and safe?</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Absolutely. The mask features 3 micro-controlled warmth levels (ranging from 38°C to 45°C) and includes an automatic safety shut-off after 30 minutes to prevent overheating.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Does it completely block out all light?</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Yes. It is designed with a contoured 3D eye cup mold and a dual-flap nose wing to block 100% of ambient light, even in bright daylight.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Does the mask support voice calls or is it only for music?</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>It is optimized purely for sleep audio and does not contain a microphone, ensuring zero accidental voice activations or disturbances during your rest.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Can children or teenagers use the Somnify mask?</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Yes, the adjustable, elastic strap fits head circumferences from 20 to 26 inches comfortably, making it suitable for adults and teenagers alike.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1589,10 +2989,11 @@
       <div class="container final-cta-container">
         <div class="moon-large-glow reveal-fade-up">
           <div class="moon-large"></div>
+          <div class="cta-moon-orbit"></div>
           <div class="cta-inner-text">
             <h2>Relax.<br>Recharge.<br><span class="highlight">Drift away.</span></h2>
             <p>Join thousands of sleepers waking up refreshed every morning.</p>
-            <a href="#checkout" class="btn btn-primary">Shop Now</a>
+            <a href="shop.html" class="btn btn-primary" style="padding: 1.25rem 3.5rem;">Shop Now</a>
           </div>
         </div>
       </div>
@@ -1602,36 +3003,48 @@
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-container">
+      <!-- Column 1: Brand Info -->
       <div class="footer-brand">
         <img src="SOOTHE & DRIFT-01.jpg.jpeg" alt="Soothe & Drift Logo" class="footer-logo">
         <p>Premium sleep products engineered to balance body, mind, and circadian rhythms.</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="Enter your email" aria-label="Email address" class="newsletter-input">
-          <button class="btn btn-primary btn-sm">Subscribe</button>
-        </div>
       </div>
       
+      <!-- Column 2: Products -->
       <div class="footer-links">
         <h4>Products</h4>
-        <a href="#shop">Smart Mask</a>
-        <a href="#shop">Somnify Plus</a>
-        <a href="#shop">Travel Kit</a>
-        <a href="#shop">Gift Cards</a>
+        <a href="shop.html">Smart Mask</a>
+        <a href="shop.html">Travel Kit</a>
+        <a href="music.html">Sleep Library</a>
+        <a href="shop.html">Accessories</a>
       </div>
 
+      <!-- Column 3: Support -->
       <div class="footer-links">
-        <h4>Science</h4>
-        <a href="#science">Delta Waves</a>
-        <a href="#science">Ocular Health</a>
-        <a href="#science">Clinical Studies</a>
-        <a href="#science">Sleep Hygiene</a>
+        <h4>Support</h4>
+        <a href="about.html">About Us</a>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">30-Day Guarantee</a>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+      </div>
+
+      <!-- Column 4: Newsletter -->
+      <div class="footer-newsletter-col">
+        <h4>Stay Updated</h4>
+        <p>Sign up to receive sleep hygiene tips, product updates, and special offers.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email" aria-label="Email address" class="newsletter-input">
+          <button class="newsletter-btn">Join</button>
+        </div>
       </div>
     </div>
+
+    <!-- Bottom Bar -->
     <div class="container footer-bottom">
-      <p>&copy; 2026 Soothe & Drift. All rights reserved.</p>
+      <p>&copy; 2026 Soothe & Drift. All rights reserved. | Made with <svg viewBox="0 0 24 24" fill="#ef4444" width="14" height="14" style="display: inline-block; vertical-align: middle; margin: 0 4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by <a href="http://www.theupliv.com" target="_blank" style="color: var(--color-gold); text-decoration: none;">UPliv</a></p>
       <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>
@@ -1639,6 +3052,18 @@
   <!-- Inline Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Mouse-move tracking for benefit & leak cards
+      const hoverCards = document.querySelectorAll('.benefit-card, .leak-card');
+      hoverCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+
       // 1. Mobile Menu Toggle
       const mobileToggle = document.getElementById('mobileToggle');
       const navMenu = document.getElementById('navMenu');
@@ -1771,7 +3196,108 @@
           header.classList.remove('scrolled');
         }
       });
+
+      // 6. Discount Popup Logic
+      const discountPopup = document.getElementById('discountPopup');
+      const closeDiscountPopupBtn = document.getElementById('closeDiscountPopup');
+      const discountForm = document.getElementById('discountForm');
+      const discountSuccessMsg = document.getElementById('discountSuccessMessage');
+
+      if (discountPopup && !localStorage.getItem('discountPopupDismissed')) {
+        setTimeout(() => {
+          discountPopup.style.display = 'flex';
+          setTimeout(() => {
+            discountPopup.classList.add('active');
+          }, 10);
+        }, 5000);
+      }
+
+      const closeDiscountPopup = () => {
+        if (discountPopup) {
+          discountPopup.classList.remove('active');
+          setTimeout(() => {
+            discountPopup.style.display = 'none';
+          }, 500);
+          localStorage.setItem('discountPopupDismissed', 'true');
+        }
+      };
+
+      if (closeDiscountPopupBtn) {
+        closeDiscountPopupBtn.addEventListener('click', closeDiscountPopup);
+      }
+
+      if (discountPopup) {
+        discountPopup.addEventListener('click', (e) => {
+          if (e.target === discountPopup) {
+            closeDiscountPopup();
+          }
+        });
+      }
+
+      if (discountForm) {
+        discountForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          discountForm.style.display = 'none';
+          if (discountSuccessMsg) {
+            discountSuccessMsg.style.display = 'flex';
+          }
+          localStorage.setItem('discountPopupDismissed', 'true');
+          setTimeout(closeDiscountPopup, 4000);
+        });
+      }
     });
   </script>
+
+  <!-- Discount Popup Form Markup -->
+  <div id="discountPopup" class="discount-popup-overlay" aria-hidden="true" style="display: none;">
+    <div class="discount-popup-card">
+      <button class="discount-popup-close" id="closeDiscountPopup" aria-label="Close popup">&times;</button>
+      <div class="discount-popup-content">
+        <!-- Left side visual / offer display -->
+        <div class="discount-popup-brand">
+          <span class="discount-popup-badge">LIMITED TIME</span>
+          <h3 class="discount-popup-offer-title">15% OFF</h3>
+          <p class="discount-popup-offer-subtitle">YOUR FIRST SLEEP MASK SUITE</p>
+        </div>
+        <!-- Right side form -->
+        <div class="discount-popup-form-container">
+          <h4 class="discount-popup-title">Unlock Serenity</h4>
+          <p class="discount-popup-text">Join our circle. Subscribe to receive your exclusive 15% discount code and updates on sleep science.</p>
+          
+          <form id="discountForm" class="discount-form">
+            <input type="email" id="discountEmail" placeholder="Enter your email address" required aria-label="Email address" class="discount-input">
+            <button type="submit" class="discount-submit-btn">Get My 15% Off</button>
+          </form>
+          
+          <div id="discountSuccessMessage" class="discount-success-msg" style="display: none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="success-icon">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <p>Your code <strong>DRIFT15</strong> is on the way to your inbox!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <a href="index.html" class="bottom-nav-item active">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="shop.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24"><path d="M17.21 9l-4.38-6.56c-.19-.28-.51-.42-.83-.42-.32 0-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.88 1.46h13.08c.88 0 1.65-.62 1.88-1.46l2.54-9.27c.03-.09.04-.18.04-.27 0-.55-.45-1-1-1h-4.79zM9 9l3-4.5L15 9H9z"/></svg>
+      <span>Shop</span>
+    </a>
+    <a href="music.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+      <span>Music</span>
+    </a>
+    <a href="about.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      <span>About</span>
+    </a>
+  </nav>
 </body>
 </html>
