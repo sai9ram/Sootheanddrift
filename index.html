@@ -3013,9 +3013,275 @@
       </div>
     </section>
 
-    <!-- Video Reviews Section -->
-    <section class="video-reviews-section"
-      style="padding: 100px 0; background-color: var(--color-bg-dark); position: relative; overflow: hidden;">
+    <!-- Video Reviews Section — Circular Rotating Carousel -->
+    <section class="video-reviews-section" style="padding: 100px 0; background-color: var(--color-bg-dark); position: relative; overflow: hidden;">
+      <style>
+        /* ── Circular Carousel ── */
+        .vc-scene {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 3rem;
+        }
+
+        .vc-ring-wrapper {
+          width: 100%;
+          height: 520px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          perspective: 1200px;
+          position: relative;
+        }
+
+        .vc-ring {
+          width: 220px;
+          height: 380px;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .vc-card {
+          position: absolute;
+          width: 220px;
+          height: 380px;
+          border-radius: 20px;
+          overflow: hidden;
+          border: 1.5px solid rgba(229, 192, 123, 0.15);
+          background: #060c18;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+          cursor: pointer;
+          transition: border-color 0.5s, box-shadow 0.5s;
+          backface-visibility: hidden;
+        }
+
+        .vc-card.active-card {
+          border-color: rgba(229, 192, 123, 0.7);
+          box-shadow: 0 0 40px rgba(229, 192, 123, 0.3), 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        .vc-card video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        .vc-play-btn {
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+          width: 52px; height: 52px;
+          border-radius: 50%;
+          background: rgba(229, 192, 123, 0.88);
+          display: flex; align-items: center; justify-content: center;
+          transition: opacity 0.3s, transform 0.3s;
+          box-shadow: 0 0 20px rgba(229,192,123,0.5);
+          pointer-events: none;
+        }
+        .vc-play-btn svg { width: 22px; height: 22px; fill: #060c18; margin-left: 3px; }
+        .vc-card.is-playing .vc-play-btn { opacity: 0; }
+
+        .vc-label {
+          position: absolute;
+          bottom: 0; left: 0; right: 0;
+          padding: 1rem 1.2rem 1.2rem;
+          background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%);
+          pointer-events: none;
+        }
+        .vc-label h3 { font-family: var(--font-serif); font-size: 1rem; color: #fff; margin: 0 0 2px; }
+        .vc-label p  { font-size: 0.72rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em; margin: 0; }
+
+        /* Nav buttons */
+        .vc-nav {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+        }
+        .vc-nav-btn {
+          width: 48px; height: 48px;
+          border-radius: 50%;
+          border: 1.5px solid rgba(229, 192, 123, 0.4);
+          background: rgba(229, 192, 123, 0.06);
+          color: var(--color-gold);
+          font-size: 1.2rem;
+          cursor: pointer;
+          display: flex; align-items: center; justify-content: center;
+          transition: background 0.3s, border-color 0.3s, transform 0.2s;
+        }
+        .vc-nav-btn:hover { background: rgba(229,192,123,0.15); border-color: var(--color-gold); transform: scale(1.08); }
+
+        .vc-dots {
+          display: flex; gap: 8px;
+        }
+        .vc-dot {
+          width: 8px; height: 8px;
+          border-radius: 50%;
+          background: rgba(229,192,123,0.25);
+          cursor: pointer;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .vc-dot.active { background: var(--color-gold); transform: scale(1.3); }
+      </style>
+
+      <div class="container">
+        <div class="testimonial-header reveal-fade-up" style="text-align: center; margin-bottom: 2rem;">
+          <div class="tagline centered">Community Feedback</div>
+          <h2 class="section-title centered">Real Sleepers.<br><span class="highlight">Real Video Reviews.</span></h2>
+          <p class="section-desc centered" style="margin-top: 1rem;">See why thousands of people have upgraded their nightly rest with Soothe &amp; Drift.</p>
+        </div>
+
+        <div class="vc-scene reveal-fade-up">
+          <div class="vc-ring-wrapper">
+            <div class="vc-ring" id="vcRing">
+
+              <!-- Card 1 -->
+              <div class="vc-card" data-index="0" onclick="vcHandleClick(0)">
+                <video id="vcVid0" src="Creating_UGC_review_video_202608211444.mp4" loop playsinline preload="metadata" muted></video>
+                <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="vc-label"><h3>Alex Watson</h3><p>Sleep Coach &amp; Biohacker</p></div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="vc-card" data-index="1" onclick="vcHandleClick(1)">
+                <video id="vcVid1" src="Woman_talking_about_eye_mask_202608211331.mp4" loop playsinline preload="metadata" muted></video>
+                <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="vc-label"><h3>Jessica Sterling</h3><p>Wellness Influencer</p></div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="vc-card" data-index="2" onclick="vcHandleClick(2)">
+                <video id="vcVid2" src="Man_talking_about_eye_mask_202608211416.mp4" loop playsinline preload="metadata" muted></video>
+                <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="vc-label"><h3>Marcus Bennett</h3><p>Daily Commuter &amp; Tech Lead</p></div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="vc-card" data-index="3" onclick="vcHandleClick(3)">
+                <video id="vcVid3" src="Man_talking_on_airplane_202608211346.mp4" loop playsinline preload="metadata" muted></video>
+                <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="vc-label"><h3>David Park</h3><p>Frequent Flyer</p></div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="vc-card" data-index="4" onclick="vcHandleClick(4)">
+                <video id="vcVid4" src="Designing_eye_mask_and_packaging_202608211421.mp4" loop playsinline preload="metadata" muted></video>
+                <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="vc-label"><h3>Priya Nair</h3><p>Product Designer</p></div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="vc-card" data-index="5" onclick="vcHandleClick(5)">
+                <video id="vcVid5" src="Woman_holding_SOTHE_DRIFT_pouch_202608211406.mp4" loop playsinline preload="metadata" muted></video>
+                <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="vc-label"><h3>Sophie Lane</h3><p>Yoga &amp; Mindfulness Coach</p></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="vc-nav">
+            <button class="vc-nav-btn" id="vcPrev" aria-label="Previous">&#8592;</button>
+            <div class="vc-dots" id="vcDots"></div>
+            <button class="vc-nav-btn" id="vcNext" aria-label="Next">&#8594;</button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const TOTAL = 6;
+          const RADIUS = 420;      // px — ring radius
+          const ring = document.getElementById('vcRing');
+          const cards = Array.from(ring.querySelectorAll('.vc-card'));
+          const dotsEl = document.getElementById('vcDots');
+          let current = 0;
+          let autoTimer = null;
+          let playingIndex = -1;
+
+          // Build dots
+          cards.forEach((_, i) => {
+            const d = document.createElement('span');
+            d.className = 'vc-dot' + (i === 0 ? ' active' : '');
+            d.addEventListener('click', () => goTo(i));
+            dotsEl.appendChild(d);
+          });
+
+          function positionCards(angle) {
+            const angleStep = 360 / TOTAL;
+            cards.forEach((card, i) => {
+              const theta = (i * angleStep - angle) * (Math.PI / 180);
+              const x = Math.sin(theta) * RADIUS;
+              const z = Math.cos(theta) * RADIUS - RADIUS;
+              const scale = 0.55 + 0.45 * ((Math.cos(theta) + 1) / 2);
+              const opacity = 0.3 + 0.7 * ((Math.cos(theta) + 1) / 2);
+              card.style.transform = `translateX(${x}px) translateZ(${z}px) scale(${scale})`;
+              card.style.opacity = opacity;
+              card.style.zIndex = Math.round(scale * 100);
+              const isActive = (i === current);
+              card.classList.toggle('active-card', isActive);
+            });
+
+            // Update dots
+            dotsEl.querySelectorAll('.vc-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+          }
+
+          function goTo(idx) {
+            // Stop any playing video when navigating
+            if (playingIndex >= 0) {
+              const vid = document.getElementById('vcVid' + playingIndex);
+              if (vid) { vid.pause(); vid.currentTime = 0; }
+              cards[playingIndex].classList.remove('is-playing');
+              playingIndex = -1;
+            }
+            current = ((idx % TOTAL) + TOTAL) % TOTAL;
+            positionCards(current * (360 / TOTAL));
+          }
+
+          window.vcHandleClick = function (idx) {
+            if (idx !== current) { goTo(idx); return; }
+            // Toggle play/pause on the front card
+            const vid = document.getElementById('vcVid' + idx);
+            const card = cards[idx];
+            if (!vid) return;
+            if (vid.paused) {
+              vid.muted = false;
+              vid.play();
+              card.classList.add('is-playing');
+              playingIndex = idx;
+              stopAuto();
+            } else {
+              vid.pause();
+              card.classList.remove('is-playing');
+              playingIndex = -1;
+              startAuto();
+            }
+          };
+
+          function startAuto() {
+            stopAuto();
+            autoTimer = setInterval(() => {
+              if (playingIndex === -1) goTo(current + 1);
+            }, 3500);
+          }
+
+          function stopAuto() {
+            if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+          }
+
+          document.getElementById('vcPrev').addEventListener('click', () => { goTo(current - 1); startAuto(); });
+          document.getElementById('vcNext').addEventListener('click', () => { goTo(current + 1); startAuto(); });
+
+          // Init
+          positionCards(0);
+          startAuto();
+        })();
+      </script>
+    </section>
+
       <style>
         .video-grid {
           display: grid;
