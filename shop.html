@@ -1349,11 +1349,11 @@
             
             <div class="visualizer-media-container" style="position: relative; width: 100%; max-width: 320px; aspect-ratio: 1; border-radius: 24px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.35); box-shadow: 0 20px 40px rgba(0,0,0,0.8); z-index: 2; background: #000;">
               <!-- Tab 1: Product Video -->
-              <div id="tab-pouch" class="visualizer-tab-content" style="width: 100%; height: 100%;">
+              <div id="tab-pouch" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
                 <video src="Woman_holding_SOTHE_DRIFT_pouch_202608211406.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
               </div>
               <!-- Tab 2: Smart Mask Image -->
-              <div id="tab-mask" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
+              <div id="tab-mask" class="visualizer-tab-content" style="width: 100%; height: 100%;">
                 <img src="Product_photoshoot_on_white_back__202608211912-removebg-preview.png" alt="Soothe & Drift Somnify Mask" style="width: 100%; height: 100%; object-fit: contain; display: block; padding: 1.5rem; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));">
               </div>
               <!-- Tab 3: Travel Video -->
@@ -1364,8 +1364,8 @@
             
             <!-- Gallery Navigation Tabs -->
             <div class="visualizer-tabs-nav" style="display: flex; gap: 0.75rem; z-index: 5; position: relative; flex-wrap: wrap; justify-content: center;">
-              <button onclick="switchShopTab('tab-pouch')" class="btn btn-outline btn-sm active" id="btn-tab-pouch" style="padding: 0.4rem 1rem; font-size: 0.78rem; border-radius: 999px;">Product Pouch</button>
-              <button onclick="switchShopTab('tab-mask')" class="btn btn-outline btn-sm" id="btn-tab-mask" style="padding: 0.4rem 1rem; font-size: 0.78rem; border-radius: 999px;">Smart Mask</button>
+              <button onclick="switchShopTab('tab-pouch')" class="btn btn-outline btn-sm" id="btn-tab-pouch" style="padding: 0.4rem 1rem; font-size: 0.78rem; border-radius: 999px;">Product Pouch</button>
+              <button onclick="switchShopTab('tab-mask')" class="btn btn-outline btn-sm active" id="btn-tab-mask" style="padding: 0.4rem 1rem; font-size: 0.78rem; border-radius: 999px;">Smart Mask</button>
               <button onclick="switchShopTab('tab-travel')" class="btn btn-outline btn-sm" id="btn-tab-travel" style="padding: 0.4rem 1rem; font-size: 0.78rem; border-radius: 999px;">Travel Mode</button>
             </div>
           </div>
