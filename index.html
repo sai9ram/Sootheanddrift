@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soothe & Drift — Finally, a better night sleep</title>
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Experience premium sleep quality with Soothe & Drift smart eye masks. Reconnect with deep rest, smart wave science, and starry night comfort.">
+  <meta name="description"
+    content="Experience premium sleep quality with Soothe & Drift smart eye masks. Reconnect with deep rest, smart wave science, and starry night comfort.">
   <meta name="keywords" content="smart eye mask, premium sleep, sleep quality, Soothe & Drift, Somnify">
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="SOOTHE & DRIFT-01.jpg.jpeg">
-  
+
   <!-- Inline Styling -->
   <style>
     /* CSS Variables & Theme Setup */
@@ -24,21 +28,21 @@
       --color-bg-deep: #050b16;
       --color-bg-card: rgba(11, 22, 42, 0.6);
       --color-bg-card-hover: rgba(16, 32, 60, 0.8);
-      
+
       --color-gold-light: #f6ebd0;
       --color-gold: #e5c07b;
       --color-gold-dark: #b89858;
-      
+
       --color-text-bright: #ffffff;
       --color-text-main: #d1d5db;
       --color-text-muted: #9ca3af;
-      
+
       --color-accent-blue: #3b82f6;
       --color-accent-blue-glow: rgba(59, 130, 246, 0.3);
-      
+
       --font-serif: 'Cormorant Garamond', serif;
       --font-sans: 'Plus Jakarta Sans', sans-serif;
-      
+
       --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -77,19 +81,21 @@
       pointer-events: none;
     }
 
-    .stars, .stars2, .stars3 {
+    .stars,
+    .stars2,
+    .stars3 {
       position: absolute;
       top: 0;
       left: 0;
       width: 200%;
       height: 200%;
-      background-image: 
-        radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 50px 160px, #ddd, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 160px 120px, #ddd, rgba(0,0,0,0));
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
       background-repeat: repeat;
       background-size: 200px 200px;
       opacity: 0.3;
@@ -98,11 +104,13 @@
     .stars {
       animation: starMove 120s linear infinite;
     }
+
     .stars2 {
       background-size: 300px 300px;
       opacity: 0.2;
       animation: starMove 180s linear infinite;
     }
+
     .stars3 {
       background-size: 400px 400px;
       opacity: 0.15;
@@ -110,8 +118,13 @@
     }
 
     @keyframes starMove {
-      from { transform: translateY(0); }
-      to { transform: translateY(-50%); }
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(-50%);
+      }
     }
 
     /* Container */
@@ -129,7 +142,10 @@
     }
 
     /* Typography & Global Components */
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
       font-family: var(--font-serif);
       font-weight: 400;
       color: var(--color-text-bright);
@@ -282,15 +298,20 @@
         -webkit-backdrop-filter: none !important;
         top: 15px !important;
       }
+
       .header-container {
         justify-content: center;
         height: auto;
       }
+
       .logo-img {
         height: 76px !important;
         width: 76px !important;
       }
-      .mobile-toggle, .nav-menu, .header-actions {
+
+      .mobile-toggle,
+      .nav-menu,
+      .header-actions {
         display: none !important;
       }
     }
@@ -335,7 +356,7 @@
       opacity: 0;
       pointer-events: none;
       transition: var(--transition-smooth);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
       z-index: 9999;
     }
 
@@ -352,7 +373,8 @@
       transition: var(--transition-smooth);
     }
 
-    .nav-item:hover, .nav-item.active {
+    .nav-item:hover,
+    .nav-item.active {
       color: var(--color-gold);
     }
 
@@ -370,6 +392,7 @@
       .header-actions .btn-primary {
         display: none;
       }
+
       .nav-menu .mobile-shop-btn {
         display: block;
         text-align: center;
@@ -382,6 +405,7 @@
       .mobile-toggle {
         display: none;
       }
+
       .nav-menu {
         position: static;
         width: auto;
@@ -444,7 +468,8 @@
       transition: var(--transition-smooth);
     }
 
-    .bottom-nav-item:hover, .bottom-nav-item.active {
+    .bottom-nav-item:hover,
+    .bottom-nav-item.active {
       color: var(--color-gold);
       background: rgba(229, 192, 123, 0.08);
     }
@@ -527,9 +552,9 @@
       height: 85%;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 30%, #fffbf0 0%, #e2c07d 50%, #906e30 100%);
-      box-shadow: 
+      box-shadow:
         0 0 60px rgba(229, 192, 123, 0.4),
-        inset -20px -20px 40px rgba(0,0,0,0.6);
+        inset -20px -20px 40px rgba(0, 0, 0, 0.6);
       position: absolute;
       animation: pulseMoon 8s ease-in-out infinite;
     }
@@ -554,13 +579,29 @@
     }
 
     @keyframes pulseMoon {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 60px rgba(229, 192, 123, 0.4); }
-      50% { transform: scale(1.03); box-shadow: 0 0 80px rgba(229, 192, 123, 0.6); }
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 60px rgba(229, 192, 123, 0.4);
+      }
+
+      50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 80px rgba(229, 192, 123, 0.6);
+      }
     }
 
     @keyframes floatBear {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(2deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-15px) rotate(2deg);
+      }
     }
 
     /* Benefits Section */
@@ -728,14 +769,34 @@
       opacity: 0.7;
     }
 
-    .pulse-bar:nth-child(2) { animation-delay: 0.2s; height: 25px; }
-    .pulse-bar:nth-child(3) { animation-delay: 0.4s; height: 35px; }
-    .pulse-bar:nth-child(4) { animation-delay: 0.1s; height: 20px; }
-    .pulse-bar:nth-child(5) { animation-delay: 0.5s; height: 30px; }
+    .pulse-bar:nth-child(2) {
+      animation-delay: 0.2s;
+      height: 25px;
+    }
+
+    .pulse-bar:nth-child(3) {
+      animation-delay: 0.4s;
+      height: 35px;
+    }
+
+    .pulse-bar:nth-child(4) {
+      animation-delay: 0.1s;
+      height: 20px;
+    }
+
+    .pulse-bar:nth-child(5) {
+      animation-delay: 0.5s;
+      height: 30px;
+    }
 
     @keyframes pulseHeight {
-      0% { transform: scaleY(0.4); }
-      100% { transform: scaleY(1.2); }
+      0% {
+        transform: scaleY(0.4);
+      }
+
+      100% {
+        transform: scaleY(1.2);
+      }
     }
 
     .sleep-score-radial {
@@ -765,7 +826,8 @@
       stroke-width: 8;
       stroke-linecap: round;
       stroke-dasharray: 251.2;
-      stroke-dashoffset: 50.2; /* 80% */
+      stroke-dashoffset: 50.2;
+      /* 80% */
       animation: fillRadial 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
@@ -777,8 +839,13 @@
     }
 
     @keyframes fillRadial {
-      from { stroke-dashoffset: 251.2; }
-      to { stroke-dashoffset: 50.2; }
+      from {
+        stroke-dashoffset: 251.2;
+      }
+
+      to {
+        stroke-dashoffset: 50.2;
+      }
     }
 
     .section-divider-text {
@@ -883,13 +950,14 @@
     }
 
     /* Eye cavity impressions inside mask */
-    .mask-cup-left, .mask-cup-right {
+    .mask-cup-left,
+    .mask-cup-right {
       width: 65px;
       height: 45px;
       background: radial-gradient(circle, rgba(2, 5, 11, 0.9) 30%, rgba(229, 192, 123, 0.15) 100%);
       border-radius: 50%;
       border: 1.5px solid rgba(229, 192, 123, 0.3);
-      box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
       position: relative;
     }
 
@@ -978,10 +1046,12 @@
         width: 100%;
         height: 100%;
       }
+
       .product-box-mock {
         width: 250px;
         height: 350px;
       }
+
       .product-mask-mock {
         width: 280px;
         height: 110px;
@@ -1086,9 +1156,17 @@
     }
 
     @keyframes pulseGlow {
-      0% { opacity: 0.4; }
-      50% { opacity: 1; }
-      100% { opacity: 0.4; }
+      0% {
+        opacity: 0.4;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.4;
+      }
     }
 
     .sci-tech-graphic {
@@ -1304,6 +1382,7 @@
       .pricing-main-value {
         font-size: 2.8rem;
       }
+
       .pricing-main-value span {
         font-size: 0.95rem;
       }
@@ -1368,6 +1447,7 @@
         gap: 4rem;
         padding: 4rem 3.5rem;
       }
+
       .pricing-card-left {
         border-right: 1px solid rgba(255, 255, 255, 0.05);
         border-bottom: none;
@@ -1531,9 +1611,21 @@
     }
 
     @keyframes pulseGold {
-      0% { transform: scale(0.9); opacity: 0.4; }
-      50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 10px var(--color-gold); }
-      100% { transform: scale(0.9); opacity: 0.4; }
+      0% {
+        transform: scale(0.9);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: scale(1.25);
+        opacity: 1;
+        box-shadow: 0 0 10px var(--color-gold);
+      }
+
+      100% {
+        transform: scale(0.9);
+        opacity: 0.4;
+      }
     }
 
     .f-spotlight-content {
@@ -1988,7 +2080,9 @@
     }
 
     /* Animations & Motion Effects - Reveal on Scroll */
-    .reveal-fade-up, .reveal-fade-left, .reveal-fade-right {
+    .reveal-fade-up,
+    .reveal-fade-left,
+    .reveal-fade-right {
       opacity: 0;
       transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s ease;
     }
@@ -2005,13 +2099,18 @@
       transform: translateX(40px);
     }
 
-    .reveal-fade-up.revealed, .reveal-fade-left.revealed, .reveal-fade-right.revealed {
+    .reveal-fade-up.revealed,
+    .reveal-fade-left.revealed,
+    .reveal-fade-right.revealed {
       opacity: 1;
       transform: translate(0);
     }
 
     /* Mobile-first base styles for spotlight/compass containers */
-    .benefits-grid, .spotlight-container, .compass-container, .footer-spotlight-container {
+    .benefits-grid,
+    .spotlight-container,
+    .compass-container,
+    .footer-spotlight-container {
       grid-template-columns: 1fr;
       gap: 3rem;
     }
@@ -2022,7 +2121,8 @@
       justify-items: center;
     }
 
-    .science-grid, .leak-grid {
+    .science-grid,
+    .leak-grid {
       grid-template-columns: 1fr;
     }
 
@@ -2052,7 +2152,9 @@
       white-space: nowrap;
     }
 
-    .hero-visual, .spotlight-visual, .compass-visual {
+    .hero-visual,
+    .spotlight-visual,
+    .compass-visual {
       order: -1;
       height: auto;
     }
@@ -2090,7 +2192,9 @@
         font-size: 0.95rem;
       }
 
-      .hero-visual, .spotlight-visual, .compass-visual {
+      .hero-visual,
+      .spotlight-visual,
+      .compass-visual {
         order: 0;
         height: auto;
       }
@@ -2112,7 +2216,8 @@
         min-height: unset;
       }
 
-      .science-grid, .leak-grid {
+      .science-grid,
+      .leak-grid {
         grid-template-columns: repeat(3, 1fr);
       }
 
@@ -2207,6 +2312,7 @@
       .discount-popup-content {
         grid-template-columns: 1fr;
       }
+
       .discount-popup-brand {
         padding: 30px 24px 20px 24px !important;
       }
@@ -2359,11 +2465,19 @@
     }
 
     @keyframes discountFadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
   <!-- Starry Background Overlay -->
   <div class="stars-container">
@@ -2404,12 +2518,13 @@
         <div class="hero-content reveal-fade-left">
           <div class="tagline">Premium Sleep Experience</div>
           <h1 class="hero-title">Finally,<br>a better night's sleep<br><span class="highlight">for everyone.</span></h1>
-          <p class="hero-desc">Enjoy deep, natural sleep without interruptions. Our smart eye mask combines calming sounds and gentle warmth to help you relax and fall asleep quickly.</p>
+          <p class="hero-desc">Enjoy deep, natural sleep without interruptions. Our smart eye mask combines calming
+            sounds and gentle warmth to help you relax and fall asleep quickly.</p>
           <div class="hero-ctas">
             <a href="shop.html" class="btn btn-primary">Shop Now</a>
             <a href="about.html" class="btn btn-outline">
               <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                <path d="M8 5V19L19 12L8 5Z" fill="currentColor" />
               </svg>
               Watch Video
             </a>
@@ -2424,7 +2539,8 @@
             <div class="moon"></div>
             <!-- Lifestyle Hero Image Floating -->
             <div class="hero-lifestyle-card">
-              <img src="Woman_wearing_eye_mask_relaxing_202608211222.jpeg" alt="Woman relaxing with Soothe & Drift smart eye mask" class="hero-lifestyle-img">
+              <img src="Woman_wearing_eye_mask_relaxing_202608211222.jpeg"
+                alt="Woman relaxing with Soothe & Drift smart eye mask" class="hero-lifestyle-img">
             </div>
           </div>
         </div>
@@ -2437,29 +2553,36 @@
         <div class="benefits-header reveal-fade-up">
           <div class="tagline centered">Engineered for Rest</div>
           <h2 class="section-title centered">Give your eyes<br><span class="highlight">a real break.</span></h2>
-          <p class="section-desc centered">By blocking 100% of light and applying relaxing warmth, the Soothe & Drift mask helps soothe tired eyes and prepares your body for deep sleep.</p>
+          <p class="section-desc centered">By blocking 100% of light and applying relaxing warmth, the Soothe & Drift
+            mask helps soothe tired eyes and prepares your body for deep sleep.</p>
         </div>
-        
+
         <div class="benefits-bento-grid reveal-fade-up">
           <!-- Card 1: Total Blackout (Large span-2) -->
           <div class="benefit-card span-2">
             <div class="benefit-card-info">
               <div class="benefit-icon">
                 <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M12 3a9 9 0 1 0 9 9 9.75 9.75 0 0 0-.674-3.418 7.5 7.5 0 1 1-11.744-11.744A9.75 9.75 0 0 0 12 3Z" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-linecap="round" opacity="0.3"/>
+                  <path
+                    d="M12 3a9 9 0 1 0 9 9 9.75 9.75 0 0 0-.674-3.418 7.5 7.5 0 1 1-11.744-11.744A9.75 9.75 0 0 0 12 3Z"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                    stroke-linecap="round" opacity="0.3" />
                 </svg>
               </div>
               <h3>100% Total Blackout Cavity</h3>
-              <p>Engineered with deep 3D eye cavities that ensure absolute zero pressure on your eyelids and eyelashes, while blocking all ambient light to trigger natural melatonin production.</p>
+              <p>Engineered with deep 3D eye cavities that ensure absolute zero pressure on your eyelids and eyelashes,
+                while blocking all ambient light to trigger natural melatonin production.</p>
             </div>
             <div class="benefit-card-visual" style="position: relative;">
-              <img src="Woman_sleeping_peacefully_in_bed_202608201426.jpeg" alt="Woman sleeping peacefully in bed" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4; position: absolute; top: 0; left: 0; pointer-events: none;">
+              <img src="Woman_sleeping_peacefully_in_bed_202608201426.jpeg" alt="Woman sleeping peacefully in bed"
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4; position: absolute; top: 0; left: 0; pointer-events: none;">
               <!-- Beautiful Sleep Score Indicator -->
               <div class="sleep-score-radial" style="position: relative; z-index: 1;">
                 <svg>
-                  <circle class="sleep-score-circle-bg" cx="50" cy="50" r="40"/>
-                  <circle class="sleep-score-circle-val" cx="50" cy="50" r="40"/>
+                  <circle class="sleep-score-circle-bg" cx="50" cy="50" r="40" />
+                  <circle class="sleep-score-circle-val" cx="50" cy="50" r="40" />
                 </svg>
                 <div class="sleep-score-text">100%</div>
               </div>
@@ -2470,16 +2593,20 @@
           <div class="benefit-card">
             <div class="benefit-icon">
               <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M8 5v14M16 5v14" stroke-linecap="round" opacity="0.3"/>
-                <path d="M12 2v20" stroke-linecap="round" opacity="0.3"/>
-                <path d="M6 10c1.5-1.5 2.5-1.5 4 0s2.5 1.5 4 0 2.5-1.5 4 0" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M6 16c1.5-1.5 2.5-1.5 4 0s2.5 1.5 4 0 2.5-1.5 4 0" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 5v14M16 5v14" stroke-linecap="round" opacity="0.3" />
+                <path d="M12 2v20" stroke-linecap="round" opacity="0.3" />
+                <path d="M6 10c1.5-1.5 2.5-1.5 4 0s2.5 1.5 4 0 2.5-1.5 4 0" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M6 16c1.5-1.5 2.5-1.5 4 0s2.5 1.5 4 0 2.5-1.5 4 0" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </div>
             <h3>Thermal Comfort</h3>
             <p>Soothing warmth zones gently expand blood vessels, melting stress and fatigue away.</p>
-            <div class="benefit-card-image-wrap" style="width: 100%; height: 110px; border-radius: 12px; overflow: hidden; margin-top: 1.5rem; border: 1px solid rgba(255,255,255,0.05);">
-              <img src="Woman_relaxing_using_eye_mask_202608211233.jpeg" alt="Soothe & Drift Thermal Therapy" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="benefit-card-image-wrap"
+              style="width: 100%; height: 110px; border-radius: 12px; overflow: hidden; margin-top: 1.5rem; border: 1px solid rgba(255,255,255,0.05);">
+              <img src="Woman_relaxing_using_eye_mask_202608211233.jpeg" alt="Soothe & Drift Thermal Therapy"
+                style="width: 100%; height: 100%; object-fit: cover;">
             </div>
           </div>
 
@@ -2487,7 +2614,8 @@
           <div class="benefit-card">
             <div class="benefit-icon">
               <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 10v4M6 6v12M9 3v18M12 9v6M15 5v14M18 8v8M21 11v2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 10v4M6 6v12M9 3v18M12 9v6M15 5v14M18 8v8M21 11v2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </div>
             <h3>Acoustic Drift</h3>
@@ -2498,9 +2626,11 @@
           <div class="benefit-card">
             <div class="benefit-icon">
               <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 10c0-1.5 2-3 5-3s5 1.5 5 3-2 3-5 3-5-1.5-5-3Z" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M11 10c0-1.5 2-3 5-3s5 1.5 5 3-2 3-5 3-5-1.5-5-3Z" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 10h6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 10c0-1.5 2-3 5-3s5 1.5 5 3-2 3-5 3-5-1.5-5-3Z" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M11 10c0-1.5 2-3 5-3s5 1.5 5 3-2 3-5 3-5-1.5-5-3Z" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M9 10h6" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
             <h3>Adaptive Fit</h3>
@@ -2511,8 +2641,9 @@
           <div class="benefit-card">
             <div class="benefit-icon">
               <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M20.24 3.76a6 6 0 0 0-8.49 0L3 12.5V21h8.5l8.74-8.74a6 6 0 0 0 0-8.5Z" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3 21l9-9M9 17h4M14 13h3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20.24 3.76a6 6 0 0 0-8.49 0L3 12.5V21h8.5l8.74-8.74a6 6 0 0 0 0-8.5Z" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M3 21l9-9M9 17h4M14 13h3" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
             <h3>Pure Organic Cotton</h3>
@@ -2524,16 +2655,19 @@
             <div class="benefit-card-info">
               <div class="benefit-icon">
                 <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 6v6l3 3" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M16.5 4.5l3 3M7.5 4.5l-3 3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12 6v6l3 3" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M16.5 4.5l3 3M7.5 4.5l-3 3" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </div>
               <h3>Intelligent Automation</h3>
-              <p>As you drift off, the mask automatically detects sleep onset, fading out the audio and thermal systems to guarantee undisturbed sleep and deep cycles.</p>
+              <p>As you drift off, the mask automatically detects sleep onset, fading out the audio and thermal systems
+                to guarantee undisturbed sleep and deep cycles.</p>
             </div>
             <div class="benefit-card-visual" style="position: relative;">
-              <img src="Woman_wearing_eye_mask_on_202608211228.jpeg" alt="Intelligent Sleep Automation with Soothe & Drift" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4; position: absolute; top: 0; left: 0; pointer-events: none;">
+              <img src="Woman_wearing_eye_mask_on_202608211228.jpeg"
+                alt="Intelligent Sleep Automation with Soothe & Drift"
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4; position: absolute; top: 0; left: 0; pointer-events: none;">
               <!-- Equalizer pulse bars -->
               <div class="pulse-wave" style="position: relative; z-index: 1;">
                 <div class="pulse-bar"></div>
@@ -2545,12 +2679,12 @@
             </div>
           </div>
         </div>
-        </div>
-        
-        <div class="section-divider-text reveal-fade-up">
-          <p class="tagline centered">Our Best Product</p>
-          <h3 class="divider-title-main">Designed by professionals</h3>
-        </div>
+      </div>
+
+      <div class="section-divider-text reveal-fade-up">
+        <p class="tagline centered">Our Best Product</p>
+        <h3 class="divider-title-main">Designed by professionals</h3>
+      </div>
       </div>
     </section>
 
@@ -2561,12 +2695,17 @@
           <div class="product-glow"></div>
           <div class="product-showcase-wrapper">
             <!-- High-Res Photoshoot Product Showcase -->
-            <div class="spotlight-product-gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; width: 100%; height: 100%; padding: 1.5rem; position: relative; z-index: 2;">
-              <div style="width: 100%; height: 100%; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
-                <img src="pomelli_photoshoot_image_1_1_0820.png" alt="Soothe & Drift Somnify Eye Mask" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <div class="spotlight-product-gallery"
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; width: 100%; height: 100%; padding: 1.5rem; position: relative; z-index: 2;">
+              <div
+                style="width: 100%; height: 100%; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
+                <img src="Product Transparent.jpeg" alt="Soothe & Drift Somnify Eye Mask"
+                  style="width: 100%; height: 100%; object-fit: cover; display: block;">
               </div>
-              <div style="width: 100%; height: 100%; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
-                <img src="Person_showcasing_product_pouch_2K_202608211210.jpeg" alt="Soothe & Drift Luxury Travel Pouch" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              <div
+                style="width: 100%; height: 100%; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
+                <img src="Person_showcasing_product_pouch_2K_202608211210.jpeg" alt="Soothe & Drift Luxury Travel Pouch"
+                  style="width: 100%; height: 100%; object-fit: cover; display: block;">
               </div>
             </div>
           </div>
@@ -2574,13 +2713,15 @@
         <div class="spotlight-content reveal-fade-right">
           <div class="tagline">Premium Smart Mask</div>
           <h2 class="section-title">Smart Eye Mask</h2>
-          <p class="section-desc">Designed to block out all distractions. Features built-in speakers for calming sounds, soothing warmth settings, and a fully adjustable fit.</p>
-          
+          <p class="section-desc">Designed to block out all distractions. Features built-in speakers for calming sounds,
+            soothing warmth settings, and a fully adjustable fit.</p>
+
           <ul class="features-list">
             <li>
               <span class="feature-bullet">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 12px; height: 12px;">
-                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  style="width: 12px; height: 12px;">
+                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
               <div>
@@ -2590,8 +2731,9 @@
             </li>
             <li>
               <span class="feature-bullet">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 12px; height: 12px;">
-                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  style="width: 12px; height: 12px;">
+                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
               <div>
@@ -2601,8 +2743,9 @@
             </li>
             <li>
               <span class="feature-bullet">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 12px; height: 12px;">
-                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  style="width: 12px; height: 12px;">
+                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
               <div>
@@ -2612,8 +2755,9 @@
             </li>
             <li>
               <span class="feature-bullet">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 12px; height: 12px;">
-                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  style="width: 12px; height: 12px;">
+                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
               <div>
@@ -2637,7 +2781,7 @@
           <div class="tagline">The Sleep Laboratory</div>
           <h2 class="section-title centered">How it helps you<br><span class="highlight">fall asleep faster.</span></h2>
         </div>
-        
+
         <div class="science-grid">
           <!-- Card 1: Phase 1 -->
           <div class="science-card reveal-fade-up">
@@ -2647,8 +2791,8 @@
                 Phase 01
               </span>
               <svg class="sci-tech-graphic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M2 12h3l2-5 3 10 2-7 2 4h10" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="12" cy="12" r="9" stroke-dasharray="2 4" stroke-linecap="round" opacity="0.3"/>
+                <path d="M2 12h3l2-5 3 10 2-7 2 4h10" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="12" cy="12" r="9" stroke-dasharray="2 4" stroke-linecap="round" opacity="0.3" />
               </svg>
             </div>
             <h3>Gentle Relaxation</h3>
@@ -2664,9 +2808,9 @@
               </span>
               <svg class="sci-tech-graphic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <circle cx="12" cy="12" r="3" />
-                <circle cx="12" cy="12" r="6" stroke-dasharray="3 3" opacity="0.6"/>
-                <circle cx="12" cy="12" r="9" opacity="0.3"/>
-                <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke-linecap="round" opacity="0.4"/>
+                <circle cx="12" cy="12" r="6" stroke-dasharray="3 3" opacity="0.6" />
+                <circle cx="12" cy="12" r="9" opacity="0.3" />
+                <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke-linecap="round" opacity="0.4" />
               </svg>
             </div>
             <h3>Calming Sleep Sounds</h3>
@@ -2681,8 +2825,9 @@
                 Phase 03
               </span>
               <svg class="sci-tech-graphic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2a10 10 0 1 0 10 10c0-3.5-3.5-6-6-6s-4 2-4 4 1.5 3 3 3" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                <path d="M12 2a10 10 0 1 0 10 10c0-3.5-3.5-6-6-6s-4 2-4 4 1.5 3 3 3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <circle cx="12" cy="12" r="1.5" fill="currentColor" />
               </svg>
             </div>
             <h3>Cozy Warmth Settings</h3>
@@ -2704,8 +2849,8 @@
           <div class="leak-card reveal-fade-up">
             <div class="leak-icon-container">
               <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="M12 8v6M9 11h6" stroke-linecap="round"/>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M12 8v6M9 11h6" stroke-linecap="round" />
               </svg>
             </div>
             <h3>Zero Light Leaks</h3>
@@ -2716,8 +2861,8 @@
           <div class="leak-card reveal-fade-up">
             <div class="leak-icon-container">
               <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
-                <circle cx="12" cy="12" r="3"/>
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+                <circle cx="12" cy="12" r="3" />
               </svg>
             </div>
             <h3>Pressure-Free Eyes</h3>
@@ -2728,9 +2873,9 @@
           <div class="leak-card reveal-fade-up">
             <div class="leak-icon-container">
               <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="7" width="16" height="10" rx="2" ry="2"/>
-                <line x1="22" y1="11" x2="22" y2="13"/>
-                <path d="M6 12h4l-2 3 4-4H8l2-3-4 4z" fill="currentColor"/>
+                <rect x="2" y="7" width="16" height="10" rx="2" ry="2" />
+                <line x1="22" y1="11" x2="22" y2="13" />
+                <path d="M6 12h4l-2 3 4-4H8l2-3-4 4z" fill="currentColor" />
               </svg>
             </div>
             <h3>Quick Charge</h3>
@@ -2741,7 +2886,7 @@
           <div class="leak-card reveal-fade-up">
             <div class="leak-icon-container">
               <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
               </svg>
             </div>
             <h3>Fully Washable</h3>
@@ -2752,8 +2897,8 @@
           <div class="leak-card reveal-fade-up">
             <div class="leak-icon-container">
               <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                <path d="M8 13.5h5M7 10.5h7" stroke-linecap="round" opacity="0.4"/>
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                <path d="M8 13.5h5M7 10.5h7" stroke-linecap="round" opacity="0.4" />
               </svg>
             </div>
             <h3>Side Sleeper Safe</h3>
@@ -2764,7 +2909,7 @@
           <div class="leak-card reveal-fade-up">
             <div class="leak-icon-container">
               <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M5 7l14 10-7 5V2l7 5L5 17" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5 7l14 10-7 5V2l7 5L5 17" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
             <h3>Bluetooth 5.2</h3>
@@ -2781,7 +2926,7 @@
           <div class="tagline">Premium Package</div>
           <h2 class="section-title centered">Start sleeping better<br><span class="highlight">tonight.</span></h2>
         </div>
-        
+
         <div class="pricing-card-wrapper reveal-fade-up">
           <div class="pricing-card-left">
             <span class="pricing-badge">All-in-one suite</span>
@@ -2793,13 +2938,14 @@
             </div>
             <a href="shop.html" class="btn btn-primary" style="width: 100%;">Buy Now</a>
           </div>
-          
+
           <div class="pricing-card-right">
             <div class="pricing-right-title">What's in the Box</div>
             <ul class="pricing-whats-included">
               <li>
                 <span class="pricing-check">✔</span>
-                <span><strong>Somnify Smart Eye Mask (15 Pack)</strong> — 15 masks overall, premium 3D contour shield</span>
+                <span><strong>Somnify Smart Eye Mask (15 Pack)</strong> — 15 masks overall, premium 3D contour
+                  shield</span>
               </li>
               <li>
                 <span class="pricing-check">✔</span>
@@ -2838,15 +2984,18 @@
         <div class="slider-wrapper reveal-fade-up">
           <div class="testimonial-slider" id="testimonialSlider">
             <div class="slide active">
-              <p class="quote">"I've struggled with insomnia for nearly a decade. The combination of heat and the low delta wave music puts me out within 10 minutes. Absolute life-saver."</p>
+              <p class="quote">"I've struggled with insomnia for nearly a decade. The combination of heat and the low
+                delta wave music puts me out within 10 minutes. Absolute life-saver."</p>
               <div class="author">— Sarah M., Frequent Traveler</div>
             </div>
             <div class="slide">
-              <p class="quote">"My partner works night shifts, which meant morning light always woke me up. This mask completely blocks everything. It is so comfortable on my ears too."</p>
+              <p class="quote">"My partner works night shifts, which meant morning light always woke me up. This mask
+                completely blocks everything. It is so comfortable on my ears too."</p>
               <div class="author">— James L., App Developer</div>
             </div>
             <div class="slide">
-              <p class="quote">"Super soft material, easy to connect to my phone. I sleep on my side and the speakers are so thin I can't even feel them. Highly recommend."</p>
+              <p class="quote">"Super soft material, easy to connect to my phone. I sleep on my side and the speakers
+                are so thin I can't even feel them. Highly recommend."</p>
               <div class="author">— Elena R., Yoga Instructor</div>
             </div>
           </div>
@@ -2860,7 +3009,8 @@
     </section>
 
     <!-- Video Reviews Section -->
-    <section class="video-reviews-section" style="padding: 100px 0; background-color: var(--color-bg-dark); position: relative; overflow: hidden;">
+    <section class="video-reviews-section"
+      style="padding: 100px 0; background-color: var(--color-bg-dark); position: relative; overflow: hidden;">
       <style>
         .video-grid {
           display: grid;
@@ -2868,11 +3018,13 @@
           gap: 2rem;
           margin-top: 3.5rem;
         }
+
         @media (min-width: 768px) {
           .video-grid {
             grid-template-columns: repeat(3, 1fr);
           }
         }
+
         .video-card {
           background: linear-gradient(135deg, rgba(11, 22, 42, 0.5) 0%, rgba(6, 12, 24, 0.7) 100%);
           border: 1px solid rgba(229, 192, 123, 0.15);
@@ -2884,18 +3036,22 @@
           display: flex;
           flex-direction: column;
         }
+
         .video-card:hover {
           transform: translateY(-5px);
           border-color: var(--color-gold);
           box-shadow: 0 20px 40px rgba(229, 192, 123, 0.1);
         }
+
         .video-wrapper {
           position: relative;
           width: 100%;
-          padding-top: 177.77%; /* 9:16 vertical ratio for UGC style reviews */
+          padding-top: 177.77%;
+          /* 9:16 vertical ratio for UGC style reviews */
           background: #000;
           overflow: hidden;
         }
+
         .video-wrapper video {
           position: absolute;
           top: 0;
@@ -2905,6 +3061,7 @@
           object-fit: cover;
           display: block;
         }
+
         .video-overlay-play {
           position: absolute;
           top: 50%;
@@ -2922,6 +3079,7 @@
           z-index: 10;
           box-shadow: 0 0 20px rgba(229, 192, 123, 0.4);
         }
+
         .video-overlay-play svg {
           width: 24px;
           height: 24px;
@@ -2929,22 +3087,26 @@
           margin-left: 4px;
           transition: var(--transition-smooth);
         }
+
         .video-card:hover .video-overlay-play {
           background: #ffffff;
           transform: translate(-50%, -50%) scale(1.1);
           box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
         }
+
         .video-info {
           padding: 1.5rem;
           text-align: left;
           border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
+
         .video-reviewer-name {
           font-family: var(--font-serif);
           font-size: 1.25rem;
           color: var(--color-text-bright);
           margin-bottom: 0.25rem;
         }
+
         .video-reviewer-title {
           font-family: var(--font-sans);
           font-size: 0.85rem;
@@ -2952,6 +3114,7 @@
           text-transform: uppercase;
           letter-spacing: 0.1em;
         }
+
         .video-wrapper.playing .video-overlay-play {
           opacity: 0;
           pointer-events: none;
@@ -2962,16 +3125,20 @@
         <div class="testimonial-header reveal-fade-up" style="text-align: center;">
           <div class="tagline centered">Community Feedback</div>
           <h2 class="section-title centered">Real Sleepers.<br><span class="highlight">Real Video Reviews.</span></h2>
-          <p class="section-desc centered" style="margin-top: 1rem;">See why thousands of people have upgraded their nightly rest with Soothe & Drift.</p>
+          <p class="section-desc centered" style="margin-top: 1rem;">See why thousands of people have upgraded their
+            nightly rest with Soothe & Drift.</p>
         </div>
 
         <div class="video-grid reveal-fade-up">
           <!-- Video 1 -->
           <div class="video-card">
             <div class="video-wrapper">
-              <video id="ugcVideo1" src="Creating_UGC_review_video_202608211444.mp4" loop playsinline preload="metadata" muted></video>
+              <video id="ugcVideo1" src="Creating_UGC_review_video_202608211444.mp4" loop playsinline preload="metadata"
+                muted></video>
               <div class="video-overlay-play" onclick="togglePlay('ugcVideo1', this)">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
               </div>
             </div>
             <div class="video-info">
@@ -2983,9 +3150,12 @@
           <!-- Video 2 -->
           <div class="video-card">
             <div class="video-wrapper">
-              <video id="ugcVideo2" src="Woman_talking_about_eye_mask_202608211331.mp4" loop playsinline preload="metadata" muted></video>
+              <video id="ugcVideo2" src="Woman_talking_about_eye_mask_202608211331.mp4" loop playsinline
+                preload="metadata" muted></video>
               <div class="video-overlay-play" onclick="togglePlay('ugcVideo2', this)">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
               </div>
             </div>
             <div class="video-info">
@@ -2997,9 +3167,12 @@
           <!-- Video 3 -->
           <div class="video-card">
             <div class="video-wrapper">
-              <video id="ugcVideo3" src="Man_talking_about_eye_mask_202608211416.mp4" loop playsinline preload="metadata" muted></video>
+              <video id="ugcVideo3" src="Man_talking_about_eye_mask_202608211416.mp4" loop playsinline
+                preload="metadata" muted></video>
               <div class="video-overlay-play" onclick="togglePlay('ugcVideo3', this)">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
               </div>
             </div>
             <div class="video-info">
@@ -3023,28 +3196,41 @@
         <div class="f-spotlight-content">
           <div class="tagline">Upgrade Your Rest</div>
           <h2 class="section-title">Soothe & Drift — <span class="highlight">Somnify</span></h2>
-          <p class="section-desc">Includes Premium Smart Mask (15 masks overall), travel case, USB-C fast charging cable, and lifetime access to the Soothe soundscapes library.</p>
+          <p class="section-desc">Includes Premium Smart Mask (15 masks overall), travel case, USB-C fast charging
+            cable, and lifetime access to the Soothe soundscapes library.</p>
           <a href="shop.html" class="btn btn-primary" style="padding: 1.25rem 3.5rem;">Buy Now — $24</a>
-          
+
           <!-- Telemetry Grid Specs -->
           <div class="f-grid-specs">
             <div class="f-grid-spec-card">
               <span class="f-grid-spec-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8a2.5 2.5 0 0 1 2 4.5 5 5 0 0 1-4 0A2.5 2.5 0 0 1 12 8z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M12 8a2.5 2.5 0 0 1 2 4.5 5 5 0 0 1-4 0A2.5 2.5 0 0 1 12 8z" />
+                </svg>
               </span>
               <span class="f-grid-spec-title">Circadian Lock</span>
               <span class="f-grid-spec-desc">100% Light Shield</span>
             </div>
             <div class="f-grid-spec-card">
               <span class="f-grid-spec-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                  <path
+                    d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                </svg>
               </span>
               <span class="f-grid-spec-title">Binaural Audio</span>
               <span class="f-grid-spec-desc">Integrated Stereo Drivers</span>
             </div>
             <div class="f-grid-spec-card">
               <span class="f-grid-spec-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
               </span>
               <span class="f-grid-spec-title">Thermal Cycle</span>
               <span class="f-grid-spec-desc">USB-C Quick-Charge</span>
@@ -3069,7 +3255,8 @@
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Yes. The speaker modules and sides are padded with high-density pressure-relief memory foam, reducing ear strain even when sleeping on your side.</p>
+              <p>Yes. The speaker modules and sides are padded with high-density pressure-relief memory foam, reducing
+                ear strain even when sleeping on your side.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -3078,7 +3265,8 @@
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>You can gently slide out the internal electronic module from the side slot, wash the fabric shell by hand in cool water with mild soap, and air dry.</p>
+              <p>You can gently slide out the internal electronic module from the side slot, wash the fabric shell by
+                hand in cool water with mild soap, and air dry.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -3087,7 +3275,8 @@
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Yes, you can configure an auto-shutoff sleep timer within our app, or it will automatically standby when no audio is broadcast for 30 minutes.</p>
+              <p>Yes, you can configure an auto-shutoff sleep timer within our app, or it will automatically standby
+                when no audio is broadcast for 30 minutes.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -3096,7 +3285,8 @@
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>We offer a 30-day money-back guarantee. If you are not sleeping deeper, ship it back for a full refund, no questions asked.</p>
+              <p>We offer a 30-day money-back guarantee. If you are not sleeping deeper, ship it back for a full refund,
+                no questions asked.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -3105,7 +3295,8 @@
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Yes, Somnify connects via standard Bluetooth, allowing you to stream from Spotify, Apple Music, YouTube, white noise apps, or your favorite meditation platform.</p>
+              <p>Yes, Somnify connects via standard Bluetooth, allowing you to stream from Spotify, Apple Music,
+                YouTube, white noise apps, or your favorite meditation platform.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -3114,7 +3305,8 @@
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>The battery lasts up to 10 nights of normal use (around 8 hours per night) on a single charge. It fully recharges via USB-C in under an hour.</p>
+              <p>The battery lasts up to 10 nights of normal use (around 8 hours per night) on a single charge. It fully
+                recharges via USB-C in under an hour.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -3123,7 +3315,8 @@
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Absolutely. The mask features 3 micro-controlled warmth levels (ranging from 38°C to 45°C) and includes an automatic safety shut-off after 30 minutes to prevent overheating.</p>
+              <p>Absolutely. The mask features 3 micro-controlled warmth levels (ranging from 38°C to 45°C) and includes
+                an automatic safety shut-off after 30 minutes to prevent overheating.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -3132,7 +3325,8 @@
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Yes. It is designed with a contoured 3D eye cup mold and a dual-flap nose wing to block 100% of ambient light, even in bright daylight.</p>
+              <p>Yes. It is designed with a contoured 3D eye cup mold and a dual-flap nose wing to block 100% of ambient
+                light, even in bright daylight.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -3141,7 +3335,8 @@
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>It is optimized purely for sleep audio and does not contain a microphone, ensuring zero accidental voice activations or disturbances during your rest.</p>
+              <p>It is optimized purely for sleep audio and does not contain a microphone, ensuring zero accidental
+                voice activations or disturbances during your rest.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -3150,7 +3345,8 @@
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Yes, the adjustable, elastic strap fits head circumferences from 20 to 26 inches comfortably, making it suitable for adults and teenagers alike.</p>
+              <p>Yes, the adjustable, elastic strap fits head circumferences from 20 to 26 inches comfortably, making it
+                suitable for adults and teenagers alike.</p>
             </div>
           </div>
         </div>
@@ -3181,7 +3377,7 @@
         <img src="SOOTHE & DRIFT-01.jpg.jpeg" alt="Soothe & Drift Logo" class="footer-logo">
         <p>Premium sleep products engineered to balance body, mind, and circadian rhythms.</p>
       </div>
-      
+
       <!-- Column 2: Products -->
       <div class="footer-links">
         <h4>Products</h4>
@@ -3214,7 +3410,12 @@
 
     <!-- Bottom Bar -->
     <div class="container footer-bottom">
-      <p>&copy; 2026 Soothe & Drift. All rights reserved. | Made with <svg viewBox="0 0 24 24" fill="#ef4444" width="14" height="14" style="display: inline-block; vertical-align: middle; margin: 0 4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by <a href="http://www.theupliv.com" target="_blank" style="color: var(--color-gold); text-decoration: none;">UPliv</a></p>
+      <p>&copy; 2026 Soothe & Drift. All rights reserved. | Made with <svg viewBox="0 0 24 24" fill="#ef4444" width="14"
+          height="14" style="display: inline-block; vertical-align: middle; margin: 0 4px;">
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+        </svg> by <a href="http://www.theupliv.com" target="_blank"
+          style="color: var(--color-gold); text-decoration: none;">UPliv</a></p>
       <div class="footer-legal">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
@@ -3277,7 +3478,7 @@
 
       // 2. Intersection Observer for Scroll Animations
       const revealElements = document.querySelectorAll('.reveal-fade-up, .reveal-fade-left, .reveal-fade-right');
-      
+
       const revealCallback = (entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -3303,7 +3504,7 @@
       const prevBtn = document.getElementById('sliderPrev');
       const nextBtn = document.getElementById('sliderNext');
       const dotsContainer = document.getElementById('sliderDots');
-      
+
       let currentSlide = 0;
       const slideCount = slides.length;
 
@@ -3321,7 +3522,7 @@
 
         const updateSlider = () => {
           slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-          
+
           slides.forEach((slide, idx) => {
             if (idx === currentSlide) {
               slide.classList.add('active');
@@ -3368,7 +3569,7 @@
         trigger.addEventListener('click', () => {
           const parent = trigger.parentElement;
           const isActive = parent.classList.contains('active');
-          
+
           document.querySelectorAll('.accordion-item').forEach(item => {
             item.classList.remove('active');
           });
@@ -3454,13 +3655,15 @@
         <!-- Right side form -->
         <div class="discount-popup-form-container">
           <h4 class="discount-popup-title">Unlock Serenity</h4>
-          <p class="discount-popup-text">Join our circle. Subscribe to receive your exclusive 15% discount code and updates on sleep science.</p>
-          
+          <p class="discount-popup-text">Join our circle. Subscribe to receive your exclusive 15% discount code and
+            updates on sleep science.</p>
+
           <form id="discountForm" class="discount-form">
-            <input type="email" id="discountEmail" placeholder="Enter your email address" required aria-label="Email address" class="discount-input">
+            <input type="email" id="discountEmail" placeholder="Enter your email address" required
+              aria-label="Email address" class="discount-input">
             <button type="submit" class="discount-submit-btn">Get My 15% Off</button>
           </form>
-          
+
           <div id="discountSuccessMessage" class="discount-success-msg" style="display: none;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="success-icon">
               <polyline points="20 6 9 17 4 12"></polyline>
@@ -3475,21 +3678,31 @@
   <!-- Mobile Bottom Navigation Bar -->
   <nav class="mobile-bottom-nav">
     <a href="index.html" class="bottom-nav-item active">
-      <svg class="bottom-nav-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+      </svg>
       <span>Home</span>
     </a>
     <a href="shop.html" class="bottom-nav-item">
-      <svg class="bottom-nav-icon" viewBox="0 0 24 24"><path d="M17.21 9l-4.38-6.56c-.19-.28-.51-.42-.83-.42-.32 0-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.88 1.46h13.08c.88 0 1.65-.62 1.88-1.46l2.54-9.27c.03-.09.04-.18.04-.27 0-.55-.45-1-1-1h-4.79zM9 9l3-4.5L15 9H9z"/></svg>
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24">
+        <path
+          d="M17.21 9l-4.38-6.56c-.19-.28-.51-.42-.83-.42-.32 0-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.88 1.46h13.08c.88 0 1.65-.62 1.88-1.46l2.54-9.27c.03-.09.04-.18.04-.27 0-.55-.45-1-1-1h-4.79zM9 9l3-4.5L15 9H9z" />
+      </svg>
       <span>Shop</span>
     </a>
     <a href="music.html" class="bottom-nav-item">
-      <svg class="bottom-nav-icon" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+      </svg>
       <span>Music</span>
     </a>
     <a href="about.html" class="bottom-nav-item">
-      <svg class="bottom-nav-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+      </svg>
       <span>About</span>
     </a>
   </nav>
 </body>
+
 </html>
