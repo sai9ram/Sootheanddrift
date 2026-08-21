@@ -2535,11 +2535,24 @@
           </div>
         </div>
         <div class="hero-visual reveal-fade-right">
-          <div class="moon-glow-container" style="width: 100%; max-width: 850px; aspect-ratio: 16/10; min-height: 520px; display: flex; align-items: center; justify-content: center; overflow: visible;">
+          <div class="moon-glow-container" style="width: 100%; max-width: 850px; aspect-ratio: 16/10; min-height: 520px; display: flex; align-items: center; justify-content: center; overflow: visible; position: relative;">
+            <!-- Outer halo ring -->
+            <div style="position: absolute; width: 420px; height: 420px; border-radius: 50%; background: transparent; border: 1.5px solid rgba(229, 192, 123, 0.18); box-shadow: 0 0 60px 20px rgba(229, 192, 123, 0.12); animation: pulseMoon 6s ease-in-out infinite; pointer-events: none; z-index: 0;"></div>
+            <!-- Moon Body -->
+            <div style="position: absolute; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle at 38% 38%, #fdf6dc 0%, #f0d98a 30%, #c9a84c 60%, #a07830 80%, #6b4f1e 100%); box-shadow: inset -28px -18px 55px rgba(60, 35, 5, 0.55), inset 10px 10px 30px rgba(255, 245, 180, 0.35), 0 0 80px 30px rgba(229, 192, 123, 0.35), 0 0 160px 60px rgba(229, 192, 123, 0.15); animation: pulseMoon 6s ease-in-out infinite; pointer-events: none; z-index: 1; overflow: hidden;">
+              <!-- Crater 1 -->
+              <div style="position: absolute; top: 22%; left: 28%; width: 48px; height: 48px; border-radius: 50%; background: radial-gradient(circle, rgba(120,80,20,0.35) 0%, transparent 70%); border: 1px solid rgba(100,65,15,0.2);"></div>
+              <!-- Crater 2 -->
+              <div style="position: absolute; top: 55%; left: 55%; width: 28px; height: 28px; border-radius: 50%; background: radial-gradient(circle, rgba(100,65,15,0.3) 0%, transparent 70%); border: 1px solid rgba(100,65,15,0.15);"></div>
+              <!-- Crater 3 -->
+              <div style="position: absolute; top: 38%; left: 62%; width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle, rgba(100,65,15,0.25) 0%, transparent 70%);"></div>
+              <!-- Shadow overlay (crescent shading) -->
+              <div style="position: absolute; top: -5%; left: 40%; width: 65%; height: 110%; border-radius: 50%; background: radial-gradient(ellipse at 80% 50%, rgba(40,20,5,0.45) 0%, transparent 65%);"></div>
+            </div>
             <!-- Ambient Glow Effect -->
-            <div class="hero-aura-glow" style="position: absolute; width: 130%; height: 130%; border-radius: 50%; background: radial-gradient(circle, rgba(229, 192, 123, 0.4) 0%, rgba(59, 130, 246, 0.25) 50%, transparent 75%); filter: blur(45px); pointer-events: none; animation: pulseMoon 6s ease-in-out infinite;"></div>
+            <div class="hero-aura-glow" style="position: absolute; width: 130%; height: 130%; border-radius: 50%; background: radial-gradient(circle, rgba(229, 192, 123, 0.25) 0%, rgba(59, 130, 246, 0.15) 50%, transparent 75%); filter: blur(45px); pointer-events: none; animation: pulseMoon 6s ease-in-out infinite; z-index: 2;"></div>
             <!-- Transparent Floating Hero Image (Extra Large) -->
-            <div class="hero-lifestyle-card" style="position: relative; width: 100%; height: 100%; border: none; background: transparent; box-shadow: none; overflow: visible; display: flex; align-items: center; justify-content: center;">
+            <div class="hero-lifestyle-card" style="position: relative; width: 100%; height: 100%; border: none; background: transparent; box-shadow: none; overflow: visible; display: flex; align-items: center; justify-content: center; z-index: 3;">
               <img src="Woman_sleeping_on_white_bed_202608212027-removebg-preview.png"
                 alt="Woman sleeping peacefully with Soothe & Drift smart eye mask" class="hero-lifestyle-img" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.75); filter: drop-shadow(0 30px 45px rgba(0,0,0,0.85)); display: block;">
             </div>
