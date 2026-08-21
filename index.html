@@ -534,11 +534,23 @@
       animation: pulseMoon 8s ease-in-out infinite;
     }
 
-    .floating-bear {
+    .hero-lifestyle-card {
       position: absolute;
       z-index: 2;
-      width: 80%;
+      width: 85%;
+      height: 85%;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid rgba(229, 192, 123, 0.4);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(229, 192, 123, 0.25);
       animation: floatBear 6s ease-in-out infinite;
+    }
+
+    .hero-lifestyle-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     @keyframes pulseMoon {
@@ -2408,15 +2420,9 @@
         <div class="hero-visual reveal-fade-right">
           <div class="moon-glow-container">
             <div class="moon"></div>
-            <!-- Bear Illustration Floating -->
-            <div class="floating-bear">
-              <svg class="bear-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(229, 192, 123, 0.2)" stroke-width="2"/>
-                <path d="M60 100 C 60 70, 140 70, 140 100" stroke="rgba(229, 192, 123, 0.4)" stroke-width="2" fill="none"/>
-                <path d="M80 110 C 80 120, 120 120, 120 110" stroke="#E5C07B" stroke-width="3" fill="none" stroke-linecap="round"/>
-                <circle cx="90" cy="95" r="4" fill="#E5C07B"/>
-                <circle cx="110" cy="95" r="4" fill="#E5C07B"/>
-              </svg>
+            <!-- Lifestyle Hero Image Floating -->
+            <div class="hero-lifestyle-card">
+              <img src="Woman_wearing_eye_mask_relaxing_202608211222.jpeg" alt="Woman relaxing with Soothe & Drift smart eye mask" class="hero-lifestyle-img">
             </div>
           </div>
         </div>
@@ -2445,9 +2451,10 @@
               <h3>100% Total Blackout Cavity</h3>
               <p>Engineered with deep 3D eye cavities that ensure absolute zero pressure on your eyelids and eyelashes, while blocking all ambient light to trigger natural melatonin production.</p>
             </div>
-            <div class="benefit-card-visual">
+            <div class="benefit-card-visual" style="position: relative;">
+              <img src="Woman_sleeping_peacefully_in_bed_202608201426.jpeg" alt="Woman sleeping peacefully in bed" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4; position: absolute; top: 0; left: 0; pointer-events: none;">
               <!-- Beautiful Sleep Score Indicator -->
-              <div class="sleep-score-radial">
+              <div class="sleep-score-radial" style="position: relative; z-index: 1;">
                 <svg>
                   <circle class="sleep-score-circle-bg" cx="50" cy="50" r="40"/>
                   <circle class="sleep-score-circle-val" cx="50" cy="50" r="40"/>
@@ -2469,6 +2476,9 @@
             </div>
             <h3>Thermal Comfort</h3>
             <p>Soothing warmth zones gently expand blood vessels, melting stress and fatigue away.</p>
+            <div class="benefit-card-image-wrap" style="width: 100%; height: 110px; border-radius: 12px; overflow: hidden; margin-top: 1.5rem; border: 1px solid rgba(255,255,255,0.05);">
+              <img src="Woman_relaxing_using_eye_mask_202608211233.jpeg" alt="Soothe & Drift Thermal Therapy" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
           </div>
 
           <!-- Card 3: Acoustic Drift (Standard) -->
@@ -2520,9 +2530,10 @@
               <h3>Intelligent Automation</h3>
               <p>As you drift off, the mask automatically detects sleep onset, fading out the audio and thermal systems to guarantee undisturbed sleep and deep cycles.</p>
             </div>
-            <div class="benefit-card-visual">
+            <div class="benefit-card-visual" style="position: relative;">
+              <img src="Woman_wearing_eye_mask_on_202608211228.jpeg" alt="Intelligent Sleep Automation with Soothe & Drift" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4; position: absolute; top: 0; left: 0; pointer-events: none;">
               <!-- Equalizer pulse bars -->
-              <div class="pulse-wave">
+              <div class="pulse-wave" style="position: relative; z-index: 1;">
                 <div class="pulse-bar"></div>
                 <div class="pulse-bar"></div>
                 <div class="pulse-bar"></div>
@@ -2547,15 +2558,14 @@
         <div class="spotlight-visual reveal-fade-left">
           <div class="product-glow"></div>
           <div class="product-showcase-wrapper">
-            <div class="product-box-mock">
-              <div class="box-brand">SOOTHE & DRIFT</div>
-              <div class="box-product-name">SOMNIFY</div>
-              <div class="box-crest">🌙</div>
-            </div>
-            <div class="product-mask-mock">
-              <div class="mask-cup-left"></div>
-              <div class="mask-bridge"></div>
-              <div class="mask-cup-right"></div>
+            <!-- High-Res Photoshoot Product Showcase -->
+            <div class="spotlight-product-gallery" style="display: flex; gap: 1rem; width: 100%; max-width: 480px; position: relative; z-index: 2;">
+              <div style="flex: 1.1; aspect-ratio: 1; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
+                <img src="pomelli_photoshoot_image_1_1_0820.png" alt="Soothe & Drift Somnify Eye Mask" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div style="flex: 0.9; aspect-ratio: 1; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5); align-self: flex-end; transform: translateY(15px);">
+                <img src="Person_showcasing_product_pouch_2K_202608211210.jpeg" alt="Soothe & Drift Luxury Travel Pouch" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
             </div>
           </div>
         </div>
@@ -2847,6 +2857,158 @@
       </div>
     </section>
 
+    <!-- Video Reviews Section -->
+    <section class="video-reviews-section" style="padding: 100px 0; background-color: var(--color-bg-dark); position: relative; overflow: hidden;">
+      <style>
+        .video-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          margin-top: 3.5rem;
+        }
+        @media (min-width: 768px) {
+          .video-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        .video-card {
+          background: linear-gradient(135deg, rgba(11, 22, 42, 0.5) 0%, rgba(6, 12, 24, 0.7) 100%);
+          border: 1px solid rgba(229, 192, 123, 0.15);
+          border-radius: 24px;
+          overflow: hidden;
+          position: relative;
+          transition: var(--transition-smooth);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+          display: flex;
+          flex-direction: column;
+        }
+        .video-card:hover {
+          transform: translateY(-5px);
+          border-color: var(--color-gold);
+          box-shadow: 0 20px 40px rgba(229, 192, 123, 0.1);
+        }
+        .video-wrapper {
+          position: relative;
+          width: 100%;
+          padding-top: 177.77%; /* 9:16 vertical ratio for UGC style reviews */
+          background: #000;
+          overflow: hidden;
+        }
+        .video-wrapper video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        .video-overlay-play {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 60px;
+          height: 60px;
+          background: rgba(229, 192, 123, 0.9);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: var(--transition-smooth);
+          z-index: 10;
+          box-shadow: 0 0 20px rgba(229, 192, 123, 0.4);
+        }
+        .video-overlay-play svg {
+          width: 24px;
+          height: 24px;
+          fill: var(--color-bg-dark);
+          margin-left: 4px;
+          transition: var(--transition-smooth);
+        }
+        .video-card:hover .video-overlay-play {
+          background: #ffffff;
+          transform: translate(-50%, -50%) scale(1.1);
+          box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+        }
+        .video-info {
+          padding: 1.5rem;
+          text-align: left;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .video-reviewer-name {
+          font-family: var(--font-serif);
+          font-size: 1.25rem;
+          color: var(--color-text-bright);
+          margin-bottom: 0.25rem;
+        }
+        .video-reviewer-title {
+          font-family: var(--font-sans);
+          font-size: 0.85rem;
+          color: var(--color-gold);
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+        .video-wrapper.playing .video-overlay-play {
+          opacity: 0;
+          pointer-events: none;
+        }
+      </style>
+
+      <div class="container">
+        <div class="testimonial-header reveal-fade-up" style="text-align: center;">
+          <div class="tagline centered">Community Feedback</div>
+          <h2 class="section-title centered">Real Sleepers.<br><span class="highlight">Real Video Reviews.</span></h2>
+          <p class="section-desc centered" style="margin-top: 1rem;">See why thousands of people have upgraded their nightly rest with Soothe & Drift.</p>
+        </div>
+
+        <div class="video-grid reveal-fade-up">
+          <!-- Video 1 -->
+          <div class="video-card">
+            <div class="video-wrapper">
+              <video id="ugcVideo1" src="Creating_UGC_review_video_202608211444.mp4" loop playsinline preload="metadata" muted></video>
+              <div class="video-overlay-play" onclick="togglePlay('ugcVideo1', this)">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3 class="video-reviewer-name">Alex Watson</h3>
+              <p class="video-reviewer-title">Sleep Coach & Biohacker</p>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="video-card">
+            <div class="video-wrapper">
+              <video id="ugcVideo2" src="Woman_talking_about_eye_mask_202608211331.mp4" loop playsinline preload="metadata" muted></video>
+              <div class="video-overlay-play" onclick="togglePlay('ugcVideo2', this)">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3 class="video-reviewer-name">Jessica Sterling</h3>
+              <p class="video-reviewer-title">Wellness Influencer</p>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="video-card">
+            <div class="video-wrapper">
+              <video id="ugcVideo3" src="Man_talking_about_eye_mask_202608211416.mp4" loop playsinline preload="metadata" muted></video>
+              <div class="video-overlay-play" onclick="togglePlay('ugcVideo3', this)">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+              </div>
+            </div>
+            <div class="video-info">
+              <h3 class="video-reviewer-name">Marcus Bennett</h3>
+              <p class="video-reviewer-title">Daily Commuter & Tech Lead</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer Spotlight / Somnify Purchase Card -->
     <section class="footer-spotlight-section">
       <div class="container footer-spotlight-container reveal-fade-up">
@@ -3060,6 +3222,25 @@
 
   <!-- Inline Scripts -->
   <script>
+    function togglePlay(id, button) {
+      const video = document.getElementById(id);
+      const wrapper = video.parentElement;
+      if (video.paused) {
+        document.querySelectorAll('.video-wrapper video').forEach(v => {
+          if (v.id !== id) {
+            v.pause();
+            v.parentElement.classList.remove('playing');
+          }
+        });
+        video.play().catch(e => console.log('Playback error:', e));
+        wrapper.classList.add('playing');
+        video.muted = false;
+      } else {
+        video.pause();
+        wrapper.classList.remove('playing');
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       // Mouse-move tracking for benefit & leak cards
       const hoverCards = document.querySelectorAll('.benefit-card, .leak-card');

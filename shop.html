@@ -1344,30 +1344,29 @@
 
         <div class="configurator-wrapper">
           <!-- Left: Graphic Showcase Visualizer -->
-          <div class="config-visualizer">
-            <div class="visualizer-hud-ring"></div>
-            <div class="visualizer-vector-wrap">
-              <!-- Premium Vector Sleep Mask Graphic -->
-              <svg viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="showcase-mask-graphic">
-                <rect x="5" y="10" width="90" height="40" rx="20" fill="url(#mask-glass)" stroke="url(#mask-border)" stroke-width="1.5" />
-                <circle cx="28" cy="30" r="12" fill="none" stroke="rgba(229, 192, 123, 0.15)" stroke-width="1" />
-                <circle cx="72" cy="30" r="12" fill="none" stroke="rgba(229, 192, 123, 0.15)" stroke-width="1" />
-                <path d="M42 46 C45 38, 55 38, 58 46" stroke="url(#mask-border)" stroke-width="1.5" fill="none" />
-                <!-- Acoustic sound wave vectors -->
-                <path d="M8 30 C12 25, 14 35, 18 30" stroke="var(--color-gold)" stroke-width="1" stroke-linecap="round" opacity="0.6" />
-                <path d="M92 30 C88 25, 86 35, 82 30" stroke="var(--color-gold)" stroke-width="1" stroke-linecap="round" opacity="0.6" />
-                <defs>
-                  <linearGradient id="mask-glass" x1="0" y1="0" x2="100" y2="60" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#0b162a" stop-opacity="0.8"/>
-                    <stop offset="1" stop-color="#050b16" stop-opacity="0.95"/>
-                  </linearGradient>
-                  <linearGradient id="mask-border" x1="0" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#e5c07b" stop-opacity="0.8"/>
-                    <stop offset="0.5" stop-color="#b89858" stop-opacity="0.3"/>
-                    <stop offset="1" stop-color="#e5c07b" stop-opacity="0.8"/>
-                  </linearGradient>
-                </defs>
-              </svg>
+          <div class="config-visualizer" style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center; min-height: 400px; padding: 2rem 1rem;">
+            <div class="visualizer-hud-ring" style="top: 50%; transform: translateY(-50%);"></div>
+            
+            <div class="visualizer-media-container" style="position: relative; width: 100%; max-width: 320px; aspect-ratio: 1; border-radius: 24px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.35); box-shadow: 0 20px 40px rgba(0,0,0,0.8); z-index: 2; background: #000;">
+              <!-- Tab 1: Product Video -->
+              <div id="tab-pouch" class="visualizer-tab-content" style="width: 100%; height: 100%;">
+                <video src="Woman_holding_SOTHE_DRIFT_pouch_202608211406.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+              </div>
+              <!-- Tab 2: Smart Mask Image -->
+              <div id="tab-mask" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
+                <img src="pomelli_photoshoot_image_1_1_0820.png" alt="Soothe & Drift Somnify Mask" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              </div>
+              <!-- Tab 3: Travel Video -->
+              <div id="tab-travel" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
+                <video src="Man_talking_on_airplane_202608211346.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+              </div>
+            </div>
+            
+            <!-- Gallery Navigation Tabs -->
+            <div class="visualizer-tabs-nav" style="display: flex; gap: 0.75rem; z-index: 5; position: relative; flex-wrap: wrap; justify-content: center;">
+              <button onclick="switchShopTab('tab-pouch')" class="btn btn-outline btn-sm active" id="btn-tab-pouch" style="padding: 0.4rem 1rem; font-size: 0.78rem; border-radius: 999px;">Product Pouch</button>
+              <button onclick="switchShopTab('tab-mask')" class="btn btn-outline btn-sm" id="btn-tab-mask" style="padding: 0.4rem 1rem; font-size: 0.78rem; border-radius: 999px;">Smart Mask</button>
+              <button onclick="switchShopTab('tab-travel')" class="btn btn-outline btn-sm" id="btn-tab-travel" style="padding: 0.4rem 1rem; font-size: 0.78rem; border-radius: 999px;">Travel Mode</button>
             </div>
           </div>
 
@@ -1519,8 +1518,25 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
+    function switchShopTab(tabId) {
+      document.querySelectorAll('.visualizer-tab-content').forEach(tab => {
+        tab.style.display = 'none';
+      });
+      const targetTab = document.getElementById(tabId);
+      if (targetTab) {
+        targetTab.style.display = 'block';
+      }
+
+      document.querySelectorAll('.visualizer-tabs-nav button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      const activeBtn = document.getElementById('btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       // 1. Mobile Menu Toggle
       const mobileToggle = document.getElementById('mobileToggle');
