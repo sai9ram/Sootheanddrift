@@ -821,7 +821,10 @@
     .product-showcase-wrapper {
       position: relative;
       width: 100%;
-      max-width: 480px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       perspective: 1000px;
     }
 
@@ -972,8 +975,8 @@
 
     @media (min-width: 577px) {
       .product-showcase-wrapper {
-        width: 320px;
-        height: 400px;
+        width: 100%;
+        height: 100%;
       }
       .product-box-mock {
         width: 250px;
@@ -2558,12 +2561,12 @@
           <div class="product-glow"></div>
           <div class="product-showcase-wrapper">
             <!-- High-Res Photoshoot Product Showcase -->
-            <div class="spotlight-product-gallery" style="display: flex; gap: 1rem; width: 100%; max-width: 480px; position: relative; z-index: 2;">
-              <div style="flex: 1.1; aspect-ratio: 1; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
-                <img src="pomelli_photoshoot_image_1_1_0820.png" alt="Soothe & Drift Somnify Eye Mask" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="spotlight-product-gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; width: 100%; height: 100%; padding: 1.5rem; position: relative; z-index: 2;">
+              <div style="width: 100%; height: 100%; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
+                <img src="pomelli_photoshoot_image_1_1_0820.png" alt="Soothe & Drift Somnify Eye Mask" style="width: 100%; height: 100%; object-fit: cover; display: block;">
               </div>
-              <div style="flex: 0.9; aspect-ratio: 1; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5); align-self: flex-end; transform: translateY(15px);">
-                <img src="Person_showcasing_product_pouch_2K_202608211210.jpeg" alt="Soothe & Drift Luxury Travel Pouch" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="width: 100%; height: 100%; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(229,192,123,0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
+                <img src="Person_showcasing_product_pouch_2K_202608211210.jpeg" alt="Soothe & Drift Luxury Travel Pouch" style="width: 100%; height: 100%; object-fit: cover; display: block;">
               </div>
             </div>
           </div>
