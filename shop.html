@@ -1343,55 +1343,12 @@
         </div>
 
         <div class="configurator-wrapper">
-          <!-- Left: Graphic Showcase Visualizer Redesigned -->
-          <div class="config-visualizer" style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: flex-start; min-height: 480px; padding: 1.5rem; background: linear-gradient(135deg, rgba(11, 22, 42, 0.45) 0%, rgba(6, 12, 24, 0.65) 100%); border: 1.5px solid rgba(229, 192, 123, 0.15); border-radius: 36px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(229, 192, 123, 0.02); overflow: hidden; position: relative;">
-            <style>
-              @keyframes scanLine {
-                0% { top: -5%; }
-                50% { opacity: 0.8; }
-                100% { top: 105%; }
-              }
-              @keyframes pulseSlow {
-                0%, 100% { opacity: 0.15; transform: scale(1); }
-                50% { opacity: 0.35; transform: scale(1.05); }
-              }
-              .config-visualizer::before {
-                content: '';
-                position: absolute;
-                width: 250px;
-                height: 250px;
-                background: radial-gradient(circle, rgba(229, 192, 123, 0.15) 0%, transparent 70%);
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                pointer-events: none;
-                z-index: 1;
-                animation: pulseSlow 8s ease-in-out infinite;
-              }
-            </style>
+          <!-- Left: Graphic Showcase Visualizer (Clean Image Only) -->
+          <div class="config-visualizer" style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center; min-height: 480px; padding: 1.5rem; background: transparent; border: none; box-shadow: none; overflow: hidden; position: relative;">
             
-            <!-- Tech Header HUD -->
-            <div class="visualizer-header-hud" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.75rem; font-family: var(--font-sans); font-size: 0.7rem; color: var(--color-text-muted); border-bottom: 1px solid rgba(255,255,255,0.06); letter-spacing: 0.15em; text-transform: uppercase; z-index: 3;">
-              <span style="display: inline-flex; align-items: center; gap: 6px;">
-                <span style="width: 6px; height: 6px; background-color: #10b981; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px #10b981;"></span>
-                Console Active
-              </span>
-              <span>Somnify v1.2</span>
-            </div>
-
-            <div class="visualizer-hud-ring" style="top: 50%; transform: translateY(-50%); opacity: 0.4;"></div>
-            
-            <!-- Visual Container with Tech Corners & Scanline -->
+            <!-- Visual Container (Fully transparent and borderless) -->
             <div class="visualizer-media-box" style="position: relative; width: 100%; max-width: 320px; aspect-ratio: 1; margin: auto 0; z-index: 2;">
-              <!-- High-tech Corner Brackets -->
-              <div class="hud-corner top-left" style="position: absolute; top: -5px; left: -5px; width: 14px; height: 14px; border-top: 2px solid var(--color-gold); border-left: 2px solid var(--color-gold); pointer-events: none;"></div>
-              <div class="hud-corner top-right" style="position: absolute; top: -5px; right: -5px; width: 14px; height: 14px; border-top: 2px solid var(--color-gold); border-right: 2px solid var(--color-gold); pointer-events: none;"></div>
-              <div class="hud-corner bottom-left" style="position: absolute; bottom: -5px; left: -5px; width: 14px; height: 14px; border-bottom: 2px solid var(--color-gold); border-left: 2px solid var(--color-gold); pointer-events: none;"></div>
-              <div class="hud-corner bottom-right" style="position: absolute; bottom: -5px; right: -5px; width: 14px; height: 14px; border-bottom: 2px solid var(--color-gold); border-right: 2px solid var(--color-gold); pointer-events: none;"></div>
-
-              <div class="visualizer-media-container" style="position: relative; width: 100%; height: 100%; border-radius: 20px; overflow: hidden; border: 1px solid rgba(229,192,123,0.25); background: transparent;">
-                <!-- Telemetry scanline overlay -->
-                <div class="visualizer-scanline" style="position: absolute; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, rgba(229,192,123,0.4), transparent); animation: scanLine 6s linear infinite; pointer-events: none; z-index: 3;"></div>
+              <div class="visualizer-media-container" style="position: relative; width: 100%; height: 100%; border-radius: 20px; overflow: hidden; border: none; background: transparent;">
                 
                 <!-- Tab 1: Product Video -->
                 <div id="tab-pouch" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
