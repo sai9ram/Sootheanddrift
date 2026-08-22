@@ -541,41 +541,34 @@
     .moon-glow-container {
       position: relative;
       width: 100%;
-      aspect-ratio: 1;
+      aspect-ratio: 16/10;
+      min-height: 280px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .moon {
-      width: 85%;
-      height: 85%;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #fffbf0 0%, #e2c07d 50%, #906e30 100%);
-      box-shadow:
-        0 0 60px rgba(229, 192, 123, 0.4),
-        inset -20px -20px 40px rgba(0, 0, 0, 0.6);
+    .hero-moon-body {
       position: absolute;
-      animation: pulseMoon 8s ease-in-out infinite;
-    }
-
-    .hero-lifestyle-card {
-      position: absolute;
-      z-index: 2;
-      width: 85%;
-      height: 85%;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
+      background: radial-gradient(circle at 38% 38%, #fdf6dc 0%, #f0d98a 30%, #c9a84c 60%, #a07830 80%, #6b4f1e 100%);
+      box-shadow: inset -28px -18px 55px rgba(60, 35, 5, 0.55), inset 10px 10px 30px rgba(255, 245, 180, 0.35), 0 0 80px 30px rgba(229, 192, 123, 0.35), 0 0 160px 60px rgba(229, 192, 123, 0.15);
+      animation: pulseMoon 6s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
       overflow: hidden;
-      border: 2px solid rgba(229, 192, 123, 0.4);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(229, 192, 123, 0.25);
-      animation: floatBear 6s ease-in-out infinite;
     }
 
     .hero-lifestyle-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      transform: scale(1.15);
+      filter: drop-shadow(0 30px 45px rgba(0,0,0,0.85));
       display: block;
+      transition: transform var(--transition-smooth);
     }
 
     @keyframes pulseMoon {
@@ -2131,16 +2124,21 @@
     }
 
     .hero-content {
-      text-align: left;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+    }
+
+    .hero-desc {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-ctas {
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
+      justify-content: center;
       gap: 0.8rem;
       width: 100%;
       margin-bottom: 2rem;
@@ -2152,11 +2150,23 @@
       white-space: nowrap;
     }
 
+    .hero-rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+    }
+
     .hero-visual,
     .spotlight-visual,
     .compass-visual {
       order: -1;
       height: auto;
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
 
     @media (min-width: 769px) {
@@ -2181,6 +2191,11 @@
         align-items: unset;
       }
 
+      .hero-desc {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
       .hero-ctas {
         justify-content: flex-start;
         gap: 1.5rem;
@@ -2192,11 +2207,28 @@
         font-size: 0.95rem;
       }
 
+      .hero-rating {
+        justify-content: flex-start;
+      }
+
       .hero-visual,
       .spotlight-visual,
       .compass-visual {
         order: 0;
         height: auto;
+      }
+
+      .moon-glow-container {
+        min-height: 520px;
+      }
+
+      .hero-moon-body {
+        width: 340px;
+        height: 340px;
+      }
+
+      .hero-lifestyle-img {
+        transform: scale(1.75);
       }
 
       .benefits-bento-grid {
@@ -2535,9 +2567,9 @@
           </div>
         </div>
         <div class="hero-visual reveal-fade-right">
-          <div class="moon-glow-container" style="width: 100%; max-width: 850px; aspect-ratio: 16/10; min-height: 520px; display: flex; align-items: center; justify-content: center; overflow: visible; position: relative;">
+          <div class="moon-glow-container" style="width: 100%; max-width: 850px; overflow: visible; position: relative;">
             <!-- Moon Body -->
-            <div style="position: absolute; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle at 38% 38%, #fdf6dc 0%, #f0d98a 30%, #c9a84c 60%, #a07830 80%, #6b4f1e 100%); box-shadow: inset -28px -18px 55px rgba(60, 35, 5, 0.55), inset 10px 10px 30px rgba(255, 245, 180, 0.35), 0 0 80px 30px rgba(229, 192, 123, 0.35), 0 0 160px 60px rgba(229, 192, 123, 0.15); animation: pulseMoon 6s ease-in-out infinite; pointer-events: none; z-index: 1; overflow: hidden;">
+            <div class="hero-moon-body">
               <!-- Crater 1 -->
               <div style="position: absolute; top: 22%; left: 28%; width: 48px; height: 48px; border-radius: 50%; background: radial-gradient(circle, rgba(120,80,20,0.35) 0%, transparent 70%); border: 1px solid rgba(100,65,15,0.2);"></div>
               <!-- Crater 2 -->
@@ -2552,7 +2584,7 @@
             <!-- Transparent Floating Hero Image (Extra Large) -->
             <div class="hero-lifestyle-card" style="position: relative; width: 100%; height: 100%; border: none; background: transparent; box-shadow: none; overflow: visible; display: flex; align-items: center; justify-content: center; z-index: 3;">
               <img src="Woman_sleeping_on_white_bed_202608212027-removebg-preview.png"
-                alt="Woman sleeping peacefully with Soothe & Drift smart eye mask" class="hero-lifestyle-img" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.75); filter: drop-shadow(0 30px 45px rgba(0,0,0,0.85)); display: block;">
+                alt="Woman sleeping peacefully with Soothe & Drift smart eye mask" class="hero-lifestyle-img">
             </div>
           </div>
         </div>
