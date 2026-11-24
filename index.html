@@ -2536,142 +2536,164 @@
     }
 
     .sb-hero {
+      padding: 130px 0 72px;
       position: relative;
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      padding: 130px 0 80px;
       overflow: hidden;
-      background: var(--color-bg-dark);
     }
 
-    .hero-bg-carousel {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .hero-bg-slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transform: scale(1);
-      transition: opacity 1.3s ease-in-out, transform 6s ease-out;
-      will-change: opacity, transform;
-    }
-
-    .hero-bg-slide.active {
-      opacity: 1;
-      transform: scale(1.06);
-    }
-
-    .hero-bg-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    .hero-bg-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        linear-gradient(90deg, rgba(2, 5, 11, 0.94) 0%, rgba(2, 5, 11, 0.78) 45%, rgba(2, 5, 11, 0.28) 100%),
-        linear-gradient(180deg, rgba(2, 5, 11, 0.75) 0%, rgba(2, 5, 11, 0.1) 28%, rgba(2, 5, 11, 0.25) 75%, #02050b 100%);
-      pointer-events: none;
-    }
-
-    .hero-fg-container {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-    }
-
-    .hero-fg-content {
-      max-width: 610px;
-    }
-
-    .hero-carousel-bar {
-      position: relative;
-      z-index: 2;
-      margin-top: 3.25rem;
-      display: flex;
+    .hero-lux-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 4rem;
       align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
+    }
+
+    .hero-lux-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.35rem;
+    }
+
+    .hero-lux-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 5.6vw, 4.75rem);
+      font-weight: 400;
+      line-height: 1.03;
+      color: var(--color-text-bright);
+      letter-spacing: -0.015em;
+    }
+
+    .hero-lux-title .highlight {
+      color: var(--color-gold);
+      font-style: italic;
+    }
+
+    .hero-lux-desc {
+      font-size: 1.08rem;
+      color: var(--color-text-main);
+      line-height: 1.75;
+      max-width: 490px;
+    }
+
+    .hero-lux-actions {
+      display: flex;
       flex-wrap: wrap;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(229, 192, 123, 0.18);
+      align-items: center;
+      gap: 1.1rem;
+      margin-top: 0.35rem;
     }
 
-    .hero-slide-caption {
-      font-size: 0.82rem;
-      color: var(--color-gold-light);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .hero-slide-controls {
+    .hero-lux-proof {
       display: flex;
       align-items: center;
       gap: 0.85rem;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      padding-top: 0.5rem;
     }
 
-    .hero-slide-dots {
+    .hero-lux-visual {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-    }
-
-    .hero-slide-dot {
-      width: 26px;
-      height: 4px;
-      border-radius: 99px;
-      background: rgba(255, 255, 255, 0.25);
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: var(--transition-smooth);
-    }
-
-    .hero-slide-dot.active {
-      width: 44px;
-      background: var(--color-gold);
-      box-shadow: 0 0 12px rgba(229, 192, 123, 0.6);
-    }
-
-    .hero-slide-arrow {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 1px solid rgba(229, 192, 123, 0.35);
-      background: rgba(2, 5, 11, 0.65);
-      color: var(--color-gold-light);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
       justify-content: center;
+    }
+
+    .hero-lux-aura {
+      position: absolute;
+      width: 115%;
+      height: 115%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(229, 192, 123, 0.22) 0%, rgba(59, 130, 246, 0.12) 45%, transparent 72%);
+      filter: blur(42px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-lux-card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 490px;
+      aspect-ratio: 1 / 1;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(229, 192, 123, 0.32);
+      box-shadow: 0 36px 90px rgba(0, 0, 0, 0.72), 0 0 50px rgba(229, 192, 123, 0.14);
+      background: #02050b;
       transition: var(--transition-smooth);
-      backdrop-filter: blur(8px);
     }
 
-    .hero-slide-arrow:hover {
-      background: var(--color-gold);
-      color: var(--color-bg-dark);
+    .hero-lux-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(229, 192, 123, 0.6);
+      box-shadow: 0 44px 100px rgba(0, 0, 0, 0.8), 0 0 70px rgba(229, 192, 123, 0.22);
     }
 
-    @media (max-width: 768px) {
+    .hero-lux-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-lux-chip {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      padding: 0.85rem 1.15rem;
+      border-radius: 16px;
+      background: rgba(2, 5, 11, 0.84);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(229, 192, 123, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .hero-storyboard-strip {
+      margin-top: 3.5rem;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(229, 192, 123, 0.2);
+      box-shadow: 0 28px 75px rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-storyboard-strip img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 968px) {
       .sb-hero {
-        min-height: 78vh;
-        padding: 112px 0 56px;
+        padding: 108px 0 52px;
       }
-      .hero-bg-overlay {
-        background:
-          linear-gradient(180deg, rgba(2, 5, 11, 0.88) 0%, rgba(2, 5, 11, 0.68) 55%, #02050b 100%);
+      .hero-lux-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+      .hero-lux-copy {
+        align-items: center;
+      }
+      .hero-lux-actions {
+        justify-content: center;
+      }
+      .hero-lux-proof {
+        justify-content: center;
+      }
+      .hero-lux-card {
+        max-width: 400px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-lux-chip {
+        display: none;
       }
     }
 
@@ -3264,101 +3286,50 @@
 
   <!-- Main Content -->
   <main>
-    <!-- 1. HERO SECTION &mdash; Full-Bleed Auto-Sliding Storyboard Carousel -->
+    <!-- 1. HERO SECTION &mdash; Luxury Editorial Split + Storyboard Strip -->
     <section class="sb-hero" id="home">
-      <div class="hero-bg-carousel" id="heroBgCarousel" aria-hidden="true">
-        <div class="hero-bg-slide active" data-caption="01 &middot; The Art of Taking a Pause">
-          <img src="storyboard/Artboard-1.jpg" alt="" width="1600" height="656" fetchpriority="high" decoding="async">
-        </div>
-        <div class="hero-bg-slide" data-caption="02 &middot; Targeted Warmth for Dry, Tired Eyes">
-          <img src="storyboard/Artboard-2.jpg" alt="" width="1600" height="656" loading="lazy" decoding="async">
-        </div>
-        <div class="hero-bg-slide" data-caption="03 &middot; No Microwave &middot; No Cords &middot; No Fuss">
-          <img src="storyboard/Artboard-4.jpg" alt="" width="1600" height="656" loading="lazy" decoding="async">
-        </div>
-        <div class="hero-bg-slide" data-caption="04 &middot; Your Moment of Calm Has a Soundtrack">
-          <img src="storyboard/Artboard-6.jpg" alt="" width="1600" height="656" loading="lazy" decoding="async">
-        </div>
-      </div>
-      <div class="hero-bg-overlay"></div>
-
-      <div class="container hero-fg-container">
-        <div class="hero-fg-content reveal-fade-up">
-          <div class="sb-eyebrow">
-            <span class="sb-eyebrow-dot"></span>
-            15-Pack &middot; Air-Activated Steam Eye Mask
-          </div>
-          <h1 class="sb-hero-title">
-            The Art of<br><span class="highlight">Taking a Pause.</span>
-          </h1>
-          <p class="sb-hero-sub">
-            Luxury in every pause. Self-heating moist steam (104&ndash;113&deg;F) activates on contact with air for up to 60 minutes&mdash;relieving dry, tired eyes without microwaves, cords, or fuss.
-          </p>
-
-          <div class="sb-pill-row">
-            <span class="sb-pill">Up to 60 Mins Warmth</span>
-            <span class="sb-pill">Single-Use &amp; Hygienic</span>
-            <span class="sb-pill">Unscented</span>
-            <span class="sb-pill">Travel Friendly</span>
-          </div>
-
-          <div class="sb-cta-row">
-            <a href="shop.html" class="btn btn-primary">Shop 15-Pack &mdash; $24</a>
-            <a href="#benefits" class="btn btn-outline">See How It Works</a>
-          </div>
-
-          <div class="sb-cta-price-note">
-            <span style="color: var(--color-gold); letter-spacing: 2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span><strong>4.9/5</strong> from 10,000+ rested sleepers &middot; <strong>$1.60 per mask</strong> &middot; Free Shipping</span>
-          </div>
-        </div>
-
-        <div class="hero-carousel-bar">
-          <span class="hero-slide-caption" id="heroSlideCaption">01 &middot; The Art of Taking a Pause</span>
-          <div class="hero-slide-controls">
-            <button type="button" class="hero-slide-arrow" id="heroSlidePrev" aria-label="Previous background slide">&larr;</button>
-            <div class="hero-slide-dots" id="heroSlideDots">
-              <button type="button" class="hero-slide-dot active" aria-label="Slide 1"></button>
-              <button type="button" class="hero-slide-dot" aria-label="Slide 2"></button>
-              <button type="button" class="hero-slide-dot" aria-label="Slide 3"></button>
-              <button type="button" class="hero-slide-dot" aria-label="Slide 4"></button>
+      <div class="container">
+        <div class="hero-lux-grid">
+          <div class="hero-lux-copy reveal-fade-left">
+            <div class="sb-eyebrow" style="margin-bottom: 0;">
+              <span class="sb-eyebrow-dot"></span>
+              15-Pack &middot; Self-Heating Steam Eye Mask
             </div>
-            <button type="button" class="hero-slide-arrow" id="heroSlideNext" aria-label="Next background slide">&rarr;</button>
+            <h1 class="hero-lux-title">
+              The Art of<br><span class="highlight">Taking a Pause.</span>
+            </h1>
+            <p class="hero-lux-desc">
+              Air-activated moist steam (104&ndash;113&deg;F) in 5 minutes for up to 60 minutes of weightless eye relief&mdash;no microwave, no cords, no fuss.
+            </p>
+            <div class="hero-lux-actions">
+              <a href="shop.html?pack=1" class="btn btn-primary">Shop 15-Pack &mdash; $24</a>
+              <a href="#benefits" class="btn btn-outline">See How It Works</a>
+            </div>
+            <div class="hero-lux-proof">
+              <span style="color: var(--color-gold); letter-spacing: 2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span><strong style="color: var(--color-gold-light);">4.9/5</strong> from 10,000+ sleepers &middot; Free Shipping</span>
+            </div>
+          </div>
+
+          <div class="hero-lux-visual reveal-fade-right">
+            <div class="hero-lux-aura"></div>
+            <div class="hero-lux-card">
+              <img src="listing-images/1.jpg" alt="Soothe & Drift 15-Pack Self-Heating Steam Eye Mask" width="1080" height="1080" fetchpriority="high" decoding="async">
+              <div class="hero-lux-chip">
+                <div>
+                  <div style="font-size: 0.85rem; font-weight: 600; color: #fff;">15 Individually Sealed Masks</div>
+                  <div style="font-size: 0.74rem; color: var(--color-gold);">Unscented &middot; Up to 60 Mins Warmth &middot; $1.60/mask</div>
+                </div>
+                <a href="shop.html?pack=1" class="btn btn-primary btn-sm">Buy $24</a>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="hero-storyboard-strip reveal-fade-up">
+          <img src="storyboard/Artboard-1.jpg" alt="Soothe & Drift &mdash; The Art of Taking a Pause Storyboard" width="1600" height="656" decoding="async">
+        </div>
       </div>
-
-      <script>
-        (function () {
-          const slides = Array.from(document.querySelectorAll('#heroBgCarousel .hero-bg-slide'));
-          const dots = Array.from(document.querySelectorAll('#heroSlideDots .hero-slide-dot'));
-          const caption = document.getElementById('heroSlideCaption');
-          let idx = 0;
-          let timer = null;
-
-          function showSlide(n) {
-            idx = ((n % slides.length) + slides.length) % slides.length;
-            slides.forEach((s, i) => s.classList.toggle('active', i === idx));
-            dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-            if (caption && slides[idx]) {
-              caption.innerHTML = slides[idx].getAttribute('data-caption') || '';
-            }
-          }
-
-          function startTimer() {
-            clearInterval(timer);
-            timer = setInterval(() => showSlide(idx + 1), 4500);
-          }
-
-          dots.forEach((d, i) => d.addEventListener('click', () => { showSlide(i); startTimer(); }));
-          const prev = document.getElementById('heroSlidePrev');
-          const next = document.getElementById('heroSlideNext');
-          if (prev) prev.addEventListener('click', () => { showSlide(idx - 1); startTimer(); });
-          if (next) next.addEventListener('click', () => { showSlide(idx + 1); startTimer(); });
-
-          startTimer();
-        })();
-      </script>
     </section>
 
     <!-- Conversion Trust Strip -->
