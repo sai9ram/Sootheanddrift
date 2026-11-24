@@ -3035,8 +3035,9 @@
 
     .sb-square-card img {
       width: 100%;
+      height: auto;
       aspect-ratio: 1 / 1;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 
@@ -3590,7 +3591,7 @@
 
         .vc-ring-wrapper {
           width: 100%;
-          height: 520px;
+          height: 430px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -3601,6 +3602,7 @@
         .vc-ring {
           width: 220px;
           height: 380px;
+          margin: 0 auto;
           position: relative;
           transform-style: preserve-3d;
           transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3702,42 +3704,42 @@
 
               <!-- Card 1 -->
               <div class="vc-card" data-index="0" onclick="vcHandleClick(0)">
-                <video id="vcVid0" src="Creating_UGC_review_video_202608211444.mp4" loop playsinline preload="none" muted></video>
+                <video id="vcVid0" src="Creating_UGC_review_video_202608211444.mp4#t=0.1" loop playsinline preload="metadata" muted></video>
                 <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                 <div class="vc-label"><h3>Alex Watson</h3><p>Sleep Coach &amp; Biohacker</p></div>
               </div>
 
               <!-- Card 2 -->
               <div class="vc-card" data-index="1" onclick="vcHandleClick(1)">
-                <video id="vcVid1" src="Woman_talking_about_eye_mask_202608211331.mp4" loop playsinline preload="none" muted></video>
+                <video id="vcVid1" src="Woman_talking_about_eye_mask_202608211331.mp4#t=0.1" loop playsinline preload="metadata" muted></video>
                 <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                 <div class="vc-label"><h3>Jessica Sterling</h3><p>Wellness Influencer</p></div>
               </div>
 
               <!-- Card 3 -->
               <div class="vc-card" data-index="2" onclick="vcHandleClick(2)">
-                <video id="vcVid2" src="Man_talking_about_eye_mask_202608211416.mp4" loop playsinline preload="none" muted></video>
+                <video id="vcVid2" src="Man_talking_about_eye_mask_202608211416.mp4#t=0.1" loop playsinline preload="metadata" muted></video>
                 <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                 <div class="vc-label"><h3>Marcus Bennett</h3><p>Daily Commuter &amp; Tech Lead</p></div>
               </div>
 
               <!-- Card 4 -->
               <div class="vc-card" data-index="3" onclick="vcHandleClick(3)">
-                <video id="vcVid3" src="Man_talking_on_airplane_202608211346.mp4" loop playsinline preload="none" muted></video>
+                <video id="vcVid3" src="Man_talking_on_airplane_202608211346.mp4#t=0.1" loop playsinline preload="metadata" muted></video>
                 <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                 <div class="vc-label"><h3>David Park</h3><p>Frequent Flyer</p></div>
               </div>
 
               <!-- Card 5 -->
               <div class="vc-card" data-index="4" onclick="vcHandleClick(4)">
-                <video id="vcVid4" src="Designing_eye_mask_and_packaging_202608211421.mp4" loop playsinline preload="none" muted></video>
+                <video id="vcVid4" src="Designing_eye_mask_and_packaging_202608211421.mp4#t=0.1" loop playsinline preload="metadata" muted></video>
                 <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                 <div class="vc-label"><h3>Priya Nair</h3><p>Product Designer</p></div>
               </div>
 
               <!-- Card 6 -->
               <div class="vc-card" data-index="5" onclick="vcHandleClick(5)">
-                <video id="vcVid5" src="Woman_holding_SOTHE_DRIFT_pouch_202608211406.mp4" loop playsinline preload="none" muted></video>
+                <video id="vcVid5" src="Woman_holding_SOTHE_DRIFT_pouch_202608211406.mp4#t=0.1" loop playsinline preload="metadata" muted></video>
                 <div class="vc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                 <div class="vc-label"><h3>Sophie Lane</h3><p>Yoga &amp; Mindfulness Coach</p></div>
               </div>
@@ -3757,7 +3759,7 @@
       <script>
         (function () {
           const TOTAL = 6;
-          const RADIUS = 420;
+          const getRadius = () => window.innerWidth < 600 ? 155 : (window.innerWidth < 992 ? 270 : 390);
           const ring = document.getElementById('vcRing');
           const cards = Array.from(ring.querySelectorAll('.vc-card'));
           const dotsEl = document.getElementById('vcDots');
@@ -3773,11 +3775,12 @@
           });
 
           function positionCards(angle) {
+            const radius = getRadius();
             const angleStep = 360 / TOTAL;
             cards.forEach((card, i) => {
               const theta = (i * angleStep - angle) * (Math.PI / 180);
-              const x = Math.sin(theta) * RADIUS;
-              const z = Math.cos(theta) * RADIUS - RADIUS;
+              const x = Math.sin(theta) * radius;
+              const z = Math.cos(theta) * radius - radius;
               const scale = 0.55 + 0.45 * ((Math.cos(theta) + 1) / 2);
               const opacity = 0.3 + 0.7 * ((Math.cos(theta) + 1) / 2);
               card.style.transform = `translateX(${x}px) translateZ(${z}px) scale(${scale})`;
@@ -3833,6 +3836,7 @@
 
           document.getElementById('vcPrev').addEventListener('click', () => { goTo(current - 1); startAuto(); });
           document.getElementById('vcNext').addEventListener('click', () => { goTo(current + 1); startAuto(); });
+          window.addEventListener('resize', () => positionCards(current * (360 / TOTAL)));
 
           positionCards(0);
           startAuto();
