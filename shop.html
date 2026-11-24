@@ -1338,79 +1338,113 @@
     <section class="shop-section">
       <div class="container">
         <div class="config-title-block">
-          <div class="tagline">Somnify Console</div>
-          <h1>Configure Your <span class="highlight">Rest Suite</span></h1>
+          <div class="tagline">Soothe &amp; Drift™ · 15-Pack</div>
+          <h1>Choose Your <span class="highlight">Pause Suite</span></h1>
         </div>
 
         <div class="configurator-wrapper">
-          <!-- Left: Graphic Showcase Visualizer (Clean Image Only) -->
-          <div class="config-visualizer" style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center; min-height: 480px; padding: 1.5rem; background: transparent; border: none; box-shadow: none; overflow: hidden; position: relative;">
+          <!-- Left: Graphic Showcase Visualizer -->
+          <div class="config-visualizer" style="display: flex; flex-direction: column; gap: 1.25rem; align-items: center; justify-content: center; min-height: 460px; padding: 1.5rem; background: rgba(5, 11, 22, 0.55); border: 1px solid rgba(229, 192, 123, 0.18); border-radius: 24px; box-shadow: 0 24px 60px rgba(0,0,0,0.5); overflow: hidden; position: relative;">
             
-            <!-- Visual Container (Fully transparent and borderless) -->
-            <div class="visualizer-media-box" style="position: relative; width: 100%; max-width: 460px; aspect-ratio: 1; margin: auto 0; z-index: 2;">
-              <div class="visualizer-media-container" style="position: relative; width: 100%; height: 100%; border-radius: 20px; overflow: hidden; border: none; background: transparent;">
+            <!-- Visual Container -->
+            <div class="visualizer-media-box" style="position: relative; width: 100%; max-width: 480px; aspect-ratio: 1 / 1; margin: auto 0; z-index: 2;">
+              <div class="visualizer-media-container" style="position: relative; width: 100%; height: 100%; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #02050b;">
                 
-                <!-- Tab 1: Product Video -->
+                <!-- Tab 1: Listing 1 (15-Pack Overview) -->
+                <div id="tab-mask" class="visualizer-tab-content" style="width: 100%; height: 100%;">
+                  <img src="listing-images/1.png" alt="Soothe & Drift Self-Heating Steam Eye Mask 15-Pack" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <!-- Tab 2: Listing 7 (Steam Demo) -->
+                <div id="tab-results" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
+                  <img src="listing-images/7.png" alt="Soothing Steam in Minutes — Just Opened vs After 5 Minutes" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <!-- Tab 3: Listing 5 (Why Soothe & Drift) -->
+                <div id="tab-compare" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
+                  <img src="listing-images/5.png" alt="Why Soothe & Drift Comparison" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <!-- Tab 4: Listing 6 (How to Use) -->
+                <div id="tab-layers" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
+                  <img src="listing-images/6.png" alt="4-Step How To Use Soothe & Drift" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <!-- Tab 5: Listing 9 (Gift Box) -->
+                <div id="tab-gift" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
+                  <img src="listing-images/9.png" alt="The Perfect Gift — Soothe & Drift" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <!-- Tab 6: Product Video -->
                 <div id="tab-pouch" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
                   <video src="Woman_holding_SOTHE_DRIFT_pouch_202608211406.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
-                </div>
-                <!-- Tab 2: Smart Mask Image -->
-                <div id="tab-mask" class="visualizer-tab-content" style="width: 100%; height: 100%;">
-                  <img src="Product_photoshoot_on_white_back__202608211912-removebg-preview.png" alt="Soothe & Drift Somnify Mask" style="width: 100%; height: 100%; object-fit: cover; display: block; padding: 0;">
-                </div>
-                <!-- Tab 3: Travel Video -->
-                <div id="tab-travel" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
-                  <video src="Man_talking_on_airplane_202608211346.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
                 </div>
               </div>
             </div>
             
             <!-- Gallery Navigation Tabs -->
-            <div class="visualizer-tabs-nav" style="display: flex; gap: 0.6rem; z-index: 5; position: relative; flex-wrap: wrap; justify-content: center; width: 100%; margin-top: auto;">
-              <button onclick="switchShopTab('tab-pouch')" class="btn btn-outline btn-sm" id="btn-tab-pouch" style="padding: 0.45rem 1.1rem; font-size: 0.75rem; border-radius: 12px; background: rgba(5,11,22,0.4); border-color: rgba(229,192,123,0.25);">Product Pouch</button>
-              <button onclick="switchShopTab('tab-mask')" class="btn btn-outline btn-sm active" id="btn-tab-mask" style="padding: 0.45rem 1.1rem; font-size: 0.75rem; border-radius: 12px; background: rgba(5,11,22,0.4); border-color: rgba(229,192,123,0.25);">Smart Mask</button>
-              <button onclick="switchShopTab('tab-travel')" class="btn btn-outline btn-sm" id="btn-tab-travel" style="padding: 0.45rem 1.1rem; font-size: 0.75rem; border-radius: 12px; background: rgba(5,11,22,0.4); border-color: rgba(229,192,123,0.25);">Travel Mode</button>
+            <div class="visualizer-tabs-nav" style="display: flex; gap: 0.45rem; z-index: 5; position: relative; flex-wrap: wrap; justify-content: center; width: 100%; margin-top: auto;">
+              <button onclick="switchShopTab('tab-mask')" class="btn btn-outline btn-sm active" id="btn-tab-mask" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">15-Pack</button>
+              <button onclick="switchShopTab('tab-results')" class="btn btn-outline btn-sm" id="btn-tab-results" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">Steam Demo</button>
+              <button onclick="switchShopTab('tab-compare')" class="btn btn-outline btn-sm" id="btn-tab-compare" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">Why Us</button>
+              <button onclick="switchShopTab('tab-layers')" class="btn btn-outline btn-sm" id="btn-tab-layers" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">How to Use</button>
+              <button onclick="switchShopTab('tab-gift')" class="btn btn-outline btn-sm" id="btn-tab-gift" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">Gift Box</button>
+              <button onclick="switchShopTab('tab-pouch')" class="btn btn-outline btn-sm" id="btn-tab-pouch" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">Video</button>
             </div>
           </div>
 
           <!-- Right: Console Controls -->
           <div class="config-controls">
             <div class="config-header-group">
-              <div class="tagline" style="margin-bottom: 0.25rem;">Active Model (15 Masks Pack)</div>
-              <h2 class="config-section-title">Somnify Smart Mask — <span class="highlight">$24</span></h2>
+              <div class="tagline" style="margin-bottom: 0.25rem;">Air-Activated · Unscented · Up to 60 Mins Warmth</div>
+              <h2 class="config-section-title">Self-Heating Steam Eye Mask</h2>
             </div>
 
-            <!-- Accessories List of Horizontal Strips -->
+            <!-- Pack Size Selector -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; margin-bottom: 1.25rem;" id="packSelector">
+              <button type="button" class="config-strip pack-option active" data-pack="1" data-price="24" data-label="1 Box (15 Masks)" onclick="selectPack(1)" style="flex-direction: column; align-items: flex-start; padding: 0.85rem 1rem; cursor: pointer; text-align: left;">
+                <span style="font-size: 0.72rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em;">Starter</span>
+                <strong style="font-size: 0.95rem; color: #fff;">15 Masks</strong>
+                <span style="font-size: 0.85rem; color: var(--color-text-muted);">$24</span>
+              </button>
+              <button type="button" class="config-strip pack-option" data-pack="2" data-price="42" data-label="2 Boxes (30 Masks)" onclick="selectPack(2)" style="flex-direction: column; align-items: flex-start; padding: 0.85rem 1rem; cursor: pointer; text-align: left;">
+                <span style="font-size: 0.72rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em;">Save $6</span>
+                <strong style="font-size: 0.95rem; color: #fff;">30 Masks</strong>
+                <span style="font-size: 0.85rem; color: var(--color-text-muted);">$42</span>
+              </button>
+              <button type="button" class="config-strip pack-option" data-pack="3" data-price="58" data-label="3 Boxes (45 Masks)" onclick="selectPack(3)" style="flex-direction: column; align-items: flex-start; padding: 0.85rem 1rem; cursor: pointer; text-align: left;">
+                <span style="font-size: 0.72rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em;">Save $14</span>
+                <strong style="font-size: 0.95rem; color: #fff;">45 Masks</strong>
+                <span style="font-size: 0.85rem; color: var(--color-text-muted);">$58</span>
+              </button>
+            </div>
+
+            <!-- Optional Add-ons -->
             <div class="config-strip-list">
-              <!-- Strip 1: Silk sleeve -->
-              <label class="config-strip" id="strip-silk">
+              <!-- Add-on 1: Luxury Gift Box -->
+              <label class="config-strip" id="strip-gift">
                 <div class="strip-meta">
                   <div class="strip-icon-box">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line></svg>
                   </div>
                   <div class="strip-details">
-                    <span class="strip-name">Mulberry Silk Sleeve</span>
-                    <span class="strip-desc">Ultra-soft, organic, washable silk shell.</span>
+                    <span class="strip-name">Signature Gift Box &amp; Ribbon</span>
+                    <span class="strip-desc">Navy &amp; gold presentation box for birthdays, anniversaries &amp; holidays.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
                   <span class="strip-price">+$5</span>
                   <div class="hud-switch">
-                    <input type="checkbox" id="add-silk" value="5" onchange="updateSummary()">
+                    <input type="checkbox" id="add-gift" value="5" onchange="updateSummary()">
                     <span class="hud-slider"></span>
                   </div>
                 </div>
               </label>
 
-              <!-- Strip 2: Case -->
+              <!-- Add-on 2: Travel Pouch -->
               <label class="config-strip" id="strip-case">
                 <div class="strip-meta">
                   <div class="strip-icon-box">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
                   </div>
                   <div class="strip-details">
-                    <span class="strip-name">Hardshell Travel Case</span>
-                    <span class="strip-desc">EVA protective hard zipper shell case.</span>
+                    <span class="strip-name">Flight Carry-On Pouch</span>
+                    <span class="strip-desc">Compact protective pouch that holds 5 sachets for flights &amp; commutes.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
@@ -1421,36 +1455,17 @@
                   </div>
                 </div>
               </label>
-
-              <!-- Strip 3: Weighted insert -->
-              <label class="config-strip" id="strip-weighted">
-                <div class="strip-meta">
-                  <div class="strip-icon-box">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8M8 12h8"></path></svg>
-                  </div>
-                  <div class="strip-details">
-                    <span class="strip-name">Lavender Weighted Pods</span>
-                    <span class="strip-desc">Lavender-infused contoured compression inserts.</span>
-                  </div>
-                </div>
-                <div class="strip-action-zone">
-                  <span class="strip-price">+$8</span>
-                  <div class="hud-switch">
-                    <input type="checkbox" id="add-weighted" value="8" onchange="updateSummary()">
-                    <span class="hud-slider"></span>
-                  </div>
-                </div>
-              </label>
             </div>
 
             <!-- Dynamic Action Bar -->
             <div class="config-action-bar">
               <div class="action-totals-wrap">
-                <span class="action-total-label">Rest Suite Total</span>
+                <span class="action-total-label" id="selected-pack-label">1 Box (15 Masks) · Free Shipping</span>
                 <span class="action-total-price" id="total-price">$24</span>
               </div>
-              <button class="btn btn-primary" id="buy-now-btn">Buy Now — $24</button>
+              <button class="btn btn-primary" id="buy-now-btn" onclick="openCheckoutConfirm()">Buy Now — $24</button>
             </div>
+            <p id="checkout-confirm-msg" style="display: none; margin-top: 1rem; padding: 0.9rem 1.1rem; border-radius: 12px; background: rgba(229,192,123,0.12); border: 1px solid rgba(229,192,123,0.4); color: var(--color-gold-light); font-size: 0.88rem;"></p>
           </div>
         </div>
       </div>
@@ -1630,60 +1645,79 @@
         });
       }
 
-      // Initial calculation on load
-      updateSummary();
+      // Pre-select pack from URL query (?pack=1|2|3)
+      const params = new URLSearchParams(window.location.search);
+      const packParam = parseInt(params.get('pack'), 10);
+      if ([1, 2, 3].includes(packParam)) {
+        selectPack(packParam);
+      } else {
+        updateSummary();
+      }
     });
+
+    let selectedPackPrice = 24;
+    let selectedPackLabel = '1 Box (15 Masks)';
+
+    function selectPack(packNum) {
+      document.querySelectorAll('.pack-option').forEach(btn => {
+        const isMatch = parseInt(btn.dataset.pack, 10) === packNum;
+        btn.classList.toggle('active', isMatch);
+        if (isMatch) {
+          selectedPackPrice = parseInt(btn.dataset.price, 10);
+          selectedPackLabel = btn.dataset.label;
+        }
+      });
+      updateSummary();
+    }
 
     // Real-time calculator function
     function updateSummary() {
-      const basePrice = 24;
-      let total = basePrice;
+      let total = selectedPackPrice;
 
-      // Check accessory 1
-      const addSilk = document.getElementById('add-silk');
-      if (addSilk) {
-        const parent = addSilk.closest('.config-strip');
-        if (addSilk.checked) {
-          total += parseInt(addSilk.value);
+      const addGift = document.getElementById('add-gift');
+      if (addGift) {
+        const parent = addGift.closest('.config-strip');
+        if (addGift.checked) {
+          total += parseInt(addGift.value, 10);
           if (parent) parent.classList.add('active');
         } else {
           if (parent) parent.classList.remove('active');
         }
       }
 
-      // Check accessory 2
       const addCase = document.getElementById('add-case');
       if (addCase) {
         const parent = addCase.closest('.config-strip');
         if (addCase.checked) {
-          total += parseInt(addCase.value);
+          total += parseInt(addCase.value, 10);
           if (parent) parent.classList.add('active');
         } else {
           if (parent) parent.classList.remove('active');
         }
       }
 
-      // Check accessory 3
-      const addWeighted = document.getElementById('add-weighted');
-      if (addWeighted) {
-        const parent = addWeighted.closest('.config-strip');
-        if (addWeighted.checked) {
-          total += parseInt(addWeighted.value);
-          if (parent) parent.classList.add('active');
-        } else {
-          if (parent) parent.classList.remove('active');
-        }
+      const labelEl = document.getElementById('selected-pack-label');
+      if (labelEl) {
+        labelEl.innerText = `${selectedPackLabel} · Free Shipping`;
       }
 
-      // Apply 15% discount if email registration is claimed
       const isDiscountClaimed = localStorage.getItem('discountClaimed') === 'true';
       if (isDiscountClaimed) {
         const discountedTotal = Math.round(total * 0.85);
         document.getElementById('total-price').innerHTML = `<span style="text-decoration: line-through; opacity: 0.5; margin-right: 8px; font-size: 0.8em; font-weight: 300;">$${total}</span>$${discountedTotal}`;
-        document.getElementById('buy-now-btn').innerText = `Buy Now — $${discountedTotal} (15% Off Applied)`;
+        document.getElementById('buy-now-btn').innerText = `Buy Now — $${discountedTotal} (15% Off)`;
       } else {
         document.getElementById('total-price').innerText = `$${total}`;
         document.getElementById('buy-now-btn').innerText = `Buy Now — $${total}`;
+      }
+    }
+
+    function openCheckoutConfirm() {
+      const msg = document.getElementById('checkout-confirm-msg');
+      const priceText = document.getElementById('buy-now-btn').innerText.replace('Buy Now — ', '');
+      if (msg) {
+        msg.style.display = 'block';
+        msg.innerHTML = `<strong>Order Ready:</strong> ${selectedPackLabel} (${priceText}) with Free Shipping &amp; 30-Day Guarantee. Connect your payment gateway (Stripe / Shopify Checkout) to complete live orders.`;
       }
     }
   </script>

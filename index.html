@@ -2516,6 +2516,585 @@
         transform: translateY(0);
       }
     }
+
+    /* ==========================================================================
+       STORYBOARD REDESIGN — MODERN, MINIMALISTIC & CONVERSION-FOCUSED
+       (Preserves exact color palette & typography variables)
+       ========================================================================== */
+    .sb-section {
+      padding: 88px 0;
+      position: relative;
+    }
+
+    .sb-section-alt {
+      background: linear-gradient(180deg, rgba(5, 11, 22, 0.45) 0%, rgba(11, 22, 42, 0.25) 50%, rgba(2, 5, 11, 0.45) 100%);
+      border-top: 1px solid rgba(229, 192, 123, 0.08);
+      border-bottom: 1px solid rgba(229, 192, 123, 0.08);
+    }
+
+    .sb-hero {
+      padding: 130px 0 64px;
+      position: relative;
+    }
+
+    .sb-hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .sb-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(229, 192, 123, 0.08);
+      border: 1px solid rgba(229, 192, 123, 0.28);
+      color: var(--color-gold-light);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .sb-eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-gold);
+      box-shadow: 0 0 10px var(--color-gold);
+    }
+
+    .sb-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5.2vw, 4.4rem);
+      font-weight: 400;
+      line-height: 1.06;
+      color: var(--color-text-bright);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .sb-hero-title .highlight {
+      color: var(--color-gold);
+      font-style: italic;
+    }
+
+    .sb-hero-sub {
+      font-size: 1.05rem;
+      color: var(--color-text-main);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 1.75rem;
+    }
+
+    .sb-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .sb-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      background: var(--color-bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.8rem;
+      color: var(--color-text-main);
+    }
+
+    .sb-pill svg {
+      width: 14px;
+      height: 14px;
+      color: var(--color-gold);
+      flex-shrink: 0;
+    }
+
+    .sb-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sb-cta-price-note {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .sb-cta-price-note strong {
+      color: var(--color-gold-light);
+    }
+
+    .sb-frame {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--color-bg-deep);
+      border: 1px solid rgba(229, 192, 123, 0.22);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65), 0 0 60px rgba(59, 130, 246, 0.12);
+      transition: var(--transition-smooth);
+    }
+
+    .sb-frame:hover {
+      border-color: rgba(229, 192, 123, 0.48);
+      transform: translateY(-4px);
+      box-shadow: 0 36px 90px rgba(0, 0, 0, 0.75), 0 0 70px rgba(229, 192, 123, 0.15);
+    }
+
+    .sb-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .sb-float-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1.15rem;
+      border-radius: 14px;
+      background: rgba(2, 5, 11, 0.82);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(229, 192, 123, 0.28);
+    }
+
+    .sb-float-badge-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text-bright);
+    }
+
+    .sb-float-badge-sub {
+      font-size: 0.75rem;
+      color: var(--color-gold);
+    }
+
+    /* Trust Strip */
+    .sb-trust-strip {
+      padding: 1.35rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(5, 11, 22, 0.6);
+    }
+
+    .sb-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .sb-trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      font-size: 0.84rem;
+      color: var(--color-text-main);
+      font-weight: 500;
+    }
+
+    .sb-trust-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-gold);
+      flex-shrink: 0;
+    }
+
+    /* Section Header */
+    .sb-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .sb-header .section-desc {
+      margin: 0.75rem auto 0;
+    }
+
+    /* Minimalist 4-Col Proof Grid */
+    .sb-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .sb-proof-card {
+      padding: 1.5rem;
+      border-radius: 18px;
+      background: var(--color-bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: var(--transition-smooth);
+    }
+
+    .sb-proof-card:hover {
+      background: var(--color-bg-card-hover);
+      border-color: rgba(229, 192, 123, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .sb-proof-num {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      color: var(--color-gold);
+      margin-bottom: 0.35rem;
+      line-height: 1.1;
+    }
+
+    .sb-proof-card h3 {
+      font-size: 0.98rem;
+      color: var(--color-text-bright);
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+    }
+
+    .sb-proof-card p {
+      font-size: 0.84rem;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+    }
+
+    /* 3-Step Ritual & Ingredients */
+    .sb-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .sb-step-card {
+      padding: 1.5rem;
+      border-radius: 18px;
+      background: var(--color-bg-card);
+      border: 1px solid rgba(229, 192, 123, 0.14);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .sb-step-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(229, 192, 123, 0.14);
+      border: 1px solid var(--color-gold);
+      color: var(--color-gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .sb-step-card h4 {
+      font-size: 0.96rem;
+      color: var(--color-text-bright);
+      margin-bottom: 0.25rem;
+    }
+
+    .sb-step-card p {
+      font-size: 0.84rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    .sb-ingredients-bar {
+      margin-top: 1.5rem;
+      padding: 1.1rem 1.5rem;
+      border-radius: 16px;
+      background: rgba(5, 11, 22, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .sb-ing-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+
+    .sb-ing-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .sb-ing-pill {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.78rem;
+      color: var(--color-text-main);
+    }
+
+    /* Conversion Bundle Selector */
+    .sb-bundles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      align-items: stretch;
+    }
+
+    .sb-bundle-card {
+      position: relative;
+      padding: 2.25rem 1.85rem;
+      border-radius: 22px;
+      background: var(--color-bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+    }
+
+    .sb-bundle-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(229, 192, 123, 0.35);
+      background: var(--color-bg-card-hover);
+    }
+
+    .sb-bundle-card.featured {
+      border: 1.5px solid var(--color-gold);
+      background: linear-gradient(180deg, rgba(16, 32, 60, 0.9) 0%, rgba(5, 11, 22, 0.92) 100%);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(229, 192, 123, 0.14);
+    }
+
+    .sb-bundle-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.3rem 0.95rem;
+      border-radius: 999px;
+      background: var(--color-gold);
+      color: var(--color-bg-dark);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .sb-bundle-name {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      color: var(--color-text-bright);
+      margin-bottom: 0.25rem;
+    }
+
+    .sb-bundle-qty {
+      font-size: 0.82rem;
+      color: var(--color-gold);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .sb-bundle-price {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--color-text-bright);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .sb-bundle-price .old {
+      font-size: 1.15rem;
+      color: var(--color-text-muted);
+      text-decoration: line-through;
+      font-weight: 400;
+      margin-right: 0.45rem;
+    }
+
+    .sb-bundle-per {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .sb-bundle-list {
+      list-style: none;
+      margin-bottom: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .sb-bundle-list li {
+      font-size: 0.86rem;
+      color: var(--color-text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .sb-bundle-list li span {
+      color: var(--color-gold);
+      font-weight: 700;
+    }
+
+    /* Audio Ritual Strip */
+    .sb-audio-bar {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .sb-audio-pill {
+      padding: 1.15rem 1.25rem;
+      border-radius: 16px;
+      background: var(--color-bg-card);
+      border: 1px solid rgba(229, 192, 123, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--color-text-bright);
+      transition: var(--transition-smooth);
+    }
+
+    .sb-audio-pill:hover {
+      border-color: var(--color-gold);
+      background: var(--color-bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .sb-audio-pill strong {
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .sb-audio-pill span {
+      font-size: 0.76rem;
+      color: var(--color-gold);
+    }
+
+    /* Square Listing Image Grids */
+    .sb-listing-duo {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.75rem;
+    }
+
+    .sb-listing-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.75rem;
+    }
+
+    .sb-square-card {
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--color-bg-deep);
+      border: 1px solid rgba(229, 192, 123, 0.2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+      transition: var(--transition-smooth);
+    }
+
+    .sb-square-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(229, 192, 123, 0.5);
+      box-shadow: 0 28px 65px rgba(0, 0, 0, 0.7), 0 0 40px rgba(229, 192, 123, 0.14);
+    }
+
+    .sb-square-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sb-compare-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .sb-bundle-thumb {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(229, 192, 123, 0.2);
+    }
+
+    .sb-bundle-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 968px) {
+      .sb-hero-grid,
+      .sb-listing-duo {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .sb-listing-trio {
+        grid-template-columns: 1fr;
+      }
+      .sb-trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .sb-proof-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .sb-steps-grid,
+      .sb-bundles-grid,
+      .sb-audio-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .sb-hero {
+        padding: 105px 0 48px;
+      }
+      .sb-section {
+        padding: 60px 0;
+      }
+      .sb-trust-grid,
+      .sb-proof-grid {
+        grid-template-columns: 1fr;
+      }
+      .sb-float-badge {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -2530,18 +3109,20 @@
   <!-- Header & Navigation -->
   <header class="site-header" id="header">
     <div class="container header-container">
-      <a href="#" class="logo-link">
+      <a href="#home" class="logo-link">
         <img src="SOOTHE & DRIFT-01.jpg.jpeg" alt="Soothe & Drift Logo" class="logo-img">
       </a>
       <nav class="nav-menu" id="navMenu">
         <a href="#home" class="nav-item active">Home</a>
+        <a href="#benefits" class="nav-item">Benefits</a>
+        <a href="#how-it-works" class="nav-item">How It Works</a>
         <a href="shop.html" class="nav-item">Shop</a>
-        <a href="music.html" class="nav-item">Music</a>
+        <a href="music.html" class="nav-item">Soundscapes</a>
         <a href="about.html" class="nav-item">About</a>
-        <a href="shop.html" class="btn btn-primary btn-sm mobile-shop-btn">Shop Now</a>
+        <a href="shop.html" class="btn btn-primary btn-sm mobile-shop-btn">Buy 15-Pack — $24</a>
       </nav>
       <div class="header-actions">
-        <a href="shop.html" class="btn btn-primary btn-sm">Shop Now</a>
+        <a href="shop.html" class="btn btn-primary btn-sm">Buy Now — $24</a>
         <button class="mobile-toggle" aria-label="Toggle Menu" id="mobileToggle">
           <span></span>
           <span></span>
@@ -2553,468 +3134,411 @@
 
   <!-- Main Content -->
   <main>
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
-      <div class="container hero-container">
-        <div class="hero-content reveal-fade-left">
-          <div class="tagline">Premium Sleep Experience</div>
-          <h1 class="hero-title">Finally, a better night's sleep<br><span class="highlight">for everyone.</span></h1>
-          <p class="hero-desc">Enjoy deep, natural sleep without interruptions. Our smart eye mask combines calming
-            sounds and gentle warmth to help you relax and fall asleep quickly.</p>
-          <div class="hero-ctas">
-            <a href="shop.html" class="btn btn-primary">Shop Now</a>
-            <a href="about.html" class="btn btn-outline">
-              <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 5V19L19 12L8 5Z" fill="currentColor" />
-              </svg>
-              Watch Video
-            </a>
+    <!-- 1. HERO SECTION — Storyboard Artboard 1 -->
+    <section class="sb-hero" id="home">
+      <div class="container sb-hero-grid">
+        <div class="reveal-fade-left">
+          <div class="sb-eyebrow">
+            <span class="sb-eyebrow-dot"></span>
+            15-Pack · Air-Activated Steam Eye Mask
           </div>
-          <div class="hero-rating">
-            <div class="stars-stars">★★★★★</div>
-            <span class="rating-text">Loved by 10,000+ happy sleepers</span>
-          </div>
-        </div>
-        <div class="hero-visual reveal-fade-right">
-          <div class="moon-glow-container" style="width: 100%; max-width: 850px; overflow: visible; position: relative;">
-            <!-- Moon Body -->
-            <div class="hero-moon-body">
-              <!-- Crater 1 -->
-              <div style="position: absolute; top: 22%; left: 28%; width: 48px; height: 48px; border-radius: 50%; background: radial-gradient(circle, rgba(120,80,20,0.35) 0%, transparent 70%); border: 1px solid rgba(100,65,15,0.2);"></div>
-              <!-- Crater 2 -->
-              <div style="position: absolute; top: 55%; left: 55%; width: 28px; height: 28px; border-radius: 50%; background: radial-gradient(circle, rgba(100,65,15,0.3) 0%, transparent 70%); border: 1px solid rgba(100,65,15,0.15);"></div>
-              <!-- Crater 3 -->
-              <div style="position: absolute; top: 38%; left: 62%; width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle, rgba(100,65,15,0.25) 0%, transparent 70%);"></div>
-              <!-- Shadow overlay (crescent shading) -->
-              <div style="position: absolute; top: -5%; left: 40%; width: 65%; height: 110%; border-radius: 50%; background: radial-gradient(ellipse at 80% 50%, rgba(40,20,5,0.45) 0%, transparent 65%);"></div>
-            </div>
-            <!-- Ambient Glow Effect -->
-            <div class="hero-aura-glow" style="position: absolute; width: 130%; height: 130%; border-radius: 50%; background: radial-gradient(circle, rgba(229, 192, 123, 0.25) 0%, rgba(59, 130, 246, 0.15) 50%, transparent 75%); filter: blur(45px); pointer-events: none; animation: pulseMoon 6s ease-in-out infinite; z-index: 2;"></div>
-            <!-- Transparent Floating Hero Image (Extra Large) -->
-            <div class="hero-lifestyle-card" style="position: relative; width: 100%; height: 100%; border: none; background: transparent; box-shadow: none; overflow: visible; display: flex; align-items: center; justify-content: center; z-index: 3;">
-              <img src="Woman_sleeping_on_white_bed_202608212027-removebg-preview.png"
-                alt="Woman sleeping peacefully with Soothe & Drift smart eye mask" class="hero-lifestyle-img">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          <h1 class="sb-hero-title">
+            The Art of<br><span class="highlight">Taking a Pause.</span>
+          </h1>
+          <p class="sb-hero-sub">
+            Luxury in every pause. Our self-heating warm eye compress activates on contact with air to deliver soothing, moist steam (104–113°F) for up to 60 minutes—relieving dry, tired eyes without microwaves, cords, or fuss.
+          </p>
 
-    <!-- Benefits Section -->
-    <section class="benefits-section">
-      <div class="container">
-        <div class="benefits-header reveal-fade-up">
-          <div class="tagline centered">Engineered for Rest</div>
-          <h2 class="section-title centered">Give your eyes<br><span class="highlight">a real break.</span></h2>
-          <p class="section-desc centered">By blocking 100% of light and applying relaxing warmth, the Soothe & Drift
-            mask helps soothe tired eyes and prepares your body for deep sleep.</p>
-        </div>
-
-        <div class="benefits-bento-grid reveal-fade-up">
-          <!-- Card 1: Total Blackout (Large span-2) -->
-          <div class="benefit-card span-2">
-            <div class="benefit-card-info">
-              <div class="benefit-icon">
-                <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path
-                    d="M12 3a9 9 0 1 0 9 9 9.75 9.75 0 0 0-.674-3.418 7.5 7.5 0 1 1-11.744-11.744A9.75 9.75 0 0 0 12 3Z"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
-                    stroke-linecap="round" opacity="0.3" />
-                </svg>
-              </div>
-              <h3>100% Total Blackout Cavity</h3>
-              <p>Engineered with deep 3D eye cavities that ensure absolute zero pressure on your eyelids and eyelashes,
-                while blocking all ambient light to trigger natural melatonin production.</p>
-            </div>
-            <div class="benefit-card-visual" style="position: relative;">
-              <img src="Woman_sleeping_peacefully_in_bed_202608201426.jpeg" alt="Woman sleeping peacefully in bed"
-                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4; position: absolute; top: 0; left: 0; pointer-events: none;">
-              <!-- Beautiful Sleep Score Indicator -->
-              <div class="sleep-score-radial" style="position: relative; z-index: 1;">
-                <svg>
-                  <circle class="sleep-score-circle-bg" cx="50" cy="50" r="40" />
-                  <circle class="sleep-score-circle-val" cx="50" cy="50" r="40" />
-                </svg>
-                <div class="sleep-score-text">100%</div>
-              </div>
-            </div>
+          <div class="sb-pill-row">
+            <span class="sb-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+              Up to 60 Mins Warmth
+            </span>
+            <span class="sb-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Single-Use &amp; Hygienic
+            </span>
+            <span class="sb-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Unscented &amp; Gentle
+            </span>
+            <span class="sb-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              Travel Friendly
+            </span>
           </div>
 
-          <!-- Card 2: Thermal Therapy (Standard) -->
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M8 5v14M16 5v14" stroke-linecap="round" opacity="0.3" />
-                <path d="M12 2v20" stroke-linecap="round" opacity="0.3" />
-                <path d="M6 10c1.5-1.5 2.5-1.5 4 0s2.5 1.5 4 0 2.5-1.5 4 0" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path d="M6 16c1.5-1.5 2.5-1.5 4 0s2.5 1.5 4 0 2.5-1.5 4 0" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </div>
-            <h3>Thermal Comfort</h3>
-            <p>Soothing warmth zones gently expand blood vessels, melting stress and fatigue away.</p>
-            <div class="benefit-card-image-wrap"
-              style="width: 100%; height: 110px; border-radius: 12px; overflow: hidden; margin-top: 1.5rem; border: 1px solid rgba(255,255,255,0.05);">
-              <img src="Woman_relaxing_using_eye_mask_202608211233.jpeg" alt="Soothe & Drift Thermal Therapy"
-                style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
+          <div class="sb-cta-row">
+            <a href="shop.html" class="btn btn-primary">Buy 15-Pack — $24</a>
+            <a href="#benefits" class="btn btn-outline">See How It Works</a>
           </div>
 
-          <!-- Card 3: Acoustic Drift (Standard) -->
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 10v4M6 6v12M9 3v18M12 9v6M15 5v14M18 8v8M21 11v2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </div>
-            <h3>Acoustic Drift</h3>
-            <p>Ultra-thin speakers deliver pink noise and soundscapes to calm active brainwaves.</p>
-          </div>
-
-          <!-- Card 4: Ergonomic Fit (Standard) -->
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 10c0-1.5 2-3 5-3s5 1.5 5 3-2 3-5 3-5-1.5-5-3Z" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path d="M11 10c0-1.5 2-3 5-3s5 1.5 5 3-2 3-5 3-5-1.5-5-3Z" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path d="M9 10h6" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <h3>Adaptive Fit</h3>
-            <p>Micro-adjustable straps contour seamlessly to any facial structure for weightless fit.</p>
-          </div>
-
-          <!-- Card 5: Organic Materials (Standard) -->
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M20.24 3.76a6 6 0 0 0-8.49 0L3 12.5V21h8.5l8.74-8.74a6 6 0 0 0 0-8.5Z" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path d="M3 21l9-9M9 17h4M14 13h3" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <h3>Pure Organic Cotton</h3>
-            <p>100% hypoallergenic, breathable materials that regulate skin temperature.</p>
-          </div>
-
-          <!-- Card 6: Intelligent Sleep Automation (Large span-2) -->
-          <div class="benefit-card span-2">
-            <div class="benefit-card-info">
-              <div class="benefit-icon">
-                <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M12 6v6l3 3" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M16.5 4.5l3 3M7.5 4.5l-3 3" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <h3>Intelligent Automation</h3>
-              <p>As you drift off, the mask automatically detects sleep onset, fading out the audio and thermal systems
-                to guarantee undisturbed sleep and deep cycles.</p>
-            </div>
-            <div class="benefit-card-visual" style="position: relative;">
-              <img src="Woman_wearing_eye_mask_on_202608211228.jpeg"
-                alt="Intelligent Sleep Automation with Soothe & Drift"
-                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4; position: absolute; top: 0; left: 0; pointer-events: none;">
-              <!-- Equalizer pulse bars -->
-              <div class="pulse-wave" style="position: relative; z-index: 1;">
-                <div class="pulse-bar"></div>
-                <div class="pulse-bar"></div>
-                <div class="pulse-bar"></div>
-                <div class="pulse-bar"></div>
-                <div class="pulse-bar"></div>
-              </div>
-            </div>
+          <div class="sb-cta-price-note">
+            <span style="color: var(--color-gold); letter-spacing: 2px;">★★★★★</span>
+            <span><strong>4.9/5</strong> from 10,000+ rested sleepers · <strong>$1.60 per mask</strong> · Free Shipping</span>
           </div>
         </div>
-      </div>
 
-      <div class="section-divider-text reveal-fade-up">
-        <p class="tagline centered">Our Best Product</p>
-        <h3 class="divider-title-main">Designed by professionals</h3>
-      </div>
-      </div>
-    </section>
-
-    <!-- Product Spotlight -->
-    <section class="spotlight-section" id="shop">
-      <div class="container spotlight-container">
-        <div class="spotlight-visual reveal-fade-left">
-          <div class="product-glow"></div>
-          <div class="product-showcase-wrapper">
-            <!-- High-Res Photoshoot Product Showcase -->
-            <div class="spotlight-product-gallery"
-              style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 1.5rem; position: relative; z-index: 2;">
-                <img src="Product_photoshoot_on_white_back__202608211912-removebg-preview.png"
-                  alt="Soothe & Drift Somnify Eye Mask"
-                  style="width: 100%; max-width: 450px; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));">
-            </div>
-          </div>
-        </div>
-        <div class="spotlight-content reveal-fade-right">
-          <div class="tagline">Premium Smart Mask</div>
-          <h2 class="section-title">Smart Eye Mask</h2>
-          <p class="section-desc">Designed to block out all distractions. Features built-in speakers for calming sounds,
-            soothing warmth settings, and a fully adjustable fit.</p>
-
-          <ul class="features-list">
-            <li>
-              <span class="feature-bullet">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  style="width: 12px; height: 12px;">
-                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
+        <div class="reveal-fade-right">
+          <div class="sb-frame">
+            <img src="storyboard/Artboard-1.png" alt="Soothe & Drift Self-Heating Steam Eye Mask 15-Pack — The Art of Taking a Pause">
+            <div class="sb-float-badge">
               <div>
-                <strong>100% Total Blackout</strong>
-                <p>Blocks out all light completely with zero pressure on your eyes.</p>
+                <div class="sb-float-badge-title">Soothe &amp; Drift™ Steam Eye Mask (15 Pack)</div>
+                <div class="sb-float-badge-sub">Individually Sealed · No Microwave Needed · 104–113°F</div>
               </div>
-            </li>
-            <li>
-              <span class="feature-bullet">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  style="width: 12px; height: 12px;">
-                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              <div>
-                <strong>Soothing Warmth</strong>
-                <p>3 regulated heat levels to relieve eye strain and muscle tension.</p>
-              </div>
-            </li>
-            <li>
-              <span class="feature-bullet">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  style="width: 12px; height: 12px;">
-                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              <div>
-                <strong>Calming Audio</strong>
-                <p>Easily connect via Bluetooth to play your favorite soundscapes.</p>
-              </div>
-            </li>
-            <li>
-              <span class="feature-bullet">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  style="width: 12px; height: 12px;">
-                  <path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              <div>
-                <strong>Soft Breathable Fabric</strong>
-                <p>Made with hypoallergenic organic cotton that stays cool all night.</p>
-              </div>
-            </li>
-          </ul>
-
-          <div class="spotlight-ctas">
-            <a href="shop.html" class="btn btn-primary">Buy Now — $24</a>
+              <a href="shop.html" class="btn btn-primary btn-sm">Shop $24</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Smart Wave Science -->
-    <section class="science-section" id="music">
+    <!-- Conversion Trust Strip -->
+    <div class="sb-trust-strip">
+      <div class="container sb-trust-grid">
+        <div class="sb-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+          30-Day Money-Back Guarantee
+        </div>
+        <div class="sb-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Free Shipping &amp; Easy Returns
+        </div>
+        <div class="sb-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          100% Natural Heating Ingredients
+        </div>
+        <div class="sb-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Air-Activated in ~5 Minutes
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. TARGETED RELIEF & VISIBLE RESULTS — Storyboard Artboard 2 -->
+    <section class="sb-section" id="benefits">
       <div class="container">
-        <div class="science-header reveal-fade-up">
-          <div class="tagline">The Sleep Laboratory</div>
-          <h2 class="section-title centered">How it helps you<br><span class="highlight">fall asleep faster.</span></h2>
+        <div class="sb-header reveal-fade-up">
+          <div class="tagline centered">Relax · Renew · Radiate</div>
+          <h2 class="section-title centered">Targeted Warmth for<br><span class="highlight">Dry, Tired Eyes.</span></h2>
+          <p class="section-desc centered">Gentle, consistent moist heat improves tear flow, relaxes overworked eye muscles, and visibly reduces redness and under-eye puffiness.</p>
         </div>
 
-        <div class="science-grid">
-          <!-- Card 1: Phase 1 -->
-          <div class="science-card reveal-fade-up">
-            <div class="science-card-header">
-              <span class="sci-phase-badge">
-                <span class="sci-dot"></span>
-                Phase 01
-              </span>
-              <svg class="sci-tech-graphic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M2 12h3l2-5 3 10 2-7 2 4h10" stroke-linecap="round" stroke-linejoin="round" />
-                <circle cx="12" cy="12" r="9" stroke-dasharray="2 4" stroke-linecap="round" opacity="0.3" />
-              </svg>
-            </div>
-            <h3>Gentle Relaxation</h3>
-            <p>Soft pulses help release tension around your temples and forehead instantly.</p>
-          </div>
+        <div class="sb-frame reveal-fade-up">
+          <img src="storyboard/Artboard-2.png" alt="Targeted Warmth for Dry, Tired Eyes — Before and After Eye Redness Relief">
+        </div>
 
-          <!-- Card 2: Phase 2 -->
-          <div class="science-card reveal-fade-up">
-            <div class="science-card-header">
-              <span class="sci-phase-badge">
-                <span class="sci-dot"></span>
-                Phase 02
-              </span>
-              <svg class="sci-tech-graphic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="3" />
-                <circle cx="12" cy="12" r="6" stroke-dasharray="3 3" opacity="0.6" />
-                <circle cx="12" cy="12" r="9" opacity="0.3" />
-                <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke-linecap="round" opacity="0.4" />
-              </svg>
-            </div>
-            <h3>Calming Sleep Sounds</h3>
-            <p>Built-in speakers play audio tuned to help your mind settle down for sleep.</p>
+        <div class="sb-listing-duo reveal-fade-up">
+          <div class="sb-square-card">
+            <img src="listing-images/3.png" alt="For a Peaceful, Whole New Level Reset — Puffiness, Dry Eyes & Deeper Relaxation">
           </div>
+          <div class="sb-square-card">
+            <img src="listing-images/4.png" alt="Modern Warm Eye Compress — Screen Detox, Travel Ready & Single Clean Use">
+          </div>
+        </div>
 
-          <!-- Card 3: Phase 3 -->
-          <div class="science-card reveal-fade-up">
-            <div class="science-card-header">
-              <span class="sci-phase-badge">
-                <span class="sci-dot"></span>
-                Phase 03
-              </span>
-              <svg class="sci-tech-graphic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2a10 10 0 1 0 10 10c0-3.5-3.5-6-6-6s-4 2-4 4 1.5 3 3 3" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <circle cx="12" cy="12" r="1.5" fill="currentColor" />
-              </svg>
-            </div>
-            <h3>Cozy Warmth Settings</h3>
-            <p>Comforting warmth improves blood flow to soothe dry, tired eyes.</p>
+        <div class="sb-proof-grid reveal-fade-up">
+          <div class="sb-proof-card">
+            <div class="sb-proof-num">01</div>
+            <h3>Relieves Eye Strain</h3>
+            <p>Soothes overworked eyes after long hours of screens, reading, or late-night focus.</p>
+          </div>
+          <div class="sb-proof-card">
+            <div class="sb-proof-num">02</div>
+            <h3>Reduces Redness</h3>
+            <p>Promotes healthy micro-circulation to calm irritated, bloodshot eyes visibly.</p>
+          </div>
+          <div class="sb-proof-card">
+            <div class="sb-proof-num">03</div>
+            <h3>Eases Puffiness</h3>
+            <p>Gentle moist steam helps soften mild under-eye swelling for a brighter, rested look.</p>
+          </div>
+          <div class="sb-proof-card">
+            <div class="sb-proof-num">04</div>
+            <h3>Deeply Relaxing</h3>
+            <p>Improves natural tear flow and melts away tension around the temples and brow.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.25rem;">
+          <a href="shop.html" class="btn btn-primary">Relieve Tired Eyes Tonight — $24</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ENGINEERING & THERMAL PROOF — Storyboard Artboard 3 -->
+    <section class="sb-section sb-section-alt" id="engineering">
+      <div class="container">
+        <div class="sb-header reveal-fade-up">
+          <div class="tagline centered">Precision Comfort</div>
+          <h2 class="section-title centered">Thoughtfully Designed for<br><span class="highlight">Real Eye Relief.</span></h2>
+          <p class="section-desc centered">Every layer is calibrated for skin-friendly softness, rapid self-heating activation, and zero-pressure wear.</p>
+        </div>
+
+        <div class="sb-frame reveal-fade-up">
+          <img src="storyboard/Artboard-3.png" alt="Thoughtfully Designed for Real Eye Relief — 5-minute activation, soft cotton, 104-113°F heat curve, elastic earhooks">
+        </div>
+
+        <div class="sb-listing-duo reveal-fade-up">
+          <div class="sb-square-card">
+            <img src="listing-images/7.png" alt="Soothing Steam in Minutes — Just Opened vs After 5 Minutes">
+          </div>
+          <div class="sb-square-card">
+            <img src="listing-images/8.png" alt="Thoughtfully Designed for Comfort — Light Blocking, Moist Steam Core & Natural Ingredients">
+          </div>
+        </div>
+
+        <div class="sb-proof-grid reveal-fade-up">
+          <div class="sb-proof-card">
+            <div class="sb-proof-num">~5 Min</div>
+            <h3>Quick &amp; Easy Warmth</h3>
+            <p>Self-activates the moment you open the sachet—no microwave or power outlet needed.</p>
+          </div>
+          <div class="sb-proof-card">
+            <div class="sb-proof-num">Cotton</div>
+            <h3>Soft-Touch Feeling</h3>
+            <p>Breathable, non-woven skin-friendly fabric engineered for high-comfort warmth.</p>
+          </div>
+          <div class="sb-proof-card">
+            <div class="sb-proof-num">104–113°F</div>
+            <h3>60-Min Steady Heat</h3>
+            <p>Maintains a therapeutic 40–45°C temperature curve for up to a full 60 minutes.</p>
+          </div>
+          <div class="sb-proof-card">
+            <div class="sb-proof-num">Zero</div>
+            <h3>Pressure-Free Earhooks</h3>
+            <p>Stretchy, ultra-soft earloops adapt comfortably without pulling or ear strain.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Anti-leak Grid -->
-    <section class="leak-section">
+    <!-- 4. INSIDE THE MASK & 3-STEP RITUAL — Storyboard Artboard 4 -->
+    <section class="sb-section" id="how-it-works">
       <div class="container">
-        <div class="leak-header reveal-fade-up">
-          <h2 class="section-title centered">Anti-leak.<br><span class="highlight">Lasting effect.</span></h2>
+        <div class="sb-header reveal-fade-up">
+          <div class="tagline centered">No Microwave · No Cords · No Fuss</div>
+          <h2 class="section-title centered">Pure Natural Warmth.<br><span class="highlight">Three Simple Steps.</span></h2>
+          <p class="section-desc centered">Clean, breathable layers powered by natural mineral heat—ready wherever you need a quiet moment.</p>
         </div>
 
-        <div class="leak-grid">
-          <!-- Card 1: Zero Light Leaks -->
-          <div class="leak-card reveal-fade-up">
-            <div class="leak-icon-container">
-              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <path d="M12 8v6M9 11h6" stroke-linecap="round" />
-              </svg>
-            </div>
-            <h3>Zero Light Leaks</h3>
-            <p>Precision wing design seals completely around the nose bridge for absolute darkness.</p>
-          </div>
+        <div class="sb-frame reveal-fade-up">
+          <img src="storyboard/Artboard-4.png" alt="Inside Soothe & Drift Steam Eye Mask — Natural Ingredients and 3-Step How to Use Guide">
+        </div>
 
-          <!-- Card 2: Pressure-Free Eyes -->
-          <div class="leak-card reveal-fade-up">
-            <div class="leak-icon-container">
-              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-            </div>
-            <h3>Pressure-Free Eyes</h3>
-            <p>Deep eye cavities allow natural blinking without touching your eyelashes or eyelids.</p>
+        <div class="sb-listing-duo reveal-fade-up">
+          <div class="sb-square-card">
+            <img src="listing-images/6.png" alt="4-Step How To Use — Open, Wear, Place Over Closed Eyes, Drift Into Relaxation">
           </div>
-
-          <!-- Card 3: Quick Charge -->
-          <div class="leak-card reveal-fade-up">
-            <div class="leak-icon-container">
-              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="7" width="16" height="10" rx="2" ry="2" />
-                <line x1="22" y1="11" x2="22" y2="13" />
-                <path d="M6 12h4l-2 3 4-4H8l2-3-4 4z" fill="currentColor" />
-              </svg>
-            </div>
-            <h3>Quick Charge</h3>
-            <p>Up to 10 nights of use on a single 1-hour fast charge cycle.</p>
+          <div class="sb-square-card">
+            <img src="listing-images/1.png" alt="Soothe & Drift 15-Pack Self-Heating Steam Eye Mask & Individual Sachets">
           </div>
+        </div>
 
-          <!-- Card 4: Fully Washable -->
-          <div class="leak-card reveal-fade-up">
-            <div class="leak-icon-container">
-              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-              </svg>
+        <div class="sb-steps-grid reveal-fade-up">
+          <div class="sb-step-card">
+            <div class="sb-step-badge">1</div>
+            <div>
+              <h4>Tear Open Airtight Sachet</h4>
+              <p>Air immediately activates the natural mineral heating pads inside each individually sealed mask.</p>
             </div>
-            <h3>Fully Washable</h3>
-            <p>Removable inner electronics module makes keeping the fabric fresh effortless.</p>
           </div>
-
-          <!-- Card 5: Side Sleeper Safe -->
-          <div class="leak-card reveal-fade-up">
-            <div class="leak-icon-container">
-              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                <path d="M8 13.5h5M7 10.5h7" stroke-linecap="round" opacity="0.4" />
-              </svg>
+          <div class="sb-step-card">
+            <div class="sb-step-badge">2</div>
+            <div>
+              <h4>Unfold &amp; Place Over Eyes</h4>
+              <p>Slip the soft elastic earhooks around your ears and rest the contoured mask over closed eyes.</p>
             </div>
-            <h3>Side Sleeper Safe</h3>
-            <p>Ultra-thin profile sides prevent pressure points even if you sleep directly on your side.</p>
           </div>
-
-          <!-- Card 6: Bluetooth 5.2 -->
-          <div class="leak-card reveal-fade-up">
-            <div class="leak-icon-container">
-              <svg class="leak-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M5 7l14 10-7 5V2l7 5L5 17" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+          <div class="sb-step-card">
+            <div class="sb-step-badge">3</div>
+            <div>
+              <h4>Relax Up to 60 Minutes</h4>
+              <p>Breathe deeply as soothing moist warmth melts away strain, redness, and tension.</p>
             </div>
-            <h3>Bluetooth 5.2</h3>
-            <p>Ultra low energy connectivity pairs seamlessly with sleep trackers and white noise apps.</p>
+          </div>
+        </div>
+
+        <div class="sb-ingredients-bar reveal-fade-up">
+          <span class="sb-ing-label">Natural, Soothing Ingredients:</span>
+          <div class="sb-ing-pills">
+            <span class="sb-ing-pill">Activated Carbon</span>
+            <span class="sb-ing-pill">Inorganic Salt</span>
+            <span class="sb-ing-pill">Purified Water</span>
+            <span class="sb-ing-pill">Vermiculite</span>
+            <span class="sb-ing-pill">Iron Powder</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing-section" id="compare">
+    <!-- 5. WHY SOOTHE & DRIFT COMPARISON — Listing Image 5 -->
+    <section class="sb-section sb-section-alt" id="why-us">
       <div class="container">
-        <div class="science-header reveal-fade-up">
-          <div class="tagline">Premium Package</div>
-          <h2 class="section-title centered">Start sleeping better<br><span class="highlight">tonight.</span></h2>
+        <div class="sb-header reveal-fade-up">
+          <div class="tagline centered">The Clear Choice</div>
+          <h2 class="section-title centered">Why Soothe &amp; Drift<br><span class="highlight">Beats Ordinary Masks.</span></h2>
+          <p class="section-desc centered">No microwave prep, no charging cables, and no bacteria-trapping reusable pads—just clean, air-activated relief ready whenever you are.</p>
         </div>
 
-        <div class="pricing-card-wrapper reveal-fade-up">
-          <div class="pricing-card-left">
-            <span class="pricing-badge">All-in-one suite</span>
-            <div class="pricing-product-name">Somnify Smart Mask</div>
-            <div class="pricing-main-value">$24<span> / package (15 masks)</span></div>
-            <div class="pricing-shipping-info">
-              <span class="pricing-shipping-dot"></span>
-              Free Shipping & Returns Included
+        <div class="sb-compare-wrap reveal-fade-up">
+          <div class="sb-square-card">
+            <img src="listing-images/5.png" alt="Why Soothe & Drift vs Other Warm Eye Masks Comparison">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. LIFESTYLE & PERFECT GIFT — Storyboard Artboard 5 + Listing 2 & 9 -->
+    <section class="sb-section" id="lifestyle">
+      <div class="container">
+        <div class="sb-header reveal-fade-up">
+          <div class="tagline centered">Every Part of Your Day</div>
+          <h2 class="section-title centered">Simple Self-Care &amp;<br><span class="highlight">The Perfect Gift.</span></h2>
+          <p class="section-desc centered">From post-screen recovery and red-eye flights to thoughtful anniversary, birthday, and holiday gifting—share the gift of true rest.</p>
+        </div>
+
+        <div class="sb-frame reveal-fade-up">
+          <img src="storyboard/Artboard-5.png" alt="Soothe & Drift Lifestyle Use Cases and Perfect Gift Box">
+        </div>
+
+        <div class="sb-listing-duo reveal-fade-up">
+          <div class="sb-square-card">
+            <img src="listing-images/2.png" alt="Wherever Life Moves You, Let Yourself Drift — Travel, Meditation, Bedtime, Work, Home, Spa">
+          </div>
+          <div class="sb-square-card">
+            <img src="listing-images/9.png" alt="The Perfect Gift for Better Sleep, Happier Tomorrows">
+          </div>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 2rem;" class="reveal-fade-up">
+          <span class="sb-pill">Daily Eye Relaxation</span>
+          <span class="sb-pill">After Screen Time</span>
+          <span class="sb-pill">During Flight &amp; Travel</span>
+          <span class="sb-pill">For Deeper Sleep</span>
+          <span class="sb-pill">Spa-Like Self-Care</span>
+          <span class="sb-pill">Anniversary &amp; Birthday Gifts</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONVERSION BUNDLE SELECTOR -->
+    <section class="sb-section" id="compare">
+      <div class="container">
+        <div class="sb-header reveal-fade-up">
+          <div class="tagline centered">Choose Your Pause</div>
+          <h2 class="section-title centered">Start Resting Better<br><span class="highlight">Tonight.</span></h2>
+          <p class="section-desc centered">Every box includes 15 individually sealed, single-use hygienic masks plus our QR-linked Soothe &amp; Drift calming soundtrack.</p>
+        </div>
+
+        <div class="sb-bundles-grid reveal-fade-up">
+          <!-- Pack 1 -->
+          <div class="sb-bundle-card">
+            <div>
+              <div class="sb-bundle-thumb">
+                <img src="listing-images/1.png" alt="Starter Pause — 1 Box (15 Masks)">
+              </div>
+              <div class="sb-bundle-name">Starter Pause</div>
+              <div class="sb-bundle-qty">1 Box · 15 Masks</div>
+              <div class="sb-bundle-price">$24</div>
+              <div class="sb-bundle-per">$1.60 per soothing session · Free Shipping</div>
+              <ul class="sb-bundle-list">
+                <li><span>✔</span> 15 Individually Sealed Steam Masks</li>
+                <li><span>✔</span> Up to 60 Mins Warmth (104–113°F)</li>
+                <li><span>✔</span> Unscented, Hypoallergenic Cotton</li>
+                <li><span>✔</span> QR Access to Soothe Soundscapes</li>
+              </ul>
             </div>
-            <a href="shop.html" class="btn btn-primary" style="width: 100%;">Buy Now</a>
+            <a href="shop.html?pack=1" class="btn btn-outline" style="width: 100%;">Select 1 Box — $24</a>
           </div>
 
-          <div class="pricing-card-right">
-            <div class="pricing-right-title">What's in the Box</div>
-            <ul class="pricing-whats-included">
-              <li>
-                <span class="pricing-check">✔</span>
-                <span><strong>Somnify Smart Eye Mask (15 Pack)</strong> — 15 masks overall, premium 3D contour
-                  shield</span>
-              </li>
-              <li>
-                <span class="pricing-check">✔</span>
-                <span><strong>Ocular Thermal Controller</strong> — 3 built-in warmth settings</span>
-              </li>
-              <li>
-                <span class="pricing-check">✔</span>
-                <span><strong>Integrated Calming Speakers</strong> — Bluetooth stereo drivers</span>
-              </li>
-              <li>
-                <span class="pricing-check">✔</span>
-                <span><strong>Organic Cotton Travel Bag</strong> — Protective storage pouch</span>
-              </li>
-              <li>
-                <span class="pricing-check">✔</span>
-                <span><strong>Fast Charge USB-C Cable</strong> — Full battery in 1 hour</span>
-              </li>
-              <li>
-                <span class="pricing-check">✔</span>
-                <span><strong>1-Year Full Warranty</strong> & 30-Day Sleep Guarantee</span>
-              </li>
-            </ul>
+          <!-- Pack 2 (Most Popular) -->
+          <div class="sb-bundle-card featured">
+            <div class="sb-bundle-tag">Most Popular · Save $6</div>
+            <div>
+              <div class="sb-bundle-thumb">
+                <img src="listing-images/9.png" alt="The Gift Duo — 2 Boxes (30 Masks)">
+              </div>
+              <div class="sb-bundle-name">The Gift Duo</div>
+              <div class="sb-bundle-qty">2 Boxes · 30 Masks</div>
+              <div class="sb-bundle-price"><span class="old">$48</span>$42</div>
+              <div class="sb-bundle-per">$1.40 per soothing session · Free Priority Shipping</div>
+              <ul class="sb-bundle-list">
+                <li><span>✔</span> 30 Individually Sealed Steam Masks</li>
+                <li><span>✔</span> Ideal for Couples or Daily Rituals</li>
+                <li><span>✔</span> Gift-Ready Luxury Pouch Packaging</li>
+                <li><span>✔</span> 30-Day Money-Back Sleep Guarantee</li>
+              </ul>
+            </div>
+            <a href="shop.html?pack=2" class="btn btn-primary" style="width: 100%;">Get Gift Duo — $42</a>
           </div>
+
+          <!-- Pack 3 -->
+          <div class="sb-bundle-card">
+            <div>
+              <div class="sb-bundle-thumb">
+                <img src="listing-images/2.png" alt="Ritual Trio — 3 Boxes (45 Masks)">
+              </div>
+              <div class="sb-bundle-name">Ritual Trio</div>
+              <div class="sb-bundle-qty">3 Boxes · 45 Masks · Save $14</div>
+              <div class="sb-bundle-price"><span class="old">$72</span>$58</div>
+              <div class="sb-bundle-per">$1.28 per soothing session · Best Value</div>
+              <ul class="sb-bundle-list">
+                <li><span>✔</span> 45 Individually Sealed Steam Masks</li>
+                <li><span>✔</span> 1.5 Months of Nightly Eye Relief</li>
+                <li><span>✔</span> Great for Home, Office &amp; Carry-On</li>
+                <li><span>✔</span> Priority Shipping &amp; 30-Day Guarantee</li>
+              </ul>
+            </div>
+            <a href="shop.html?pack=3" class="btn btn-outline" style="width: 100%;">Select Trio — $58</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. SOUNDTRACK RITUAL & BRAND STORY — Storyboard Artboard 6 -->
+    <section class="sb-section sb-section-alt" id="music">
+      <div class="container">
+        <div class="sb-header reveal-fade-up">
+          <div class="tagline centered">More Than Warmth · A World of Calm</div>
+          <h2 class="section-title centered">Your Moment of Calm<br><span class="highlight">Has a Soundtrack.</span></h2>
+          <p class="section-desc centered">Scan the Thank You QR card inside every box to unlock curated audio sessions designed to pair with your 60-minute warm eye ritual.</p>
+        </div>
+
+        <div class="sb-frame reveal-fade-up">
+          <img src="storyboard/Artboard-6.png" alt="Soothe & Drift Soundtrack QR Experience — Wherever Life Moves You, Let Yourself Drift">
+        </div>
+
+        <div class="sb-audio-bar reveal-fade-up">
+          <a href="music.html" class="sb-audio-pill">
+            <div>
+              <strong>Relaxation</strong>
+              <span>Gentle Ambient Drift</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--color-gold)"><path d="M8 5v14l11-7z"/></svg>
+          </a>
+          <a href="music.html" class="sb-audio-pill">
+            <div>
+              <strong>Meditation</strong>
+              <span>Mindful Breath Cadence</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--color-gold)"><path d="M8 5v14l11-7z"/></svg>
+          </a>
+          <a href="music.html" class="sb-audio-pill">
+            <div>
+              <strong>Stress Relief</strong>
+              <span>Warm Evening Unwind</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--color-gold)"><path d="M8 5v14l11-7z"/></svg>
+          </a>
+          <a href="music.html" class="sb-audio-pill">
+            <div>
+              <strong>Deep Sleep</strong>
+              <span>Nocturnal Delta Calm</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--color-gold)"><path d="M8 5v14l11-7z"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -3023,25 +3547,22 @@
     <section class="testimonials-section">
       <div class="container">
         <div class="testimonial-header reveal-fade-up">
-          <div class="tagline">User Stories</div>
-          <h2 class="section-title centered">A perfect fit for<br><span class="highlight">every lifestyle.</span></h2>
+          <div class="tagline">Customer Stories</div>
+          <h2 class="section-title centered">Loved by Screen Workers,<br><span class="highlight">Travelers &amp; Sleepers.</span></h2>
         </div>
 
         <div class="slider-wrapper reveal-fade-up">
           <div class="testimonial-slider" id="testimonialSlider">
             <div class="slide active">
-              <p class="quote">"I've struggled with insomnia for nearly a decade. The combination of heat and the low
-                delta wave music puts me out within 10 minutes. Absolute life-saver."</p>
+              <p class="quote">"After 10 hours on my laptop, my eyes used to burn every evening. Five minutes after tearing open a Soothe &amp; Drift mask, the gentle steam melts the strain right away."</p>
               <div class="author">— Sarah M., Frequent Traveler</div>
             </div>
             <div class="slide">
-              <p class="quote">"My partner works night shifts, which meant morning light always woke me up. This mask
-                completely blocks everything. It is so comfortable on my ears too."</p>
-              <div class="author">— James L., App Developer</div>
+              <p class="quote">"No charging, no microwave, no mess. I keep two sachets in my carry-on for every flight and wake up looking refreshed instead of puffy and red-eyed."</p>
+              <div class="author">— James L., Product Lead</div>
             </div>
             <div class="slide">
-              <p class="quote">"Super soft material, easy to connect to my phone. I sleep on my side and the speakers
-                are so thin I can't even feel them. Highly recommend."</p>
+              <p class="quote">"Unscented, super soft cotton, and the earhooks don't tug at all. Pairing it with the QR relaxation soundtrack is now my favorite 20-minute evening ritual."</p>
               <div class="author">— Elena R., Yoga Instructor</div>
             </div>
           </div>
@@ -3171,7 +3692,7 @@
         <div class="testimonial-header reveal-fade-up" style="text-align: center; margin-bottom: 2rem;">
           <div class="tagline centered">Community Feedback</div>
           <h2 class="section-title centered">Real Sleepers.<br><span class="highlight">Real Video Reviews.</span></h2>
-          <p class="section-desc centered" style="margin-top: 1rem;">See why thousands of people have upgraded their nightly rest with Soothe &amp; Drift.</p>
+          <p class="section-desc centered" style="margin-top: 1rem;">See why thousands of people have upgraded their nightly pause with Soothe &amp; Drift.</p>
         </div>
 
         <div class="vc-scene reveal-fade-up">
@@ -3235,7 +3756,7 @@
       <script>
         (function () {
           const TOTAL = 6;
-          const RADIUS = 420;      // px — ring radius
+          const RADIUS = 420;
           const ring = document.getElementById('vcRing');
           const cards = Array.from(ring.querySelectorAll('.vc-card'));
           const dotsEl = document.getElementById('vcDots');
@@ -3243,7 +3764,6 @@
           let autoTimer = null;
           let playingIndex = -1;
 
-          // Build dots
           cards.forEach((_, i) => {
             const d = document.createElement('span');
             d.className = 'vc-dot' + (i === 0 ? ' active' : '');
@@ -3266,12 +3786,10 @@
               card.classList.toggle('active-card', isActive);
             });
 
-            // Update dots
             dotsEl.querySelectorAll('.vc-dot').forEach((d, i) => d.classList.toggle('active', i === current));
           }
 
           function goTo(idx) {
-            // Stop any playing video when navigating
             if (playingIndex >= 0) {
               const vid = document.getElementById('vcVid' + playingIndex);
               if (vid) { vid.pause(); vid.currentTime = 0; }
@@ -3284,7 +3802,6 @@
 
           window.vcHandleClick = function (idx) {
             if (idx !== current) { goTo(idx); return; }
-            // Toggle play/pause on the front card
             const vid = document.getElementById('vcVid' + idx);
             const card = cards[idx];
             if (!vid) return;
@@ -3316,68 +3833,10 @@
           document.getElementById('vcPrev').addEventListener('click', () => { goTo(current - 1); startAuto(); });
           document.getElementById('vcNext').addEventListener('click', () => { goTo(current + 1); startAuto(); });
 
-          // Init
           positionCards(0);
           startAuto();
         })();
       </script>
-    </section>
-
-
-    <!-- Footer Spotlight / Somnify Purchase Card -->
-    <section class="footer-spotlight-section">
-      <div class="container footer-spotlight-container reveal-fade-up">
-        <!-- Technical HUD Status Indicator -->
-        <div class="f-hud-status">
-          <span class="f-hud-pulse"></span>
-          REST SYSTEM ACTIVE // MELATONIN COUPLING ENABLED
-        </div>
-
-        <div class="f-spotlight-content">
-          <div class="tagline">Upgrade Your Rest</div>
-          <h2 class="section-title">Soothe & Drift — <span class="highlight">Somnify</span></h2>
-          <p class="section-desc">Includes Premium Smart Mask (15 masks overall), travel case, USB-C fast charging
-            cable, and lifetime access to the Soothe soundscapes library.</p>
-          <a href="shop.html" class="btn btn-primary" style="padding: 1.25rem 3.5rem;">Buy Now — $24</a>
-
-          <!-- Telemetry Grid Specs -->
-          <div class="f-grid-specs">
-            <div class="f-grid-spec-card">
-              <span class="f-grid-spec-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  <path d="M12 8a2.5 2.5 0 0 1 2 4.5 5 5 0 0 1-4 0A2.5 2.5 0 0 1 12 8z" />
-                </svg>
-              </span>
-              <span class="f-grid-spec-title">Circadian Lock</span>
-              <span class="f-grid-spec-desc">100% Light Shield</span>
-            </div>
-            <div class="f-grid-spec-card">
-              <span class="f-grid-spec-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-                  <path
-                    d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
-                </svg>
-              </span>
-              <span class="f-grid-spec-title">Binaural Audio</span>
-              <span class="f-grid-spec-desc">Integrated Stereo Drivers</span>
-            </div>
-            <div class="f-grid-spec-card">
-              <span class="f-grid-spec-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                </svg>
-              </span>
-              <span class="f-grid-spec-title">Thermal Cycle</span>
-              <span class="f-grid-spec-desc">USB-C Quick-Charge</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- FAQs Section -->
@@ -3385,108 +3844,71 @@
       <div class="container">
         <div class="faq-header reveal-fade-up">
           <div class="tagline">Got Questions?</div>
-          <h2 class="section-title centered">Who is this<br><span class="highlight">sleep mask for?</span></h2>
+          <h2 class="section-title centered">Everything About<br><span class="highlight">Soothe &amp; Drift.</span></h2>
         </div>
 
         <div class="faq-accordion reveal-fade-up">
           <div class="accordion-item">
             <button class="accordion-trigger">
-              <span>Is this mask safe for side sleepers?</span>
+              <span>How does the mask heat up without a microwave or battery?</span>
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Yes. The speaker modules and sides are padded with high-density pressure-relief memory foam, reducing
-                ear strain even when sleeping on your side.</p>
+              <p>Each mask is sealed in an airtight sachet. The moment you tear it open, natural iron powder, activated carbon, vermiculite, inorganic salt, and purified water react gently with oxygen in the air—warming up in about 5 minutes with zero cords or microwaves.</p>
             </div>
           </div>
           <div class="accordion-item">
             <button class="accordion-trigger">
-              <span>How do I wash the eye mask?</span>
+              <span>How warm does it get and how long does the heat last?</span>
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>You can gently slide out the internal electronic module from the side slot, wash the fabric shell by
-                hand in cool water with mild soap, and air dry.</p>
+              <p>It reaches a soothing, steady therapeutic range of 104–113°F (40–45°C) and maintains comfortable moist warmth for up to 60 minutes before cooling down naturally.</p>
             </div>
           </div>
           <div class="accordion-item">
             <button class="accordion-trigger">
-              <span>Does the Bluetooth sound disconnect automatically?</span>
+              <span>Is it unscented and safe for sensitive eyes?</span>
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Yes, you can configure an auto-shutoff sleep timer within our app, or it will automatically standby
-                when no audio is broadcast for 30 minutes.</p>
+              <p>Yes. Our Steam Eye Mask is completely unscented and crafted with breathable, soft-touch non-woven cotton—ideal for sensitive skin and tired eyes. (Please remove contact lenses before use.)</p>
             </div>
           </div>
           <div class="accordion-item">
             <button class="accordion-trigger">
-              <span>What is the return policy?</span>
+              <span>How many masks are in one pack?</span>
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>We offer a 30-day money-back guarantee. If you are not sleeping deeper, ship it back for a full refund,
-                no questions asked.</p>
+              <p>Every pouch contains 15 individually sealed, single-use hygienic steam eye masks—perfect for two weeks of nightly rituals, desk breaks, or travel.</p>
             </div>
           </div>
           <div class="accordion-item">
             <button class="accordion-trigger">
-              <span>Can I use my own music or soundscapes?</span>
+              <span>Can I bring Soothe &amp; Drift masks on an airplane?</span>
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Yes, Somnify connects via standard Bluetooth, allowing you to stream from Spotify, Apple Music,
-                YouTube, white noise apps, or your favorite meditation platform.</p>
+              <p>Absolutely! Because they are ultra-thin, individually sealed, and contain no lithium batteries or liquids, they are 100% TSA and carry-on friendly.</p>
             </div>
           </div>
           <div class="accordion-item">
             <button class="accordion-trigger">
-              <span>How long does the battery last on a single charge?</span>
+              <span>How do I access the calming soundtrack?</span>
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>The battery lasts up to 10 nights of normal use (around 8 hours per night) on a single charge. It fully
-                recharges via USB-C in under an hour.</p>
+              <p>Every box includes a Thank You QR card—simply scan it with your phone (or visit our Soundscapes page) to stream Relaxation, Meditation, Stress Relief, and Deep Sleep tracks.</p>
             </div>
           </div>
           <div class="accordion-item">
             <button class="accordion-trigger">
-              <span>Is the heat therapy adjustable and safe?</span>
+              <span>What is your return policy?</span>
               <span class="icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Absolutely. The mask features 3 micro-controlled warmth levels (ranging from 38°C to 45°C) and includes
-                an automatic safety shut-off after 30 minutes to prevent overheating.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger">
-              <span>Does it completely block out all light?</span>
-              <span class="icon">+</span>
-            </button>
-            <div class="accordion-panel">
-              <p>Yes. It is designed with a contoured 3D eye cup mold and a dual-flap nose wing to block 100% of ambient
-                light, even in bright daylight.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger">
-              <span>Does the mask support voice calls or is it only for music?</span>
-              <span class="icon">+</span>
-            </button>
-            <div class="accordion-panel">
-              <p>It is optimized purely for sleep audio and does not contain a microphone, ensuring zero accidental
-                voice activations or disturbances during your rest.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger">
-              <span>Can children or teenagers use the Somnify mask?</span>
-              <span class="icon">+</span>
-            </button>
-            <div class="accordion-panel">
-              <p>Yes, the adjustable, elastic strap fits head circumferences from 20 to 26 inches comfortably, making it
-                suitable for adults and teenagers alike.</p>
+              <p>We offer a 30-day money-back guarantee. If you aren't thrilled with your eye relief and rest, contact us for a full refund.</p>
             </div>
           </div>
         </div>
@@ -3500,9 +3922,9 @@
           <div class="moon-large"></div>
           <div class="cta-moon-orbit"></div>
           <div class="cta-inner-text">
-            <h2>Relax.<br>Recharge.<br><span class="highlight">Drift away.</span></h2>
-            <p>Join thousands of sleepers waking up refreshed every morning.</p>
-            <a href="shop.html" class="btn btn-primary" style="padding: 1.25rem 3.5rem;">Shop Now</a>
+            <h2>Better Rest.<br>Brighter People.<br><span class="highlight">Drift away.</span></h2>
+            <p>Wherever life moves you, let yourself drift. 15-Pack Steam Eye Mask — $24 with Free Shipping.</p>
+            <a href="shop.html" class="btn btn-primary" style="padding: 1.25rem 3.5rem;">Shop 15-Pack Now — $24</a>
           </div>
         </div>
       </div>
