@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customize Your Rest â€” Soothe & Drift Shop</title>
+  <title>Customize Your Rest &mdash; Soothe & Drift Shop</title>
   <!-- SEO Meta Tags -->
   <meta name="description" content="Configure your custom Somnify smart sleep mask suite. Add premium silk sleeves, weighted pods, and travel cases.">
   <meta name="keywords" content="smart mask shop, custom sleep mask, Somnify store, sleep accessories">
@@ -1338,7 +1338,7 @@
     <section class="shop-section">
       <div class="container">
         <div class="config-title-block">
-          <div class="tagline">Soothe &amp; Driftâ„¢ Â· 15-Pack</div>
+          <div class="tagline">Soothe &amp; Drift&trade; &middot; 15-Pack</div>
           <h1>Choose Your <span class="highlight">Pause Suite</span></h1>
         </div>
 
@@ -1356,7 +1356,7 @@
                 </div>
                 <!-- Tab 2: Listing 7 (Steam Demo) -->
                 <div id="tab-results" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
-                  <img width="1080" height="1080" loading="lazy" decoding="async" src="listing-images/7.jpg" alt="Soothing Steam in Minutes â€” Just Opened vs After 5 Minutes" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                  <img width="1080" height="1080" loading="lazy" decoding="async" src="listing-images/7.jpg" alt="Soothing Steam in Minutes &mdash; Just Opened vs After 5 Minutes" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <!-- Tab 3: Listing 5 (Why Soothe & Drift) -->
                 <div id="tab-compare" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
@@ -1368,7 +1368,7 @@
                 </div>
                 <!-- Tab 5: Listing 9 (Gift Box) -->
                 <div id="tab-gift" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
-                  <img width="1080" height="1080" loading="lazy" decoding="async" src="listing-images/9.jpg" alt="The Perfect Gift â€” Soothe & Drift" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                  <img width="1080" height="1080" loading="lazy" decoding="async" src="listing-images/9.jpg" alt="The Perfect Gift &mdash; Soothe & Drift" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <!-- Tab 6: Product Video -->
                 <div id="tab-pouch" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
@@ -1391,7 +1391,7 @@
           <!-- Right: Console Controls -->
           <div class="config-controls">
             <div class="config-header-group">
-              <div class="tagline" style="margin-bottom: 0.25rem;">Air-Activated Â· Unscented Â· Up to 60 Mins Warmth</div>
+              <div class="tagline" style="margin-bottom: 0.25rem;">Air-Activated &middot; Unscented &middot; Up to 60 Mins Warmth</div>
               <h2 class="config-section-title">Self-Heating Steam Eye Mask</h2>
             </div>
 
@@ -1460,10 +1460,10 @@
             <!-- Dynamic Action Bar -->
             <div class="config-action-bar">
               <div class="action-totals-wrap">
-                <span class="action-total-label" id="selected-pack-label">1 Box (15 Masks) Â· Free Shipping</span>
+                <span class="action-total-label" id="selected-pack-label">1 Box (15 Masks) &middot; Free Shipping</span>
                 <span class="action-total-price" id="total-price">$24</span>
               </div>
-              <button class="btn btn-primary" id="buy-now-btn" onclick="openCheckoutConfirm()">Buy Now â€” $24</button>
+              <button class="btn btn-primary" id="buy-now-btn" onclick="openCheckoutConfirm()">Buy Now &mdash; $24</button>
             </div>
             <p id="checkout-confirm-msg" style="display: none; margin-top: 1rem; padding: 0.9rem 1.1rem; border-radius: 12px; background: rgba(229,192,123,0.12); border: 1px solid rgba(229,192,123,0.4); color: var(--color-gold-light); font-size: 0.88rem;"></p>
           </div>
@@ -1698,23 +1698,23 @@
 
       const labelEl = document.getElementById('selected-pack-label');
       if (labelEl) {
-        labelEl.innerText = `${selectedPackLabel} Â· Free Shipping`;
+        labelEl.innerText = `${selectedPackLabel} &middot; Free Shipping`;
       }
 
       const isDiscountClaimed = localStorage.getItem('discountClaimed') === 'true';
       if (isDiscountClaimed) {
         const discountedTotal = Math.round(total * 0.85);
         document.getElementById('total-price').innerHTML = `<span style="text-decoration: line-through; opacity: 0.5; margin-right: 8px; font-size: 0.8em; font-weight: 300;">$${total}</span>$${discountedTotal}`;
-        document.getElementById('buy-now-btn').innerText = `Buy Now â€” $${discountedTotal} (15% Off)`;
+        document.getElementById('buy-now-btn').innerText = `Buy Now &mdash; $${discountedTotal} (15% Off)`;
       } else {
         document.getElementById('total-price').innerText = `$${total}`;
-        document.getElementById('buy-now-btn').innerText = `Buy Now â€” $${total}`;
+        document.getElementById('buy-now-btn').innerText = `Buy Now &mdash; $${total}`;
       }
     }
 
     function openCheckoutConfirm() {
       const msg = document.getElementById('checkout-confirm-msg');
-      const priceText = document.getElementById('buy-now-btn').innerText.replace('Buy Now â€” ', '');
+      const priceText = document.getElementById('buy-now-btn').innerText.replace('Buy Now &mdash; ', '');
       if (msg) {
         msg.style.display = 'block';
         msg.innerHTML = `<strong>Order Ready:</strong> ${selectedPackLabel} (${priceText}) with Free Shipping &amp; 30-Day Guarantee. Connect your payment gateway (Stripe / Shopify Checkout) to complete live orders.`;
