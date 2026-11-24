@@ -2536,170 +2536,142 @@
     }
 
     .sb-hero {
-      padding: 118px 0 56px;
       position: relative;
-    }
-
-    .hero-editorial-top {
-      text-align: center;
-      max-width: 780px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .hero-stage-shell {
-      display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 2rem;
-      align-items: stretch;
-      background: linear-gradient(155deg, rgba(11, 22, 42, 0.72) 0%, rgba(2, 5, 11, 0.92) 100%);
-      border: 1px solid rgba(229, 192, 123, 0.24);
-      border-radius: 28px;
-      padding: 1.5rem;
-      box-shadow: 0 32px 90px rgba(0, 0, 0, 0.7), 0 0 70px rgba(59, 130, 246, 0.1);
-      backdrop-filter: blur(20px);
-    }
-
-    .hero-stage-media {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .hero-media-viewport {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #02050b;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      aspect-ratio: 16 / 10;
+      min-height: 88vh;
       display: flex;
       align-items: center;
-      justify-content: center;
+      padding: 130px 0 80px;
+      overflow: hidden;
+      background: var(--color-bg-dark);
     }
 
-    .hero-media-viewport img {
+    .hero-bg-carousel {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-bg-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transform: scale(1);
+      transition: opacity 1.3s ease-in-out, transform 6s ease-out;
+      will-change: opacity, transform;
+    }
+
+    .hero-bg-slide.active {
+      opacity: 1;
+      transform: scale(1.06);
+    }
+
+    .hero-bg-slide img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
+      object-position: center;
       display: block;
-      transition: opacity 0.3s ease;
     }
 
-    .hero-view-tabs {
+    .hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(2, 5, 11, 0.94) 0%, rgba(2, 5, 11, 0.78) 45%, rgba(2, 5, 11, 0.28) 100%),
+        linear-gradient(180deg, rgba(2, 5, 11, 0.75) 0%, rgba(2, 5, 11, 0.1) 28%, rgba(2, 5, 11, 0.25) 75%, #02050b 100%);
+      pointer-events: none;
+    }
+
+    .hero-fg-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero-fg-content {
+      max-width: 610px;
+    }
+
+    .hero-carousel-bar {
+      position: relative;
+      z-index: 2;
+      margin-top: 3.25rem;
       display: flex;
-      gap: 0.6rem;
-      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
       flex-wrap: wrap;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(229, 192, 123, 0.18);
     }
 
-    .hero-view-tab {
-      padding: 0.48rem 1rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--color-text-muted);
-      font-size: 0.78rem;
+    .hero-slide-caption {
+      font-size: 0.82rem;
+      color: var(--color-gold-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       font-weight: 600;
+    }
+
+    .hero-slide-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .hero-slide-dots {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-slide-dot {
+      width: 26px;
+      height: 4px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.25);
+      border: none;
       cursor: pointer;
+      padding: 0;
       transition: var(--transition-smooth);
     }
 
-    .hero-view-tab.active,
-    .hero-view-tab:hover {
-      border-color: var(--color-gold);
+    .hero-slide-dot.active {
+      width: 44px;
+      background: var(--color-gold);
+      box-shadow: 0 0 12px rgba(229, 192, 123, 0.6);
+    }
+
+    .hero-slide-arrow {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(229, 192, 123, 0.35);
+      background: rgba(2, 5, 11, 0.65);
       color: var(--color-gold-light);
-      background: rgba(229, 192, 123, 0.12);
-    }
-
-    .hero-stage-buy {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 1.25rem 1rem 1.25rem 0.5rem;
-      gap: 1.15rem;
-    }
-
-    .hero-buy-packs {
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .hero-pack-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.85rem 1.1rem;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      color: var(--color-text-main);
       cursor: pointer;
-      transition: var(--transition-smooth);
-      text-align: left;
-    }
-
-    .hero-pack-btn:hover {
-      border-color: rgba(229, 192, 123, 0.4);
-      background: rgba(229, 192, 123, 0.05);
-    }
-
-    .hero-pack-btn.active {
-      border-color: var(--color-gold);
-      background: rgba(229, 192, 123, 0.12);
-      box-shadow: 0 0 24px rgba(229, 192, 123, 0.12);
-    }
-
-    .hero-pack-title {
-      font-weight: 600;
-      font-size: 0.92rem;
-      color: #fff;
-      display: block;
-    }
-
-    .hero-pack-sub {
-      font-size: 0.75rem;
-      color: var(--color-gold);
-    }
-
-    .hero-pack-price {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--color-gold-light);
-    }
-
-    .hero-buy-checks {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.55rem;
-      font-size: 0.8rem;
-      color: var(--color-text-main);
-    }
-
-    .hero-buy-checks span {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      justify-content: center;
+      transition: var(--transition-smooth);
+      backdrop-filter: blur(8px);
     }
 
-    .hero-buy-checks b {
-      color: var(--color-gold);
+    .hero-slide-arrow:hover {
+      background: var(--color-gold);
+      color: var(--color-bg-dark);
     }
 
-    @media (max-width: 968px) {
-      .hero-stage-shell {
-        grid-template-columns: 1fr;
-        padding: 1rem;
+    @media (max-width: 768px) {
+      .sb-hero {
+        min-height: 78vh;
+        padding: 112px 0 56px;
       }
-      .hero-stage-buy {
-        padding: 0.5rem;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .hero-buy-checks {
-        grid-template-columns: 1fr;
+      .hero-bg-overlay {
+        background:
+          linear-gradient(180deg, rgba(2, 5, 11, 0.88) 0%, rgba(2, 5, 11, 0.68) 55%, #02050b 100%);
       }
     }
 
@@ -3292,102 +3264,100 @@
 
   <!-- Main Content -->
   <main>
-    <!-- 1. HERO SECTION &mdash; New Interactive Editorial Stage Model -->
+    <!-- 1. HERO SECTION &mdash; Full-Bleed Auto-Sliding Storyboard Carousel -->
     <section class="sb-hero" id="home">
-      <div class="container">
-        <div class="hero-editorial-top reveal-fade-up">
-          <div class="sb-eyebrow" style="margin-bottom: 1rem;">
+      <div class="hero-bg-carousel" id="heroBgCarousel" aria-hidden="true">
+        <div class="hero-bg-slide active" data-caption="01 &middot; The Art of Taking a Pause">
+          <img src="storyboard/Artboard-1.jpg" alt="" width="1600" height="656" fetchpriority="high" decoding="async">
+        </div>
+        <div class="hero-bg-slide" data-caption="02 &middot; Targeted Warmth for Dry, Tired Eyes">
+          <img src="storyboard/Artboard-2.jpg" alt="" width="1600" height="656" loading="lazy" decoding="async">
+        </div>
+        <div class="hero-bg-slide" data-caption="03 &middot; No Microwave &middot; No Cords &middot; No Fuss">
+          <img src="storyboard/Artboard-4.jpg" alt="" width="1600" height="656" loading="lazy" decoding="async">
+        </div>
+        <div class="hero-bg-slide" data-caption="04 &middot; Your Moment of Calm Has a Soundtrack">
+          <img src="storyboard/Artboard-6.jpg" alt="" width="1600" height="656" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="hero-bg-overlay"></div>
+
+      <div class="container hero-fg-container">
+        <div class="hero-fg-content reveal-fade-up">
+          <div class="sb-eyebrow">
             <span class="sb-eyebrow-dot"></span>
-            Soothe &amp; Drift&trade; &middot; Self-Heating Steam Eye Mask
+            15-Pack &middot; Air-Activated Steam Eye Mask
           </div>
-          <h1 class="sb-hero-title" style="margin-bottom: 0.9rem;">
-            The Art of <span class="highlight">Taking a Pause.</span>
+          <h1 class="sb-hero-title">
+            The Art of<br><span class="highlight">Taking a Pause.</span>
           </h1>
-          <p class="sb-hero-sub" style="margin: 0 auto; max-width: 640px;">
-            Air-activated moist steam (104&ndash;113&deg;F) in ~5 minutes to relieve dry, tired eyes for up to 60 minutes&mdash;no microwave, no cords, no fuss.
+          <p class="sb-hero-sub">
+            Luxury in every pause. Self-heating moist steam (104&ndash;113&deg;F) activates on contact with air for up to 60 minutes&mdash;relieving dry, tired eyes without microwaves, cords, or fuss.
           </p>
+
+          <div class="sb-pill-row">
+            <span class="sb-pill">Up to 60 Mins Warmth</span>
+            <span class="sb-pill">Single-Use &amp; Hygienic</span>
+            <span class="sb-pill">Unscented</span>
+            <span class="sb-pill">Travel Friendly</span>
+          </div>
+
+          <div class="sb-cta-row">
+            <a href="shop.html" class="btn btn-primary">Shop 15-Pack &mdash; $24</a>
+            <a href="#benefits" class="btn btn-outline">See How It Works</a>
+          </div>
+
+          <div class="sb-cta-price-note">
+            <span style="color: var(--color-gold); letter-spacing: 2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span><strong>4.9/5</strong> from 10,000+ rested sleepers &middot; <strong>$1.60 per mask</strong> &middot; Free Shipping</span>
+          </div>
         </div>
 
-        <div class="hero-stage-shell reveal-fade-up">
-          <!-- Left: Interactive Media Viewport -->
-          <div class="hero-stage-media">
-            <div class="hero-media-viewport">
-              <img id="heroStageImg" src="storyboard/Artboard-1.jpg" alt="Soothe & Drift Self-Heating Steam Eye Mask 15-Pack &mdash; The Art of Taking a Pause" width="1600" height="656" fetchpriority="high" decoding="async">
+        <div class="hero-carousel-bar">
+          <span class="hero-slide-caption" id="heroSlideCaption">01 &middot; The Art of Taking a Pause</span>
+          <div class="hero-slide-controls">
+            <button type="button" class="hero-slide-arrow" id="heroSlidePrev" aria-label="Previous background slide">&larr;</button>
+            <div class="hero-slide-dots" id="heroSlideDots">
+              <button type="button" class="hero-slide-dot active" aria-label="Slide 1"></button>
+              <button type="button" class="hero-slide-dot" aria-label="Slide 2"></button>
+              <button type="button" class="hero-slide-dot" aria-label="Slide 3"></button>
+              <button type="button" class="hero-slide-dot" aria-label="Slide 4"></button>
             </div>
-            <div class="hero-view-tabs">
-              <button type="button" class="hero-view-tab active" onclick="setHeroMedia(this, 'storyboard/Artboard-1.jpg')">Brand Story</button>
-              <button type="button" class="hero-view-tab" onclick="setHeroMedia(this, 'listing-images/1.jpg')">15-Pack Pouch</button>
-              <button type="button" class="hero-view-tab" onclick="setHeroMedia(this, 'listing-images/7.jpg')">Warm Steam Demo</button>
-            </div>
-          </div>
-
-          <!-- Right: Quick-Buy Conversion Console -->
-          <div class="hero-stage-buy">
-            <div>
-              <div class="sb-cta-price-note" style="margin-bottom: 0.6rem;">
-                <span style="color: var(--color-gold); letter-spacing: 2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <span><strong>4.9/5</strong> &middot; 10,000+ Rested Sleepers</span>
-              </div>
-              <h2 style="font-family: var(--font-serif); font-size: 1.75rem; color: #fff; font-weight: 400; line-height: 1.2;">
-                Choose Your Pause Pack
-              </h2>
-            </div>
-
-            <div class="hero-buy-packs">
-              <button type="button" class="hero-pack-btn" onclick="setHeroPack(this, 1, 24)">
-                <div>
-                  <span class="hero-pack-title">Starter Pause &middot; 1 Box (15 Masks)</span>
-                  <span class="hero-pack-sub">$1.60 per session &middot; Free Shipping</span>
-                </div>
-                <span class="hero-pack-price">$24</span>
-              </button>
-              <button type="button" class="hero-pack-btn active" onclick="setHeroPack(this, 2, 42)">
-                <div>
-                  <span class="hero-pack-title">The Gift Duo &middot; 2 Boxes (30 Masks)</span>
-                  <span class="hero-pack-sub">Most Popular &middot; Save $6</span>
-                </div>
-                <span class="hero-pack-price">$42</span>
-              </button>
-              <button type="button" class="hero-pack-btn" onclick="setHeroPack(this, 3, 58)">
-                <div>
-                  <span class="hero-pack-title">Ritual Trio &middot; 3 Boxes (45 Masks)</span>
-                  <span class="hero-pack-sub">Best Value &middot; Save $14</span>
-                </div>
-                <span class="hero-pack-price">$58</span>
-              </button>
-            </div>
-
-            <div class="hero-buy-checks">
-              <span><b>&#10004;</b> ~5 Min Air Activation</span>
-              <span><b>&#10004;</b> Up to 60 Mins Warmth</span>
-              <span><b>&#10004;</b> Unscented Organic Cotton</span>
-              <span><b>&#10004;</b> 30-Day Sleep Guarantee</span>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 0.65rem;">
-              <a id="heroBuyCta" href="shop.html?pack=2" class="btn btn-primary" style="width: 100%; text-align: center;">Shop Now &mdash; $42</a>
-              <a href="#benefits" style="text-align: center; font-size: 0.82rem; color: var(--color-text-muted); text-decoration: none;">Explore How It Works &darr;</a>
-            </div>
+            <button type="button" class="hero-slide-arrow" id="heroSlideNext" aria-label="Next background slide">&rarr;</button>
           </div>
         </div>
       </div>
 
       <script>
-        function setHeroMedia(btn, src) {
-          const img = document.getElementById('heroStageImg');
-          if (img) img.src = src;
-          document.querySelectorAll('.hero-view-tab').forEach(b => b.classList.remove('active'));
-          if (btn) btn.classList.add('active');
-        }
-        function setHeroPack(btn, pack, price) {
-          document.querySelectorAll('.hero-pack-btn').forEach(b => b.classList.remove('active'));
-          if (btn) btn.classList.add('active');
-          const cta = document.getElementById('heroBuyCta');
-          if (cta) {
-            cta.href = 'shop.html?pack=' + pack;
-            cta.innerHTML = 'Shop Now &mdash; $' + price;
+        (function () {
+          const slides = Array.from(document.querySelectorAll('#heroBgCarousel .hero-bg-slide'));
+          const dots = Array.from(document.querySelectorAll('#heroSlideDots .hero-slide-dot'));
+          const caption = document.getElementById('heroSlideCaption');
+          let idx = 0;
+          let timer = null;
+
+          function showSlide(n) {
+            idx = ((n % slides.length) + slides.length) % slides.length;
+            slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+            dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+            if (caption && slides[idx]) {
+              caption.innerHTML = slides[idx].getAttribute('data-caption') || '';
+            }
           }
-        }
+
+          function startTimer() {
+            clearInterval(timer);
+            timer = setInterval(() => showSlide(idx + 1), 4500);
+          }
+
+          dots.forEach((d, i) => d.addEventListener('click', () => { showSlide(i); startTimer(); }));
+          const prev = document.getElementById('heroSlidePrev');
+          const next = document.getElementById('heroSlideNext');
+          if (prev) prev.addEventListener('click', () => { showSlide(idx - 1); startTimer(); });
+          if (next) next.addEventListener('click', () => { showSlide(idx + 1); startTimer(); });
+
+          startTimer();
+        })();
       </script>
     </section>
 
