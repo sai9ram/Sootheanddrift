@@ -709,6 +709,183 @@
       color: var(--color-gold);
     }
 
+    /* Upgraded Minimalist Audio Sanctuary */
+    .music-hero-banner {
+      max-width: 1080px;
+      margin: 0 auto 3.5rem;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(229, 192, 123, 0.25);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65), 0 0 50px rgba(59, 130, 246, 0.12);
+      background: #02050b;
+    }
+
+    .music-hero-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .sanctuary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 2.5rem;
+      max-width: 1080px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    .sanctuary-stage {
+      background: linear-gradient(160deg, rgba(11, 22, 42, 0.78) 0%, rgba(2, 5, 11, 0.92) 100%);
+      border: 1px solid rgba(229, 192, 123, 0.22);
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+    }
+
+    .sanctuary-orb-wrap {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1.25rem 0;
+    }
+
+    .sanctuary-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(229, 192, 123, 0.25);
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .sanctuary-ring.outer {
+      inset: -16px;
+      border-style: dashed;
+      border-color: rgba(59, 130, 246, 0.3);
+      animation: rotateRings 32s linear infinite;
+    }
+
+    .sanctuary-orb {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, var(--color-gold-light) 0%, var(--color-gold) 45%, rgba(59, 130, 246, 0.35) 100%);
+      box-shadow: 0 0 45px rgba(229, 192, 123, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.35);
+      transition: transform 0.8s ease, box-shadow 0.8s ease;
+    }
+
+    .sanctuary-stage.playing .sanctuary-orb {
+      animation: breatheOrb 5s ease-in-out infinite;
+      box-shadow: 0 0 70px rgba(229, 192, 123, 0.55), 0 0 110px rgba(59, 130, 246, 0.25);
+    }
+
+    @keyframes breatheOrb {
+      0%, 100% { transform: scale(0.95); }
+      50% { transform: scale(1.08); }
+    }
+
+    .eq-bars {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 5px;
+      height: 36px;
+      margin: 1rem 0 1.25rem;
+    }
+
+    .eq-bar {
+      width: 4px;
+      height: 8px;
+      border-radius: 99px;
+      background: linear-gradient(180deg, var(--color-gold-light), var(--color-gold-dark));
+      opacity: 0.45;
+      transition: height 0.25s ease, opacity 0.25s ease;
+    }
+
+    .sanctuary-stage.playing .eq-bar {
+      opacity: 0.95;
+      animation: eqPulse 1.2s ease-in-out infinite alternate;
+    }
+
+    .sanctuary-stage.playing .eq-bar:nth-child(odd) { animation-duration: 0.9s; }
+    .sanctuary-stage.playing .eq-bar:nth-child(3n) { animation-duration: 1.45s; }
+
+    @keyframes eqPulse {
+      0% { height: 8px; }
+      100% { height: 34px; }
+    }
+
+    .timer-pills {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .timer-pill {
+      padding: 0.38rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--color-text-muted);
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .timer-pill.active,
+    .timer-pill:hover {
+      border-color: var(--color-gold);
+      color: var(--color-gold-light);
+      background: rgba(229, 192, 123, 0.12);
+    }
+
+    .volume-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      width: 100%;
+      max-width: 240px;
+      margin: 1.15rem auto 0;
+      color: var(--color-text-muted);
+      font-size: 0.78rem;
+    }
+
+    .volume-slider {
+      flex: 1;
+      accent-color: var(--color-gold);
+      cursor: pointer;
+    }
+
+    .sanctuary-controls {
+      background: var(--color-bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 28px;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .sanctuary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Player controls HUD */
     .player-action-bar {
       display: flex;
@@ -1385,52 +1562,78 @@
     <section class="music-section">
       <div class="container">
         <div class="music-title-block">
-          <div class="tagline">Acoustic Therapy</div>
-          <h1>Sleep Sound <span class="highlight">Library</span></h1>
+          <div class="tagline">QR Audio Companion</div>
+          <h1>Your Moment of Calm<br><span class="highlight">Has a Soundtrack.</span></h1>
+          <p style="color: var(--color-text-muted); max-width: 620px; margin: 0.85rem auto 0; font-size: 0.98rem;">
+            Designed to pair with your 60-minute Self-Heating Steam Eye Mask ritual. Choose a mood, set your timer, and drift away.
+          </p>
         </div>
 
-        <div class="player-console-wrapper">
-          <!-- Left: Glowing Harmonic Orb Visualizer HUD -->
-          <div class="visualizer-hud-panel" id="visualizer-panel" style="position: relative; overflow: hidden; background: #02050b;">
-            <img src="storyboard/Artboard-6.png" alt="Your Moment of Calm Has a Soundtrack — Soothe & Drift" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; pointer-events: none; z-index: 0;">
-            <div class="vis-radar-circle" style="z-index: 1;"></div>
-            <div class="vis-radar-inner" style="z-index: 1;"></div>
-            
-            <div class="vis-orb-container" style="z-index: 2; position: relative;">
-              <div class="vis-wave-pulse"></div>
-              <div class="vis-wave-pulse"></div>
-              <div class="vis-orb"></div>
+        <!-- Full Uncropped Storyboard 6 Visual -->
+        <div class="music-hero-banner reveal-fade-up">
+          <img src="storyboard/Artboard-6.png" alt="Your Moment of Calm Has a Soundtrack — Soothe & Drift">
+        </div>
+
+        <div class="sanctuary-grid reveal-fade-up">
+          <!-- Left: Ambient Sanctuary Stage -->
+          <div class="sanctuary-stage" id="visualizer-panel">
+            <div>
+              <div class="tagline" style="margin-bottom: 0.35rem;">Now Selected</div>
+              <h2 id="active-track-name" style="font-family: var(--font-serif); font-size: 1.9rem; color: #fff; line-height: 1.15;">Relaxation</h2>
+              <div id="active-track-badge" style="font-size: 0.8rem; color: var(--color-gold); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.35rem;">Warm Ambient Drift</div>
             </div>
 
-            <div class="hud-track-meta" style="z-index: 2; position: relative;">
-              <div class="hud-track-title" id="active-track-name">Select a Track</div>
-              <div class="hud-track-info-badge" id="active-track-badge">Ready to Play</div>
+            <div class="sanctuary-orb-wrap">
+              <div class="sanctuary-ring outer"></div>
+              <div class="sanctuary-ring"></div>
+              <div class="sanctuary-orb"></div>
             </div>
 
-            <div class="hud-telemetry-block" style="z-index: 2; position: relative;">
-              <div class="hud-telemetry-item" id="tel-sync">Sync: 98.4%</div>
-              <div class="hud-telemetry-item" id="tel-mod">Delta: 0.1Hz</div>
+            <div class="eq-bars" aria-hidden="true">
+              <span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span>
+              <span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span>
+              <span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span>
+            </div>
+
+            <div style="width: 100%;">
+              <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                <button class="play-hud-btn" id="play-button" aria-label="Play Track">
+                  <svg id="play-svg-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                </button>
+              </div>
+
+              <div class="volume-row">
+                <span>Vol</span>
+                <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="45" aria-label="Soundscape Volume">
+                <span id="timer-display" style="color: var(--color-gold); min-width: 46px; text-align: right;">60:00</span>
+              </div>
+
+              <div class="timer-pills" id="timer-pills">
+                <button type="button" class="timer-pill" data-mins="15">15 min</button>
+                <button type="button" class="timer-pill" data-mins="30">30 min</button>
+                <button type="button" class="timer-pill active" data-mins="60">60 min (Mask Ritual)</button>
+              </div>
             </div>
           </div>
 
           <!-- Right: Track Listings Panel -->
-          <div class="tracks-panel">
+          <div class="sanctuary-controls">
             <div class="tracks-header">
-              <div class="tagline" style="margin-bottom: 0.25rem;">Acoustic Frequencies</div>
-              <h2 class="tracks-title">Calibrated Waveforms</h2>
+              <div class="tagline" style="margin-bottom: 0.25rem;">Curated Soundscapes</div>
+              <h2 class="tracks-title">Choose Your Atmosphere</h2>
             </div>
 
             <!-- Interactive Tracks list -->
             <div class="tracks-list-container">
               <!-- Track 1 -->
-              <div class="track-strip active" data-track-name="Relaxation — Gentle Drift" data-badge="QR Soundtrack 01" data-audio-freq="100">
+              <div class="track-strip active" data-track-name="Relaxation" data-badge="Warm Ambient Drift · 432Hz Pad" data-audio-freq="174">
                 <div class="track-meta">
                   <div class="track-icon-box">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
                   </div>
                   <div class="track-details">
                     <span class="track-name">Relaxation</span>
-                    <span class="track-desc">Warm ambient tones to pair with your 60-minute steam eye ritual.</span>
+                    <span class="track-desc">Warm harmonic pad &amp; soft breeze to pair with gentle steam.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
@@ -1439,14 +1642,14 @@
               </div>
 
               <!-- Track 2 -->
-              <div class="track-strip" data-track-name="Meditation — Quiet Pause" data-badge="QR Soundtrack 02" data-audio-freq="150">
+              <div class="track-strip" data-track-name="Meditation" data-badge="Mindful Breath Cadence · 528Hz" data-audio-freq="220">
                 <div class="track-meta">
                   <div class="track-icon-box">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25M8 16v6M12 16v6M16 16v6"></path></svg>
                   </div>
                   <div class="track-details">
                     <span class="track-name">Meditation</span>
-                    <span class="track-desc">Mindful breath cadence for mid-day screen breaks and travel.</span>
+                    <span class="track-desc">Centered acoustic drone for mid-day screen breaks and flights.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
@@ -1455,14 +1658,14 @@
               </div>
 
               <!-- Track 3 -->
-              <div class="track-strip" data-track-name="Stress — Evening Unwind" data-badge="QR Soundtrack 03" data-audio-freq="185">
+              <div class="track-strip" data-track-name="Stress Relief" data-badge="Evening Unwind · Soft Pink Noise" data-audio-freq="146">
                 <div class="track-meta">
                   <div class="track-icon-box">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
                   </div>
                   <div class="track-details">
                     <span class="track-name">Stress Relief</span>
-                    <span class="track-desc">Soft harmonic swells that release temple and eye tension.</span>
+                    <span class="track-desc">Velvety rainfall textures that quiet mental chatter fast.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
@@ -1471,14 +1674,14 @@
               </div>
 
               <!-- Track 4 -->
-              <div class="track-strip" data-track-name="Sleep — Nocturnal Drift" data-badge="QR Soundtrack 04" data-audio-freq="220">
+              <div class="track-strip" data-track-name="Sleep" data-badge="Nocturnal Delta Calm · Deep Warmth" data-audio-freq="110">
                 <div class="track-meta">
                   <div class="track-icon-box">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                   </div>
                   <div class="track-details">
                     <span class="track-name">Sleep</span>
-                    <span class="track-desc">Deep nocturnal delta textures for uninterrupted rest.</span>
+                    <span class="track-desc">Deep nocturnal chord swells for uninterrupted overnight rest.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
@@ -1487,18 +1690,9 @@
               </div>
             </div>
 
-            <!-- Play control bar -->
-            <div class="player-action-bar">
-              <div class="player-btn-controls">
-                <button class="play-hud-btn" id="play-button" aria-label="Play Track">
-                  <!-- Play SVG icon -->
-                  <svg id="play-svg-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-                </button>
-                <div style="font-size: 0.88rem; color: var(--color-text-muted);">
-                  Click play to experience the Soothe &amp; Drift QR soundtrack.
-                </div>
-              </div>
-              <a href="shop.html" class="btn btn-outline btn-sm">Shop 15-Pack — $24</a>
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.06);">
+              <span style="font-size: 0.84rem; color: var(--color-text-muted);">Best experienced with our 15-Pack Steam Eye Mask</span>
+              <a href="shop.html" class="btn btn-primary btn-sm">Shop 15-Pack — $24</a>
             </div>
           </div>
         </div>
@@ -1613,34 +1807,59 @@
         revealObserver.observe(element);
       });
 
-      // 4. Interactive Music Player Logic
+      // 4. Interactive Music Player Logic (Warm Harmonic Pad + Gentle Noise + Sleep Timer)
       const tracks = document.querySelectorAll('.track-strip');
       const playBtn = document.getElementById('play-button');
       const playSvgIcon = document.getElementById('play-svg-icon');
       const visualizer = document.getElementById('visualizer-panel');
       const activeTrackName = document.getElementById('active-track-name');
       const activeTrackBadge = document.getElementById('active-track-badge');
+      const volumeSlider = document.getElementById('volume-slider');
+      const timerDisplay = document.getElementById('timer-display');
+      const timerPills = document.querySelectorAll('.timer-pill');
 
       let audioCtx = null;
-      let oscillator = null;
-      let gainNode = null;
+      let activeNodes = [];
+      let masterGain = null;
       let isPlaying = false;
-      let selectedFrequency = 100;
+      let selectedFrequency = 174;
+      let remainingSeconds = 60 * 60;
+      let timerInterval = null;
 
-      // Track selection handler
+      function formatTime(secs) {
+        const m = Math.floor(secs / 60);
+        const s = secs % 60;
+        return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+
+      timerPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          timerPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          remainingSeconds = parseInt(pill.dataset.mins, 10) * 60;
+          timerDisplay.textContent = formatTime(remainingSeconds);
+        });
+      });
+
+      if (volumeSlider) {
+        volumeSlider.addEventListener('input', () => {
+          if (masterGain && audioCtx) {
+            masterGain.gain.setTargetAtTime((volumeSlider.value / 100) * 0.14, audioCtx.currentTime, 0.08);
+          }
+        });
+      }
+
       tracks.forEach(track => {
         track.addEventListener('click', () => {
           tracks.forEach(t => t.classList.remove('active'));
           track.classList.add('active');
-          
+
           const name = track.getAttribute('data-track-name');
           const badge = track.getAttribute('data-badge');
-          selectedFrequency = parseInt(track.getAttribute('data-audio-freq'));
+          selectedFrequency = parseInt(track.getAttribute('data-audio-freq'), 10);
 
           activeTrackName.textContent = name;
           activeTrackBadge.textContent = badge;
-          document.getElementById('tel-mod').textContent = badge;
-          document.getElementById('tel-sync').textContent = 'Sync: ' + (95 + Math.random() * 4).toFixed(1) + '%';
 
           if (isPlaying) {
             stopAudioSynth();
@@ -1649,14 +1868,12 @@
         });
       });
 
-      // Set initial values
       const activeTrack = document.querySelector('.track-strip.active');
       if (activeTrack) {
         activeTrackName.textContent = activeTrack.getAttribute('data-track-name');
         activeTrackBadge.textContent = activeTrack.getAttribute('data-badge');
       }
 
-      // Play/Pause button trigger
       playBtn.addEventListener('click', () => {
         if (isPlaying) {
           stopAudioSynth();
@@ -1665,51 +1882,94 @@
         }
       });
 
-      function startAudioSynth(frequency) {
+      function startAudioSynth(baseFreq) {
         try {
           isPlaying = true;
           visualizer.classList.add('playing');
           playBtn.style.background = '#ffffff';
           playBtn.style.color = '#02050b';
-          // Set Pause SVG icon
           playSvgIcon.innerHTML = `<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>`;
 
-          // Initialize Web Audio API for sleep wave generator demo
           if (!audioCtx) {
             audioCtx = new (window.AudioContext || window.webkitAudioContext)();
           }
+          if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+          }
 
-          oscillator = audioCtx.createOscillator();
-          gainNode = audioCtx.createGain();
+          masterGain = audioCtx.createGain();
+          const vol = volumeSlider ? (volumeSlider.value / 100) * 0.14 : 0.06;
+          masterGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+          masterGain.gain.exponentialRampToValueAtTime(Math.max(vol, 0.01), audioCtx.currentTime + 1.2);
+          masterGain.connect(audioCtx.destination);
 
-          oscillator.type = 'sine';
-          oscillator.frequency.value = frequency; // Low hum frequency
-          
-          // Ultra low volume for background hum
-          gainNode.gain.setValueAtTime(0.08, audioCtx.currentTime);
-          
-          oscillator.connect(gainNode);
-          gainNode.connect(audioCtx.destination);
+          // Warm fifths ambient chord (root, fifth, octave)
+          [1, 1.5, 2].forEach((ratio, idx) => {
+            const osc = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.value = baseFreq * ratio;
+            g.gain.value = idx === 0 ? 0.55 : (idx === 1 ? 0.25 : 0.15);
+            osc.connect(g);
+            g.connect(masterGain);
+            osc.start();
+            activeNodes.push(osc);
+          });
 
-          oscillator.start();
+          // Soft filtered brown-noise breeze
+          const bufferSize = audioCtx.sampleRate * 2;
+          const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+          const output = noiseBuffer.getChannelData(0);
+          let lastOut = 0;
+          for (let i = 0; i < bufferSize; i++) {
+            const white = Math.random() * 2 - 1;
+            output[i] = (lastOut + (0.02 * white)) / 1.02;
+            lastOut = output[i];
+            output[i] *= 1.8;
+          }
+          const whiteNoise = audioCtx.createBufferSource();
+          whiteNoise.buffer = noiseBuffer;
+          whiteNoise.loop = true;
+
+          const filter = audioCtx.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.value = 380;
+
+          const noiseGain = audioCtx.createGain();
+          noiseGain.gain.value = 0.22;
+
+          whiteNoise.connect(filter);
+          filter.connect(noiseGain);
+          noiseGain.connect(masterGain);
+          whiteNoise.start();
+          activeNodes.push(whiteNoise);
+
+          clearInterval(timerInterval);
+          timerInterval = setInterval(() => {
+            if (remainingSeconds > 0) {
+              remainingSeconds--;
+              timerDisplay.textContent = formatTime(remainingSeconds);
+            } else {
+              stopAudioSynth();
+            }
+          }, 1000);
         } catch (e) {
-          console.log('Audio Context failed to start (interaction required).');
+          console.log('Audio Context failed to start:', e);
         }
       }
 
       function stopAudioSynth() {
         isPlaying = false;
+        clearInterval(timerInterval);
         visualizer.classList.remove('playing');
         playBtn.style.background = 'var(--color-gold)';
         playBtn.style.color = 'var(--color-bg-dark)';
-        // Set Play SVG icon
         playSvgIcon.innerHTML = `<path d="M8 5v14l11-7z"></path>`;
 
-        if (oscillator) {
-          oscillator.stop();
-          oscillator.disconnect();
-          oscillator = null;
-        }
+        activeNodes.forEach(node => {
+          try { node.stop(); node.disconnect(); } catch (_) {}
+        });
+        activeNodes = [];
       }
 
       // Discount Popup Logic
