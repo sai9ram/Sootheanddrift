@@ -791,6 +791,24 @@
       padding: 1.25rem 1.15rem;
     }
 
+    .sanctuary-drive-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(229, 192, 123, 0.3);
+      background: #02050b;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+      margin: 0.75rem 0;
+    }
+
+    .sanctuary-drive-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
     .sanctuary-orb-wrap {
       position: relative;
       width: 170px;
@@ -1632,29 +1650,18 @@
               <div id="active-track-badge" style="font-size: 0.78rem; color: var(--color-gold-light); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.35rem;">Warm Ambient Drift</div>
             </div>
 
-            <div class="sanctuary-orb-wrap">
-              <div class="sanctuary-ring outer"></div>
-              <div class="sanctuary-ring"></div>
-              <div class="sanctuary-orb"></div>
+            <div class="sanctuary-drive-frame">
+              <iframe id="drive-player-frame"
+                src="https://drive.google.com/file/d/17FX_YQxDZvTfwg-OTJ14VwAC6abR9jf8/preview"
+                allow="autoplay; encrypted-media; fullscreen"
+                loading="lazy"
+                title="Soothe & Drift Soundtrack Player"></iframe>
             </div>
 
             <div class="sanctuary-dock">
-              <div class="eq-bars" aria-hidden="true" style="margin: 0 0 1rem;">
-                <span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span>
-                <span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span>
-                <span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span>
-              </div>
-
-              <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-                <button class="play-hud-btn" id="play-button" aria-label="Play Track">
-                  <svg id="play-svg-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-                </button>
-              </div>
-
-              <div class="volume-row">
-                <span>Vol</span>
-                <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="45" aria-label="Soundscape Volume">
-                <span id="timer-display" style="color: var(--color-gold); min-width: 46px; text-align: right;">60:00</span>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap;">
+                <span id="timer-display" style="color: var(--color-gold); font-weight: 600; font-size: 0.88rem;">Session Timer: 60:00</span>
+                <a id="drive-direct-link" href="https://drive.google.com/file/d/17FX_YQxDZvTfwg-OTJ14VwAC6abR9jf8/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="font-size: 0.78rem; color: var(--color-gold-light); text-decoration: none;">Open in Google Drive &nearr;</a>
               </div>
 
               <div class="timer-pills" id="timer-pills">
@@ -1675,66 +1682,66 @@
             <!-- Interactive Tracks list -->
             <div class="tracks-list-container">
               <!-- Track 1 -->
-              <div class="track-strip active" data-track-name="Relaxation" data-badge="Warm Ambient Drift &middot; 432Hz Pad" data-audio-freq="174">
+              <div class="track-strip active" data-track-name="Relaxation" data-badge="Track 01 &middot; Warm Ambient Drift" data-drive-id="17FX_YQxDZvTfwg-OTJ14VwAC6abR9jf8">
                 <div class="track-meta">
                   <div class="track-icon-box">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
                   </div>
                   <div class="track-details">
                     <span class="track-name">Relaxation</span>
-                    <span class="track-desc">Warm harmonic pad &amp; soft breeze to pair with gentle steam.</span>
+                    <span class="track-desc">Warm ambient tones to pair with gentle steam.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
-                  <span class="track-duration">Relax</span>
+                  <span class="track-duration">Track 1</span>
                 </div>
               </div>
 
               <!-- Track 2 -->
-              <div class="track-strip" data-track-name="Meditation" data-badge="Mindful Breath Cadence &middot; 528Hz" data-audio-freq="220">
+              <div class="track-strip" data-track-name="Meditation" data-badge="Track 02 &middot; Mindful Breath Cadence" data-drive-id="1-JjWmHrSHUFm5p7P2Is1mkOcKEJVePZi">
                 <div class="track-meta">
                   <div class="track-icon-box">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25M8 16v6M12 16v6M16 16v6"></path></svg>
                   </div>
                   <div class="track-details">
                     <span class="track-name">Meditation</span>
-                    <span class="track-desc">Centered acoustic drone for mid-day screen breaks and flights.</span>
+                    <span class="track-desc">Centered soundscape for mid-day screen breaks and flights.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
-                  <span class="track-duration">Focus</span>
+                  <span class="track-duration">Track 2</span>
                 </div>
               </div>
 
               <!-- Track 3 -->
-              <div class="track-strip" data-track-name="Stress Relief" data-badge="Evening Unwind &middot; Soft Pink Noise" data-audio-freq="146">
+              <div class="track-strip" data-track-name="Stress Relief" data-badge="Track 03 &middot; Evening Unwind" data-drive-id="1qv-PAtvtSj9D2CojAWBg_IPHZsIDaenr">
                 <div class="track-meta">
                   <div class="track-icon-box">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
                   </div>
                   <div class="track-details">
                     <span class="track-name">Stress Relief</span>
-                    <span class="track-desc">Velvety rainfall textures that quiet mental chatter fast.</span>
+                    <span class="track-desc">Soothing textures that quiet mental chatter fast.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
-                  <span class="track-duration">Unwind</span>
+                  <span class="track-duration">Track 3</span>
                 </div>
               </div>
 
               <!-- Track 4 -->
-              <div class="track-strip" data-track-name="Sleep" data-badge="Nocturnal Delta Calm &middot; Deep Warmth" data-audio-freq="110">
+              <div class="track-strip" data-track-name="Sleep" data-badge="Track 04 &middot; Nocturnal Delta Calm" data-drive-id="1k9GSGiWBiOdnBZb2OZ2Ahcc-7J54PS0T">
                 <div class="track-meta">
                   <div class="track-icon-box">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                   </div>
                   <div class="track-details">
                     <span class="track-name">Sleep</span>
-                    <span class="track-desc">Deep nocturnal chord swells for uninterrupted overnight rest.</span>
+                    <span class="track-desc">Deep nocturnal soundscape for uninterrupted overnight rest.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
-                  <span class="track-duration">Sleep</span>
+                  <span class="track-duration">Track 4</span>
                 </div>
               </div>
             </div>
@@ -1856,22 +1863,15 @@
         revealObserver.observe(element);
       });
 
-      // 4. Interactive Music Player Logic (Warm Harmonic Pad + Gentle Noise + Sleep Timer)
+      // 4. Interactive Music Player Logic (Google Drive Streaming Tracks + Session Timer)
       const tracks = document.querySelectorAll('.track-strip');
-      const playBtn = document.getElementById('play-button');
-      const playSvgIcon = document.getElementById('play-svg-icon');
-      const visualizer = document.getElementById('visualizer-panel');
       const activeTrackName = document.getElementById('active-track-name');
       const activeTrackBadge = document.getElementById('active-track-badge');
-      const volumeSlider = document.getElementById('volume-slider');
+      const driveFrame = document.getElementById('drive-player-frame');
+      const driveDirectLink = document.getElementById('drive-direct-link');
       const timerDisplay = document.getElementById('timer-display');
       const timerPills = document.querySelectorAll('.timer-pill');
 
-      let audioCtx = null;
-      let activeNodes = [];
-      let masterGain = null;
-      let isPlaying = false;
-      let selectedFrequency = 174;
       let remainingSeconds = 60 * 60;
       let timerInterval = null;
 
@@ -1881,22 +1881,27 @@
         return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
       }
 
+      function startTimer() {
+        clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+          if (remainingSeconds > 0) {
+            remainingSeconds--;
+            if (timerDisplay) timerDisplay.textContent = 'Session Timer: ' + formatTime(remainingSeconds);
+          } else {
+            clearInterval(timerInterval);
+          }
+        }, 1000);
+      }
+
       timerPills.forEach(pill => {
         pill.addEventListener('click', () => {
           timerPills.forEach(p => p.classList.remove('active'));
           pill.classList.add('active');
           remainingSeconds = parseInt(pill.dataset.mins, 10) * 60;
-          timerDisplay.textContent = formatTime(remainingSeconds);
+          if (timerDisplay) timerDisplay.textContent = 'Session Timer: ' + formatTime(remainingSeconds);
+          startTimer();
         });
       });
-
-      if (volumeSlider) {
-        volumeSlider.addEventListener('input', () => {
-          if (masterGain && audioCtx) {
-            masterGain.gain.setTargetAtTime((volumeSlider.value / 100) * 0.14, audioCtx.currentTime, 0.08);
-          }
-        });
-      }
 
       const moodBgs = {
         'Relaxation': 'Woman_relaxing_with_eye_mask_202608211242.jpeg',
@@ -1913,123 +1918,27 @@
 
           const name = track.getAttribute('data-track-name');
           const badge = track.getAttribute('data-badge');
-          selectedFrequency = parseInt(track.getAttribute('data-audio-freq'), 10);
+          const driveId = track.getAttribute('data-drive-id');
 
-          activeTrackName.textContent = name;
-          activeTrackBadge.textContent = badge;
+          if (activeTrackName) activeTrackName.textContent = name;
+          if (activeTrackBadge) activeTrackBadge.textContent = badge;
           if (bgImgEl && moodBgs[name]) {
             bgImgEl.src = moodBgs[name];
           }
-
-          if (isPlaying) {
-            stopAudioSynth();
-            startAudioSynth(selectedFrequency);
+          if (driveFrame && driveId) {
+            driveFrame.src = `https://drive.google.com/file/d/${driveId}/preview`;
           }
+          if (driveDirectLink && driveId) {
+            driveDirectLink.href = `https://drive.google.com/file/d/${driveId}/view?usp=sharing`;
+          }
+          startTimer();
         });
       });
 
       const activeTrack = document.querySelector('.track-strip.active');
       if (activeTrack) {
-        activeTrackName.textContent = activeTrack.getAttribute('data-track-name');
-        activeTrackBadge.textContent = activeTrack.getAttribute('data-badge');
-      }
-
-      playBtn.addEventListener('click', () => {
-        if (isPlaying) {
-          stopAudioSynth();
-        } else {
-          startAudioSynth(selectedFrequency);
-        }
-      });
-
-      function startAudioSynth(baseFreq) {
-        try {
-          isPlaying = true;
-          visualizer.classList.add('playing');
-          playBtn.style.background = '#ffffff';
-          playBtn.style.color = '#02050b';
-          playSvgIcon.innerHTML = `<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>`;
-
-          if (!audioCtx) {
-            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-          }
-          if (audioCtx.state === 'suspended') {
-            audioCtx.resume();
-          }
-
-          masterGain = audioCtx.createGain();
-          const vol = volumeSlider ? (volumeSlider.value / 100) * 0.14 : 0.06;
-          masterGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-          masterGain.gain.exponentialRampToValueAtTime(Math.max(vol, 0.01), audioCtx.currentTime + 1.2);
-          masterGain.connect(audioCtx.destination);
-
-          // Warm fifths ambient chord (root, fifth, octave)
-          [1, 1.5, 2].forEach((ratio, idx) => {
-            const osc = audioCtx.createOscillator();
-            const g = audioCtx.createGain();
-            osc.type = 'sine';
-            osc.frequency.value = baseFreq * ratio;
-            g.gain.value = idx === 0 ? 0.55 : (idx === 1 ? 0.25 : 0.15);
-            osc.connect(g);
-            g.connect(masterGain);
-            osc.start();
-            activeNodes.push(osc);
-          });
-
-          // Soft filtered brown-noise breeze
-          const bufferSize = audioCtx.sampleRate * 2;
-          const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-          const output = noiseBuffer.getChannelData(0);
-          let lastOut = 0;
-          for (let i = 0; i < bufferSize; i++) {
-            const white = Math.random() * 2 - 1;
-            output[i] = (lastOut + (0.02 * white)) / 1.02;
-            lastOut = output[i];
-            output[i] *= 1.8;
-          }
-          const whiteNoise = audioCtx.createBufferSource();
-          whiteNoise.buffer = noiseBuffer;
-          whiteNoise.loop = true;
-
-          const filter = audioCtx.createBiquadFilter();
-          filter.type = 'lowpass';
-          filter.frequency.value = 380;
-
-          const noiseGain = audioCtx.createGain();
-          noiseGain.gain.value = 0.22;
-
-          whiteNoise.connect(filter);
-          filter.connect(noiseGain);
-          noiseGain.connect(masterGain);
-          whiteNoise.start();
-          activeNodes.push(whiteNoise);
-
-          clearInterval(timerInterval);
-          timerInterval = setInterval(() => {
-            if (remainingSeconds > 0) {
-              remainingSeconds--;
-              timerDisplay.textContent = formatTime(remainingSeconds);
-            } else {
-              stopAudioSynth();
-            }
-          }, 1000);
-        } catch (e) {
-          console.log('Audio Context failed to start:', e);
-        }
-      }
-
-      function stopAudioSynth() {
-        isPlaying = false;
-        clearInterval(timerInterval);
-        visualizer.classList.remove('playing');
-        playBtn.style.background = 'var(--color-gold)';
-        playBtn.style.color = 'var(--color-bg-dark)';
-        playSvgIcon.innerHTML = `<path d="M8 5v14l11-7z"></path>`;
-
-        activeNodes.forEach(node => {
-          try { node.stop(); node.disconnect(); } catch (_) {}
-        });
-        activeNodes = [];
+        if (activeTrackName) activeTrackName.textContent = activeTrack.getAttribute('data-track-name');
+        if (activeTrackBadge) activeTrackBadge.textContent = activeTrack.getAttribute('data-badge');
       }
 
       // Discount Popup Logic
