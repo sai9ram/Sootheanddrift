@@ -3249,10 +3249,194 @@
         display: none;
       }
     }
+
+    /* ==========================================================================
+       LUXURY SPLASH SCREEN & LOGO ANIMATION
+       ========================================================================== */
+    .splash-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 45%, #0d1b2e 0%, #050b16 48%, #02050b 100%);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  visibility 0.7s ease;
+    }
+
+    .splash-screen.is-hidden {
+      opacity: 0;
+      transform: scale(1.03);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .splash-logo-stage {
+      position: relative;
+      width: 156px;
+      height: 156px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.75rem;
+    }
+
+    .splash-aura {
+      position: absolute;
+      inset: -32px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(229, 192, 123, 0.28) 0%, rgba(59, 130, 246, 0.14) 50%, transparent 72%);
+      filter: blur(22px);
+      animation: splashAuraPulse 2.4s ease-in-out infinite alternate;
+    }
+
+    .splash-orbit {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(229, 192, 123, 0.35);
+      animation: splashOrbitSpin 9s linear infinite;
+    }
+
+    .splash-orbit::after {
+      content: '';
+      position: absolute;
+      top: -3.5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--color-gold-light);
+      box-shadow: 0 0 12px var(--color-gold);
+    }
+
+    .splash-orbit-inner {
+      position: absolute;
+      inset: 12px;
+      border-radius: 50%;
+      border: 1px dashed rgba(59, 130, 246, 0.28);
+      animation: splashOrbitSpin 14s linear infinite reverse;
+    }
+
+    .splash-logo-img {
+      position: relative;
+      z-index: 2;
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid rgba(229, 192, 123, 0.7);
+      box-shadow: 0 0 36px rgba(229, 192, 123, 0.3), 0 14px 40px rgba(0, 0, 0, 0.65);
+      animation: splashLogoReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .splash-brand {
+      font-family: var(--font-serif);
+      font-size: clamp(1.45rem, 3.2vw, 2rem);
+      font-weight: 400;
+      color: var(--color-text-bright);
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: splashTextReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+
+    .splash-tagline {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-top: 0.45rem;
+      opacity: 0;
+      animation: splashSubReveal 0.8s ease 0.4s forwards;
+    }
+
+    .splash-shimmer {
+      width: 140px;
+      height: 1.5px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      position: relative;
+    }
+
+    .splash-shimmer::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -60%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--color-gold-light), transparent);
+      animation: splashBarSweep 1.2s ease-in-out infinite;
+    }
+
+    @keyframes splashLogoReveal {
+      from { opacity: 0; transform: scale(0.82); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes splashTextReveal {
+      from { opacity: 0; transform: translateY(10px); letter-spacing: 0.16em; }
+      to { opacity: 1; transform: translateY(0); letter-spacing: 0.26em; }
+    }
+
+    @keyframes splashSubReveal {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 0.92; transform: translateY(0); }
+    }
+
+    @keyframes splashOrbitSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes splashAuraPulse {
+      from { opacity: 0.7; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1.06); }
+    }
+
+    @keyframes splashBarSweep {
+      from { left: -60%; }
+      to { left: 110%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .splash-screen { display: none !important; }
+    }
   </style>
 </head>
 
 <body>
+  <!-- Luxury Splash Screen -->
+  <div class="splash-screen" id="splashScreen" aria-hidden="true">
+    <div class="splash-logo-stage">
+      <div class="splash-aura"></div>
+      <div class="splash-orbit"></div>
+      <div class="splash-orbit-inner"></div>
+      <img src="logo-sm.jpg" alt="Soothe & Drift" class="splash-logo-img" width="104" height="104" fetchpriority="high">
+    </div>
+    <div class="splash-brand">Soothe &amp; Drift</div>
+    <div class="splash-tagline">The Art of Taking a Pause</div>
+    <div class="splash-shimmer"></div>
+  </div>
+  <script>
+    (function () {
+      const splash = document.getElementById('splashScreen');
+      if (!splash) return;
+      const dismiss = () => splash.classList.add('is-hidden');
+      splash.addEventListener('click', dismiss);
+      window.addEventListener('load', () => setTimeout(dismiss, 1100));
+      setTimeout(dismiss, 1800);
+    })();
+  </script>
   <!-- Starry Background Overlay -->
   <div class="stars-container">
     <div class="stars"></div>
