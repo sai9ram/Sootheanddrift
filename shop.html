@@ -1483,7 +1483,14 @@
               </div>
               <button class="btn btn-primary" id="buy-now-btn" onclick="openCheckoutConfirm()">Buy Now &mdash; $24</button>
             </div>
-            <p id="checkout-confirm-msg" style="display: none; margin-top: 1rem; padding: 0.9rem 1.1rem; border-radius: 12px; background: rgba(229,192,123,0.12); border: 1px solid rgba(229,192,123,0.4); color: var(--color-gold-light); font-size: 0.88rem;"></p>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.9rem; padding: 0 0.25rem;">
+              <span style="font-size: 0.75rem; color: var(--color-text-muted);">
+                Apple Pay &middot; Google Pay &middot; Visa &middot; Mastercard &middot; Amex &middot; Discover &middot; Klarna &middot; Afterpay &middot; PayPal &middot; ACH
+              </span>
+              <a href="https://www.amazon.com/Unscented-Minutes-Warmth-Friendly-Breathable/dp/B0HBTF62ZV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.vtKydHRlMcwiglaWHAw6jQVGBY7INbyYyyyQQDvlgxRegn7zXW_IoBVR30egV5yOTKK6SFL5rbDS52LTT1Ud2CAkxAIBjYNbf4qidwwR8X0k5kLNn7bdRSO6viE970VjhWyBqkbOULE73kxF3UdNDHum3TLD0N7byTU4dSxe91I38UqwdLv-MkvqQpgCz13uR_jLXc-dxS6copuDl1ZfCduQF8Qh0knqJe2KbennwORZ2kUpcdWhmLG1AP2Tln3WclUnVIb-YZOA2i858_twRpDPMCi506LvlVWo5y5E8Vk.uUMlaBz6FwfnRR4560pK6v8s4Dz1OtTQ7D6qdtE7Yq0&dib_tag=se&keywords=Soothe+%26+Drift&qid=1795584141&sr=8-1" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: var(--color-gold); text-decoration: none; font-weight: 600; white-space: nowrap;">Or Buy on Amazon &nearr;</a>
+            </div>
+            <p id="checkout-confirm-msg" style="display: none; margin-top: 1rem; padding: 0.9rem 1.1rem; border-radius: 12px; background: rgba(229,192,123,0.12); border: 1px solid rgba(229,192,123,0.4); color: var(--color-gold-light); font-size: 0.86rem;"></p>
           </div>
         </div>
       </div>
@@ -1673,10 +1680,12 @@
       }
     });
 
+    let selectedPackId = 1;
     let selectedPackPrice = 24;
     let selectedPackLabel = '1 Box (15 Masks)';
 
     function selectPack(packNum) {
+      selectedPackId = packNum;
       document.querySelectorAll('.pack-option').forEach(btn => {
         const isMatch = parseInt(btn.dataset.pack, 10) === packNum;
         btn.classList.toggle('active', isMatch);
@@ -1730,8 +1739,39 @@
       }
     }
 
-    function openCheckoutConfirm() {
-      window.open("https://www.amazon.com/Unscented-Minutes-Warmth-Friendly-Breathable/dp/B0HBTF62ZV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.vtKydHRlMcwiglaWHAw6jQVGBY7INbyYyyyQQDvlgxRegn7zXW_IoBVR30egV5yOTKK6SFL5rbDS52LTT1Ud2CAkxAIBjYNbf4qidwwR8X0k5kLNn7bdRSO6viE970VjhWyBqkbOULE73kxF3UdNDHum3TLD0N7byTU4dSxe91I38UqwdLv-MkvqQpgCz13uR_jLXc-dxS6copuDl1ZfCduQF8Qh0knqJe2KbennwORZ2kUpcdWhmLG1AP2Tln3WclUnVIb-YZOA2i858_twRpDPMCi506LvlVWo5y5E8Vk.uUMlaBz6FwfnRR4560pK6v8s4Dz1OtTQ7D6qdtE7Yq0&dib_tag=se&keywords=Soothe+%26+Drift&qid=1795584141&sr=8-1", "_blank", "noopener,noreferrer");
+    async function openCheckoutConfirm() {
+      const btn = document.getElementById('buy-now-btn');
+      const msg = document.getElementById('checkout-confirm-msg');
+      const prevText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Redirecting to Checkout...';
+      if (msg) msg.style.display = 'none';
+
+      try {
+        const res = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            pack: selectedPackId,
+            addGift: Boolean(document.getElementById('add-gift')?.checked),
+            addCase: Boolean(document.getElementById('add-case')?.checked),
+            discountClaimed: localStorage.getItem('discountClaimed') === 'true'
+          })
+        });
+        const data = await res.json();
+        if (res.ok && data.url) {
+          window.location.href = data.url;
+          return;
+        }
+        throw new Error(data.error || 'Checkout unavailable');
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = prevText;
+        if (msg) {
+          msg.style.display = 'block';
+          msg.innerHTML = `${err.message} <a href="https://www.amazon.com/Unscented-Minutes-Warmth-Friendly-Breathable/dp/B0HBTF62ZV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.vtKydHRlMcwiglaWHAw6jQVGBY7INbyYyyyQQDvlgxRegn7zXW_IoBVR30egV5yOTKK6SFL5rbDS52LTT1Ud2CAkxAIBjYNbf4qidwwR8X0k5kLNn7bdRSO6viE970VjhWyBqkbOULE73kxF3UdNDHum3TLD0N7byTU4dSxe91I38UqwdLv-MkvqQpgCz13uR_jLXc-dxS6copuDl1ZfCduQF8Qh0knqJe2KbennwORZ2kUpcdWhmLG1AP2Tln3WclUnVIb-YZOA2i858_twRpDPMCi506LvlVWo5y5E8Vk.uUMlaBz6FwfnRR4560pK6v8s4Dz1OtTQ7D6qdtE7Yq0&dib_tag=se&keywords=Soothe+%26+Drift&qid=1795584141&sr=8-1" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold); font-weight: 700; margin-left: 6px;">Buy on Amazon &nearr;</a>`;
+        }
+      }
     }
   </script>
 
