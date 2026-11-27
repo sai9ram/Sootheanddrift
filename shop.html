@@ -2075,7 +2075,7 @@
       <h3 style="font-family:var(--font-serif); font-size:1.5rem; color:#fff; font-weight:400;">Your Cart</h3>
       <button type="button" onclick="closeCart()" aria-label="Close Cart" style="background:transparent; border:none; color:var(--color-gold); font-size:1.5rem; cursor:pointer;">&times;</button>
     </div>
-    <div class="cart-shipping-bar">&#10004; You&rsquo;ve unlocked <strong>FREE US Shipping</strong> + 30-Day Guarantee</div>
+    <div class="cart-shipping-bar" id="cartShippingBar">Add a pack to unlock <strong>FREE US Shipping</strong></div>
     <div class="cart-items-wrap" id="cartItemsWrap"></div>
     <div class="cart-drawer-foot">
       <div style="display:flex; justify-content:space-between; align-items:center;">
@@ -2229,7 +2229,14 @@
 
       const wrap = document.getElementById('cartItemsWrap');
       const subEl = document.getElementById('cartSubtotal');
+      const barEl = document.getElementById('cartShippingBar');
       if (!wrap || !subEl) return;
+
+      if (barEl) {
+        barEl.innerHTML = count > 0
+          ? '<strong>FREE US Shipping</strong> &amp; 30-Day Sleep Guarantee Included'
+          : 'Add a pack to enjoy <strong>FREE US Shipping</strong>';
+      }
 
       if (cart.length === 0) {
         wrap.innerHTML = '<div style="text-align:center; padding:3rem 1rem; color:var(--color-text-muted);">Your cart is empty. Select a pack to start your pause.</div>';
