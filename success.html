@@ -31,7 +31,7 @@
       padding: 2rem 1.25rem;
     }
     .success-card {
-      max-width: 560px;
+      max-width: 580px;
       width: 100%;
       background: rgba(11, 22, 42, 0.72);
       border: 1px solid rgba(229, 192, 123, 0.35);
@@ -65,7 +65,18 @@
       font-size: 0.98rem;
       line-height: 1.7;
       color: var(--color-text-main);
+      margin-bottom: 1.25rem;
+    }
+    .order-ref {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(229, 192, 123, 0.22);
+      color: var(--color-gold-light);
+      font-size: 0.8rem;
       margin-bottom: 1.75rem;
+      word-break: break-all;
     }
     .actions {
       display: flex;
@@ -100,11 +111,21 @@
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"></polyline></svg>
     </div>
     <h1>Thank You for <span>Taking a Pause.</span></h1>
-    <p>Your Soothe &amp; Drift&trade; order is confirmed! We&rsquo;ll ship your Self-Heating Steam Eye Masks within 1&ndash;2 business days with free shipping. While you wait, explore our calming audio ritual.</p>
+    <p>Your Soothe &amp; Drift&trade; order is confirmed! We&rsquo;ll ship your Self-Heating Steam Eye Masks within 1&ndash;2 business days with free US shipping.</p>
+    <div class="order-ref" id="orderRef" style="display: none;"></div>
     <div class="actions">
       <a href="music.html" class="btn btn-gold">Listen to Soundscapes</a>
       <a href="index.html" class="btn btn-outline">Back to Home</a>
     </div>
   </div>
+  <script>
+    localStorage.removeItem('sd_cart');
+    const sid = new URLSearchParams(window.location.search).get('session_id');
+    if (sid) {
+      const el = document.getElementById('orderRef');
+      el.style.display = 'inline-block';
+      el.textContent = 'Order Reference: ' + sid;
+    }
+  </script>
 </body>
 </html>

@@ -1316,6 +1316,485 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* ==========================================================================
+       PRO DTC E-COMMERCE STOREFRONT (TRYLUMIDEW-STYLE IN SOOTHE & DRIFT PALETTE)
+       ========================================================================== */
+    .cart-trigger-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      background: rgba(229, 192, 123, 0.12);
+      border: 1px solid rgba(229, 192, 123, 0.38);
+      color: var(--color-gold-light);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .cart-trigger-btn:hover {
+      background: rgba(229, 192, 123, 0.22);
+      border-color: var(--color-gold);
+    }
+    .cart-count-pill {
+      background: var(--color-gold);
+      color: #02050b;
+      font-weight: 700;
+      font-size: 0.72rem;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5px;
+    }
+
+    .dtc-shop-hero {
+      padding: 120px 0 70px;
+    }
+    .dtc-buy-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .dtc-gallery {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .dtc-main-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #02050b;
+      border: 1px solid rgba(229, 192, 123, 0.25);
+      box-shadow: 0 28px 75px rgba(0, 0, 0, 0.65);
+    }
+    .dtc-main-stage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .dtc-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(2, 5, 11, 0.72);
+      border: 1px solid rgba(229, 192, 123, 0.4);
+      color: var(--color-gold-light);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+      z-index: 3;
+    }
+    .dtc-arrow:hover { background: var(--color-gold); color: #02050b; }
+    .dtc-arrow.prev { left: 12px; }
+    .dtc-arrow.next { right: 12px; }
+
+    .dtc-thumbs {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.6rem;
+    }
+    .dtc-thumb {
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      opacity: 0.65;
+      transition: var(--transition-smooth);
+      padding: 0;
+      background: #02050b;
+    }
+    .dtc-thumb.active, .dtc-thumb:hover {
+      opacity: 1;
+      border-color: var(--color-gold);
+      box-shadow: 0 0 16px rgba(229, 192, 123, 0.25);
+    }
+    .dtc-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Right Buy-Box */
+    .dtc-buybox {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .dtc-rating-row {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.85rem;
+      color: var(--color-text-main);
+    }
+    .dtc-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #fff;
+    }
+    .dtc-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .dtc-price-now {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-gold-light);
+    }
+    .dtc-price-was {
+      font-size: 1.15rem;
+      color: var(--color-text-muted);
+      text-decoration: line-through;
+    }
+    .dtc-save-pill {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(229, 192, 123, 0.16);
+      border: 1px solid rgba(229, 192, 123, 0.4);
+      color: var(--color-gold);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .dtc-benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.55rem 1rem;
+      font-size: 0.86rem;
+      color: var(--color-text-main);
+    }
+    .dtc-benefits span { display: flex; align-items: center; gap: 0.45rem; }
+    .dtc-benefits b { color: var(--color-gold); }
+
+    .dtc-tier-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .dtc-tier {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.2rem;
+      border-radius: 16px;
+      background: var(--color-bg-card);
+      border: 1.5px solid rgba(255, 255, 255, 0.09);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      text-align: left;
+      width: 100%;
+    }
+    .dtc-tier:hover {
+      border-color: rgba(229, 192, 123, 0.45);
+      background: var(--color-bg-card-hover);
+    }
+    .dtc-tier.active {
+      border-color: var(--color-gold);
+      background: linear-gradient(135deg, rgba(229, 192, 123, 0.14) 0%, rgba(11, 22, 42, 0.85) 100%);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+    .dtc-tier-left {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .dtc-radio {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid rgba(229, 192, 123, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .dtc-tier.active .dtc-radio::after {
+      content: '';
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--color-gold);
+    }
+    .dtc-tier-badge {
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      padding: 0.18rem 0.65rem;
+      border-radius: 999px;
+      background: var(--color-gold);
+      color: #02050b;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dtc-cta-stack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .dtc-btn-cart {
+      padding: 1rem 1.25rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--color-gold);
+      background: rgba(229, 192, 123, 0.1);
+      color: var(--color-gold-light);
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .dtc-btn-cart:hover {
+      background: rgba(229, 192, 123, 0.22);
+      transform: translateY(-2px);
+    }
+    .dtc-btn-buy {
+      padding: 1rem 1.25rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+      color: #02050b;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(229, 192, 123, 0.28);
+      transition: var(--transition-smooth);
+    }
+    .dtc-btn-buy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(229, 192, 123, 0.44);
+    }
+
+    /* Accordions inside buybox */
+    .dtc-accordions {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 0.5rem;
+    }
+    .dtc-acc-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .dtc-acc-btn {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 0.95rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+    }
+    .dtc-acc-btn span:last-child { color: var(--color-gold); font-size: 1.15rem; }
+    .dtc-acc-panel {
+      display: none;
+      padding-bottom: 1rem;
+      font-size: 0.86rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+    .dtc-acc-item.open .dtc-acc-panel { display: block; }
+
+    /* Below-fold DTC sections */
+    .dtc-band {
+      padding: 80px 0;
+      border-top: 1px solid rgba(229, 192, 123, 0.08);
+    }
+    .dtc-band-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 2.75rem;
+    }
+    .dtc-band-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.2vw, 3rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.12;
+    }
+    .dtc-band-header p { color: var(--color-text-muted); margin-top: 0.75rem; }
+    .dtc-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.35rem;
+    }
+    .dtc-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .dtc-glass-card {
+      padding: 1.65rem;
+      border-radius: 20px;
+      background: var(--color-bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .dtc-glass-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--color-gold-light);
+      margin-bottom: 0.45rem;
+    }
+    .dtc-glass-card p { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; }
+
+    /* Slide-Out Cart Drawer */
+    .cart-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 5, 11, 0.72);
+      backdrop-filter: blur(6px);
+      z-index: 9990;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.35s ease;
+    }
+    .cart-backdrop.open { opacity: 1; visibility: visible; }
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 420px;
+      background: #050b16;
+      border-left: 1px solid rgba(229, 192, 123, 0.28);
+      z-index: 9995;
+      transform: translateX(100%);
+      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+    }
+    .cart-drawer.open { transform: translateX(0); }
+    .cart-drawer-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .cart-shipping-bar {
+      margin: 0.9rem 0;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      background: rgba(229, 192, 123, 0.08);
+      border: 1px solid rgba(229, 192, 123, 0.25);
+      font-size: 0.8rem;
+      color: var(--color-gold-light);
+      text-align: center;
+    }
+    .cart-items-wrap {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      padding: 0.5rem 0;
+    }
+    .cart-item-row {
+      display: grid;
+      grid-template-columns: 64px 1fr auto;
+      gap: 0.85rem;
+      align-items: center;
+      padding: 0.75rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .cart-item-row img {
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .qty-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 999px;
+      padding: 0.15rem 0.5rem;
+    }
+    .qty-box button {
+      background: transparent;
+      border: none;
+      color: var(--color-gold);
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0 4px;
+    }
+    .cart-drawer-foot {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    /* Sticky Bottom Bar */
+    .sticky-atc {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(5, 11, 22, 0.94);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(229, 192, 123, 0.25);
+      padding: 0.75rem 1.25rem;
+      z-index: 900;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .sticky-atc.visible { transform: translateY(0); }
+    .sticky-atc-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    @media (max-width: 968px) {
+      .dtc-buy-grid, .dtc-2col { grid-template-columns: 1fr; gap: 2rem; }
+      .dtc-gallery { position: static; }
+      .dtc-3col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .dtc-benefits, .dtc-cta-stack { grid-template-columns: 1fr; }
+      .dtc-thumbs { grid-template-columns: repeat(3, 1fr); }
+    }
   </style>
 </head>
 <body>
@@ -1341,7 +1820,10 @@
         <a href="shop.html" class="btn btn-primary btn-sm mobile-shop-btn">Shop Now</a>
       </nav>
       <div class="header-actions">
-        <a href="shop.html" class="btn btn-primary btn-sm">Shop Now</a>
+        <button type="button" class="cart-trigger-btn" onclick="openCart()" aria-label="Open Cart">
+          Cart <span class="cart-count-pill" id="headerCartCount">0</span>
+        </button>
+        <a href="#shop" class="btn btn-primary btn-sm">Shop Now</a>
         <button class="mobile-toggle" aria-label="Toggle Menu" id="mobileToggle">
           <span></span>
           <span></span>
@@ -1352,97 +1834,106 @@
   </header>
 
   <main>
-    <!-- Product Configurator Section -->
-    <section class="shop-section">
+    <!-- 1. DTC PRODUCT BUY-BOX (trylumidew-style) -->
+    <section class="dtc-shop-hero" id="shop">
       <div class="container">
-        <div class="config-title-block">
-          <div class="tagline">Soothe &amp; Drift&trade; &middot; 15-Pack</div>
-          <h1>Choose Your <span class="highlight">Pause Suite</span></h1>
-        </div>
-
-        <div class="configurator-wrapper">
-          <!-- Left: Graphic Showcase Visualizer -->
-          <div class="config-visualizer" style="display: flex; flex-direction: column; gap: 1.25rem; align-items: center; justify-content: center; min-height: 460px; padding: 1.5rem; background: rgba(5, 11, 22, 0.55); border: 1px solid rgba(229, 192, 123, 0.18); border-radius: 24px; box-shadow: 0 24px 60px rgba(0,0,0,0.5); overflow: hidden; position: relative;">
-            
-            <!-- Visual Container -->
-            <div class="visualizer-media-box" style="position: relative; width: 100%; max-width: 480px; aspect-ratio: 1 / 1; margin: auto 0; z-index: 2;">
-              <div class="visualizer-media-container" style="position: relative; width: 100%; height: 100%; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #02050b;">
-                
-                <!-- Tab 1: Listing 1 (15-Pack Overview) -->
-                <div id="tab-mask" class="visualizer-tab-content" style="width: 100%; height: 100%;">
-                  <img width="1080" height="1080" loading="lazy" decoding="async" src="listing-images/1.jpg" alt="Soothe & Drift Self-Heating Steam Eye Mask 15-Pack" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                </div>
-                <!-- Tab 2: Listing 7 (Steam Demo) -->
-                <div id="tab-results" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
-                  <img width="1080" height="1080" loading="lazy" decoding="async" src="listing-images/7.jpg" alt="Soothing Steam in Minutes &mdash; Just Opened vs After 5 Minutes" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                </div>
-                <!-- Tab 3: Listing 5 (Why Soothe & Drift) -->
-                <div id="tab-compare" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
-                  <img width="1080" height="1080" loading="lazy" decoding="async" src="listing-images/5.jpg" alt="Why Soothe & Drift Comparison" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                </div>
-                <!-- Tab 4: Listing 6 (How to Use) -->
-                <div id="tab-layers" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
-                  <img width="1080" height="1080" loading="lazy" decoding="async" src="listing-images/6.jpg" alt="4-Step How To Use Soothe & Drift" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                </div>
-                <!-- Tab 5: Listing 9 (Gift Box) -->
-                <div id="tab-gift" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
-                  <img width="1080" height="1080" loading="lazy" decoding="async" src="listing-images/9.jpg" alt="The Perfect Gift &mdash; Soothe & Drift" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                </div>
-                <!-- Tab 6: Product Video -->
-                <div id="tab-pouch" class="visualizer-tab-content" style="width: 100%; height: 100%; display: none;">
-                  <video src="Woman_holding_SOTHE_DRIFT_pouch_202608211406.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
-                </div>
-              </div>
+        <div class="dtc-buy-grid">
+          <!-- Left: Sticky 1:1 Gallery -->
+          <div class="dtc-gallery">
+            <div class="dtc-main-stage">
+              <button type="button" class="dtc-arrow prev" onclick="stepGallery(-1)" aria-label="Previous Image">&larr;</button>
+              <img id="dtcMainImg" src="listing-images/1.jpg" alt="Soothe & Drift Self-Heating Steam Eye Mask 15-Pack" width="1080" height="1080" fetchpriority="high" decoding="async">
+              <button type="button" class="dtc-arrow next" onclick="stepGallery(1)" aria-label="Next Image">&rarr;</button>
             </div>
-            
-            <!-- Gallery Navigation Tabs -->
-            <div class="visualizer-tabs-nav" style="display: flex; gap: 0.45rem; z-index: 5; position: relative; flex-wrap: wrap; justify-content: center; width: 100%; margin-top: auto;">
-              <button onclick="switchShopTab('tab-mask')" class="btn btn-outline btn-sm active" id="btn-tab-mask" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">15-Pack</button>
-              <button onclick="switchShopTab('tab-results')" class="btn btn-outline btn-sm" id="btn-tab-results" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">Steam Demo</button>
-              <button onclick="switchShopTab('tab-compare')" class="btn btn-outline btn-sm" id="btn-tab-compare" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">Why Us</button>
-              <button onclick="switchShopTab('tab-layers')" class="btn btn-outline btn-sm" id="btn-tab-layers" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">How to Use</button>
-              <button onclick="switchShopTab('tab-gift')" class="btn btn-outline btn-sm" id="btn-tab-gift" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">Gift Box</button>
-              <button onclick="switchShopTab('tab-pouch')" class="btn btn-outline btn-sm" id="btn-tab-pouch" style="padding: 0.4rem 0.85rem; font-size: 0.72rem; border-radius: 10px;">Video</button>
+            <div class="dtc-thumbs" id="dtcThumbs">
+              <button type="button" class="dtc-thumb active" onclick="setGallery(0)"><img src="listing-images/1.jpg" alt="15-Pack Overview" width="1080" height="1080" decoding="async"></button>
+              <button type="button" class="dtc-thumb" onclick="setGallery(1)"><img src="listing-images/7.jpg" alt="Steam Demo" width="1080" height="1080" loading="lazy" decoding="async"></button>
+              <button type="button" class="dtc-thumb" onclick="setGallery(2)"><img src="listing-images/5.jpg" alt="Comparison" width="1080" height="1080" loading="lazy" decoding="async"></button>
+              <button type="button" class="dtc-thumb" onclick="setGallery(3)"><img src="listing-images/6.jpg" alt="How to Use" width="1080" height="1080" loading="lazy" decoding="async"></button>
+              <button type="button" class="dtc-thumb" onclick="setGallery(4)"><img src="listing-images/9.jpg" alt="Gift Box" width="1080" height="1080" loading="lazy" decoding="async"></button>
+              <button type="button" class="dtc-thumb" onclick="setGallery(5)"><img src="listing-images/8.jpg" alt="Ingredients" width="1080" height="1080" loading="lazy" decoding="async"></button>
             </div>
           </div>
 
-          <!-- Right: Console Controls -->
-          <div class="config-controls">
-            <div class="config-header-group">
-              <div class="tagline" style="margin-bottom: 0.25rem;">Air-Activated &middot; Unscented &middot; Up to 60 Mins Warmth</div>
-              <h2 class="config-section-title">Self-Heating Steam Eye Mask</h2>
+          <!-- Right: High-Converting Buy-Box -->
+          <div class="dtc-buybox">
+            <div class="dtc-rating-row">
+              <span style="color: var(--color-gold); letter-spacing: 2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span><strong>4.9</strong> &middot; 1,240+ Verified Sleepers</span>
             </div>
 
-            <!-- Pack Size Selector -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; margin-bottom: 1.25rem;" id="packSelector">
-              <button type="button" class="config-strip pack-option active" data-pack="1" data-price="24" data-label="1 Box (15 Masks)" onclick="selectPack(1)" style="flex-direction: column; align-items: flex-start; padding: 0.85rem 1rem; cursor: pointer; text-align: left;">
-                <span style="font-size: 0.72rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em;">Starter</span>
-                <strong style="font-size: 0.95rem; color: #fff;">15 Masks</strong>
-                <span style="font-size: 0.85rem; color: var(--color-text-muted);">$24</span>
+            <div>
+              <div class="tagline" style="margin-bottom: 0.35rem;">Soothe &amp; Drift&trade; &middot; Unscented</div>
+              <h1 class="dtc-title">Self-Heating Steam Eye Mask</h1>
+            </div>
+
+            <div class="dtc-price-row">
+              <span class="dtc-price-now" id="total-price">$24</span>
+              <span class="dtc-price-was" id="compare-price">$32</span>
+              <span class="dtc-save-pill" id="save-pill">Free US Shipping</span>
+            </div>
+
+            <div class="dtc-benefits">
+              <span><b>&#10004;</b> Relieves dry, strained eyes</span>
+              <span><b>&#10004;</b> Air-activated in ~5 mins</span>
+              <span><b>&#10004;</b> Up to 60 mins moist steam</span>
+              <span><b>&#10004;</b> No microwave or cords</span>
+            </div>
+
+            <!-- Radio Bundle Tiers -->
+            <div class="dtc-tier-list">
+              <button type="button" class="dtc-tier pack-option active" data-pack="1" data-price="24" data-was="32" data-label="1 Box (15 Masks)" onclick="selectPack(1)">
+                <div class="dtc-tier-left">
+                  <span class="dtc-radio"></span>
+                  <div>
+                    <strong style="color:#fff; display:block; font-size:0.95rem;">Starter Pause &middot; 1 Box (15 Masks)</strong>
+                    <span style="color:var(--color-text-muted); font-size:0.78rem;">$1.60 per soothing session</span>
+                  </div>
+                </div>
+                <strong style="color:var(--color-gold-light); font-size:1.08rem;">$24</strong>
               </button>
-              <button type="button" class="config-strip pack-option" data-pack="2" data-price="42" data-label="2 Boxes (30 Masks)" onclick="selectPack(2)" style="flex-direction: column; align-items: flex-start; padding: 0.85rem 1rem; cursor: pointer; text-align: left;">
-                <span style="font-size: 0.72rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em;">Save $6</span>
-                <strong style="font-size: 0.95rem; color: #fff;">30 Masks</strong>
-                <span style="font-size: 0.85rem; color: var(--color-text-muted);">$42</span>
+
+              <button type="button" class="dtc-tier pack-option" data-pack="2" data-price="42" data-was="48" data-label="2 Boxes (30 Masks)" onclick="selectPack(2)">
+                <span class="dtc-tier-badge">Most Popular &middot; Save $6</span>
+                <div class="dtc-tier-left">
+                  <span class="dtc-radio"></span>
+                  <div>
+                    <strong style="color:#fff; display:block; font-size:0.95rem;">The Gift Duo &middot; 2 Boxes (30 Masks)</strong>
+                    <span style="color:var(--color-text-muted); font-size:0.78rem;">$1.40 per session &middot; Ideal for couples</span>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <span style="color:var(--color-text-muted); text-decoration:line-through; font-size:0.8rem; margin-right:5px;">$48</span>
+                  <strong style="color:var(--color-gold-light); font-size:1.08rem;">$42</strong>
+                </div>
               </button>
-              <button type="button" class="config-strip pack-option" data-pack="3" data-price="58" data-label="3 Boxes (45 Masks)" onclick="selectPack(3)" style="flex-direction: column; align-items: flex-start; padding: 0.85rem 1rem; cursor: pointer; text-align: left;">
-                <span style="font-size: 0.72rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em;">Save $14</span>
-                <strong style="font-size: 0.95rem; color: #fff;">45 Masks</strong>
-                <span style="font-size: 0.85rem; color: var(--color-text-muted);">$58</span>
+
+              <button type="button" class="dtc-tier pack-option" data-pack="3" data-price="58" data-was="72" data-label="3 Boxes (45 Masks)" onclick="selectPack(3)">
+                <span class="dtc-tier-badge">Best Value &middot; Save $14</span>
+                <div class="dtc-tier-left">
+                  <span class="dtc-radio"></span>
+                  <div>
+                    <strong style="color:#fff; display:block; font-size:0.95rem;">Ritual Trio &middot; 3 Boxes (45 Masks)</strong>
+                    <span style="color:var(--color-text-muted); font-size:0.78rem;">$1.28 per session &middot; Priority Shipping</span>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <span style="color:var(--color-text-muted); text-decoration:line-through; font-size:0.8rem; margin-right:5px;">$72</span>
+                  <strong style="color:var(--color-gold-light); font-size:1.08rem;">$58</strong>
+                </div>
               </button>
             </div>
 
             <!-- Optional Add-ons -->
             <div class="config-strip-list">
-              <!-- Add-on 1: Luxury Gift Box -->
               <label class="config-strip" id="strip-gift">
                 <div class="strip-meta">
                   <div class="strip-icon-box">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line></svg>
                   </div>
                   <div class="strip-details">
                     <span class="strip-name">Signature Gift Box &amp; Ribbon</span>
-                    <span class="strip-desc">Navy &amp; gold presentation box for birthdays, anniversaries &amp; holidays.</span>
+                    <span class="strip-desc">Navy &amp; gold presentation box for gifting.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
@@ -1454,15 +1945,14 @@
                 </div>
               </label>
 
-              <!-- Add-on 2: Travel Pouch -->
               <label class="config-strip" id="strip-case">
                 <div class="strip-meta">
                   <div class="strip-icon-box">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
                   </div>
                   <div class="strip-details">
                     <span class="strip-name">Flight Carry-On Pouch</span>
-                    <span class="strip-desc">Compact protective pouch that holds 5 sachets for flights &amp; commutes.</span>
+                    <span class="strip-desc">Holds 5 sachets for flights &amp; travel.</span>
                   </div>
                 </div>
                 <div class="strip-action-zone">
@@ -1475,42 +1965,142 @@
               </label>
             </div>
 
-            <!-- Dynamic Action Bar -->
-            <div class="config-action-bar">
-              <div class="action-totals-wrap">
-                <span class="action-total-label" id="selected-pack-label">1 Box (15 Masks) &middot; Free Shipping</span>
-                <span class="action-total-price" id="total-price">$24</span>
-              </div>
-              <button class="btn btn-primary" id="buy-now-btn" onclick="openCheckoutConfirm()">Buy Now &mdash; $24</button>
+            <!-- Dual Action Buttons -->
+            <div class="dtc-cta-stack">
+              <button type="button" class="dtc-btn-cart" onclick="addSelectionToCart()">Add to Cart</button>
+              <button type="button" class="dtc-btn-buy" id="buy-now-btn" onclick="instantCheckout()">Buy Now &mdash; $24</button>
             </div>
 
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.9rem; padding: 0 0.25rem;">
-              <span style="font-size: 0.75rem; color: var(--color-text-muted);">
-                Apple Pay &middot; Google Pay &middot; Visa &middot; Mastercard &middot; Amex &middot; Discover &middot; Klarna &middot; Afterpay &middot; PayPal &middot; ACH
-              </span>
-              <a href="https://www.amazon.com/Unscented-Minutes-Warmth-Friendly-Breathable/dp/B0HBTF62ZV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.vtKydHRlMcwiglaWHAw6jQVGBY7INbyYyyyQQDvlgxRegn7zXW_IoBVR30egV5yOTKK6SFL5rbDS52LTT1Ud2CAkxAIBjYNbf4qidwwR8X0k5kLNn7bdRSO6viE970VjhWyBqkbOULE73kxF3UdNDHum3TLD0N7byTU4dSxe91I38UqwdLv-MkvqQpgCz13uR_jLXc-dxS6copuDl1ZfCduQF8Qh0knqJe2KbennwORZ2kUpcdWhmLG1AP2Tln3WclUnVIb-YZOA2i858_twRpDPMCi506LvlVWo5y5E8Vk.uUMlaBz6FwfnRR4560pK6v8s4Dz1OtTQ7D6qdtE7Yq0&dib_tag=se&keywords=Soothe+%26+Drift&qid=1795584141&sr=8-1" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: var(--color-gold); text-decoration: none; font-weight: 600; white-space: nowrap;">Or Buy on Amazon &nearr;</a>
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.65rem;">
+              <span style="font-size:0.74rem; color:var(--color-text-muted);">Apple Pay &middot; Google Pay &middot; Visa &middot; Mastercard &middot; Amex &middot; Discover &middot; Klarna &middot; Afterpay &middot; PayPal &middot; ACH</span>
+              <a href="https://www.amazon.com/Unscented-Minutes-Warmth-Friendly-Breathable/dp/B0HBTF62ZV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.vtKydHRlMcwiglaWHAw6jQVGBY7INbyYyyyQQDvlgxRegn7zXW_IoBVR30egV5yOTKK6SFL5rbDS52LTT1Ud2CAkxAIBjYNbf4qidwwR8X0k5kLNn7bdRSO6viE970VjhWyBqkbOULE73kxF3UdNDHum3TLD0N7byTU4dSxe91I38UqwdLv-MkvqQpgCz13uR_jLXc-dxS6copuDl1ZfCduQF8Qh0knqJe2KbennwORZ2kUpcdWhmLG1AP2Tln3WclUnVIb-YZOA2i858_twRpDPMCi506LvlVWo5y5E8Vk.uUMlaBz6FwfnRR4560pK6v8s4Dz1OtTQ7D6qdtE7Yq0&dib_tag=se&keywords=Soothe+%26+Drift&qid=1795584141&sr=8-1" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem; color:var(--color-gold); text-decoration:none; font-weight:600;">Or Buy on Amazon &nearr;</a>
             </div>
-            <p id="checkout-confirm-msg" style="display: none; margin-top: 1rem; padding: 0.9rem 1.1rem; border-radius: 12px; background: rgba(229,192,123,0.12); border: 1px solid rgba(229,192,123,0.4); color: var(--color-gold-light); font-size: 0.86rem;"></p>
+            <p id="checkout-confirm-msg" style="display: none; padding: 0.9rem 1.1rem; border-radius: 12px; background: rgba(229,192,123,0.12); border: 1px solid rgba(229,192,123,0.4); color: var(--color-gold-light); font-size: 0.85rem;"></p>
+
+            <!-- Collapsible Accordions -->
+            <div class="dtc-accordions">
+              <div class="dtc-acc-item open">
+                <button type="button" class="dtc-acc-btn" onclick="toggleAcc(this)"><span>What&rsquo;s Included</span><span>&minus;</span></button>
+                <div class="dtc-acc-panel">15 individually sealed, single-use hygienic Self-Heating Steam Eye Masks per box + QR code card unlocking our Relaxation, Meditation, Stress Relief &amp; Sleep audio library.</div>
+              </div>
+              <div class="dtc-acc-item">
+                <button type="button" class="dtc-acc-btn" onclick="toggleAcc(this)"><span>How to Use (3 Simple Steps)</span><span>+</span></button>
+                <div class="dtc-acc-panel">1) Tear open the airtight sachet (oxygen activates warmth instantly). 2) Unfold &amp; loop the soft elastic earhooks over your ears. 3) Relax for up to 60 minutes of 104&ndash;113&deg;F moist steam.</div>
+              </div>
+              <div class="dtc-acc-item">
+                <button type="button" class="dtc-acc-btn" onclick="toggleAcc(this)"><span>Natural Ingredients</span><span>+</span></button>
+                <div class="dtc-acc-panel">Iron Powder, Activated Carbon, Vermiculite, Inorganic Salt, and Purified Water wrapped in breathable, unscented non-woven cotton.</div>
+              </div>
+              <div class="dtc-acc-item">
+                <button type="button" class="dtc-acc-btn" onclick="toggleAcc(this)"><span>Shipping &amp; 30-Day Guarantee</span><span>+</span></button>
+                <div class="dtc-acc-panel">Free US shipping on every order (dispatched within 1&ndash;2 business days). Backed by our 30-Day Money-Back Sleep Guarantee.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Glowing Moon Final CTA -->
+    <!-- 2. REAL STORIES, REAL CALM -->
+    <section class="dtc-band">
+      <div class="container">
+        <div class="dtc-band-header">
+          <div class="tagline centered">Verified Reviews</div>
+          <h2>Real Stories, <span class="highlight">Real Calm.</span></h2>
+          <p>Why thousands of screen workers, travelers, and light sleepers keep Soothe &amp; Drift on their nightstand.</p>
+        </div>
+        <div class="dtc-3col">
+          <div class="dtc-glass-card">
+            <div style="color:var(--color-gold); margin-bottom:0.5rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <h3>&ldquo;Brings my eyes back to life&rdquo;</h3>
+            <p>&ldquo;After 9 hours staring at spreadsheets, 20 minutes with this warm steam mask completely erases the burning and redness.&rdquo; &mdash; <strong>Hannah K.</strong></p>
+          </div>
+          <div class="dtc-glass-card">
+            <div style="color:var(--color-gold); margin-bottom:0.5rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <h3>&ldquo;Now it&rsquo;s our nightly ritual&rdquo;</h3>
+            <p>&ldquo;We got the 2-Box Gift Duo. No cords, no microwave, just tear open and drift off while listening to the QR soundscapes.&rdquo; &mdash; <strong>Marcus &amp; Priya</strong></p>
+          </div>
+          <div class="dtc-glass-card">
+            <div style="color:var(--color-gold); margin-bottom:0.5rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <h3>&ldquo;Red-eye flight essential&rdquo;</h3>
+            <p>&ldquo;TSA friendly and individually sealed. I keep two in my carry-on and land looking rested instead of puffy.&rdquo; &mdash; <strong>David P.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. REAL STEAM & SIMPLE INGREDIENTS -->
+    <section class="dtc-band" style="background: rgba(5, 11, 22, 0.45);">
+      <div class="container">
+        <div class="dtc-2col">
+          <div>
+            <div class="tagline">5 Natural Ingredients</div>
+            <h2 style="font-family:var(--font-serif); font-size:clamp(2rem,4vw,2.9rem); color:#fff; font-weight:400; line-height:1.12; margin-bottom:1rem;">Real Steam. <span class="highlight">Real Comfort.</span></h2>
+            <p style="color:var(--color-text-main); line-height:1.7; margin-bottom:1.5rem;">Unlike bulky electric or microwave masks that give harsh dry heat, Soothe &amp; Drift releases gentle, moist micro-steam (104&ndash;113&deg;F) that hydrates delicate under-eye skin and relaxes ocular tension.</p>
+            <div class="dtc-benefits" style="margin-bottom:1.5rem;">
+              <span><b>&#10004;</b> Moist steam, not dry heat</span>
+              <span><b>&#10004;</b> Warms up in ~5 minutes</span>
+              <span><b>&#10004;</b> Up to 60 mins steady warmth</span>
+              <span><b>&#10004;</b> Fresh &amp; hygienic every time</span>
+            </div>
+            <a href="#shop" class="btn btn-primary">Choose Your Pack</a>
+          </div>
+          <div style="border-radius:24px; overflow:hidden; border:1px solid rgba(229,192,123,0.25);">
+            <img src="listing-images/7.jpg" alt="Soothing Steam in Minutes" width="1080" height="1080" loading="lazy" decoding="async" style="width:100%; height:auto; display:block;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. RISK-FREE GUARANTEE -->
     <section class="final-cta-section">
       <div class="container final-cta-container">
         <div class="moon-large-glow reveal-fade-up">
           <div class="moon-large"></div>
           <div class="cta-moon-orbit"></div>
           <div class="cta-inner-text">
-            <h2>Relax.<br>Recharge.<br><span class="highlight">Drift away.</span></h2>
-            <p>Join thousands of sleepers waking up refreshed every morning.</p>
-            <a href="#total-price" class="btn btn-primary" style="padding: 1.25rem 3.5rem;">Shop Now</a>
+            <h2>Try It Risk-Free.<br><span class="highlight">30-Day Guarantee.</span></h2>
+            <p>Experience deeper rest and refreshed eyes—or get a full refund within 30 days, no questions asked.</p>
+            <a href="#shop" class="btn btn-primary" style="padding: 1.25rem 3.5rem;">Shop Steam Eye Mask</a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Slide-Out Cart Drawer -->
+  <div class="cart-backdrop" id="cartBackdrop" onclick="closeCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-head">
+      <h3 style="font-family:var(--font-serif); font-size:1.5rem; color:#fff; font-weight:400;">Your Cart</h3>
+      <button type="button" onclick="closeCart()" aria-label="Close Cart" style="background:transparent; border:none; color:var(--color-gold); font-size:1.5rem; cursor:pointer;">&times;</button>
+    </div>
+    <div class="cart-shipping-bar">&#10004; You&rsquo;ve unlocked <strong>FREE US Shipping</strong> + 30-Day Guarantee</div>
+    <div class="cart-items-wrap" id="cartItemsWrap"></div>
+    <div class="cart-drawer-foot">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="color:var(--color-text-muted); font-size:0.9rem;">Estimated Subtotal</span>
+        <strong id="cartSubtotal" style="font-family:var(--font-serif); font-size:1.6rem; color:var(--color-gold-light);">$0</strong>
+      </div>
+      <button type="button" class="dtc-btn-buy" id="cartCheckoutBtn" onclick="checkoutCart()" style="width:100%;">Proceed to Checkout &rarr;</button>
+      <a href="https://www.amazon.com/Unscented-Minutes-Warmth-Friendly-Breathable/dp/B0HBTF62ZV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.vtKydHRlMcwiglaWHAw6jQVGBY7INbyYyyyQQDvlgxRegn7zXW_IoBVR30egV5yOTKK6SFL5rbDS52LTT1Ud2CAkxAIBjYNbf4qidwwR8X0k5kLNn7bdRSO6viE970VjhWyBqkbOULE73kxF3UdNDHum3TLD0N7byTU4dSxe91I38UqwdLv-MkvqQpgCz13uR_jLXc-dxS6copuDl1ZfCduQF8Qh0knqJe2KbennwORZ2kUpcdWhmLG1AP2Tln3WclUnVIb-YZOA2i858_twRpDPMCi506LvlVWo5y5E8Vk.uUMlaBz6FwfnRR4560pK6v8s4Dz1OtTQ7D6qdtE7Yq0&dib_tag=se&keywords=Soothe+%26+Drift&qid=1795584141&sr=8-1" target="_blank" rel="noopener noreferrer" style="text-align:center; font-size:0.8rem; color:var(--color-gold); text-decoration:none; font-weight:600;">Or Buy on Amazon &nearr;</a>
+      <p id="cartErrorMsg" style="display:none; font-size:0.8rem; color:var(--color-gold-light); text-align:center;"></p>
+    </div>
+  </aside>
+
+  <!-- Sticky Bottom Add-to-Cart Bar -->
+  <div class="sticky-atc" id="stickyAtc">
+    <div class="sticky-atc-inner">
+      <div>
+        <strong style="color:#fff; font-size:0.92rem; display:block;">Soothe &amp; Drift&trade; Steam Eye Mask</strong>
+        <span id="stickyPackText" style="color:var(--color-gold); font-size:0.78rem;">1 Box (15 Masks) &middot; $24</span>
+      </div>
+      <div style="display:flex; gap:0.6rem;">
+        <button type="button" class="dtc-btn-cart" onclick="addSelectionToCart()" style="padding:0.6rem 1.1rem; font-size:0.82rem;">Add to Cart</button>
+        <button type="button" class="dtc-btn-buy" onclick="instantCheckout()" style="padding:0.6rem 1.2rem; font-size:0.82rem;">Buy Now</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Site Footer (COMMON WITH INDEX) -->
   <footer class="site-footer">
@@ -1580,7 +2170,180 @@
       }
     }
 
+    const GALLERY_IMAGES = [
+      'listing-images/1.jpg',
+      'listing-images/7.jpg',
+      'listing-images/5.jpg',
+      'listing-images/6.jpg',
+      'listing-images/9.jpg',
+      'listing-images/8.jpg'
+    ];
+    let galleryIdx = 0;
+
+    function setGallery(idx) {
+      galleryIdx = ((idx % GALLERY_IMAGES.length) + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
+      const img = document.getElementById('dtcMainImg');
+      if (img) img.src = GALLERY_IMAGES[galleryIdx];
+      document.querySelectorAll('.dtc-thumb').forEach((t, i) => t.classList.toggle('active', i === galleryIdx));
+    }
+
+    function stepGallery(delta) {
+      setGallery(galleryIdx + delta);
+    }
+
+    function toggleAcc(btn) {
+      const item = btn.closest('.dtc-acc-item');
+      const isOpen = item.classList.toggle('open');
+      btn.querySelector('span:last-child').textContent = isOpen ? '\u2212' : '+';
+    }
+
+    const ITEM_META = {
+      'pack-1': { name: 'Starter Pause (15 Masks)', price: 24, img: 'listing-images/1.jpg' },
+      'pack-2': { name: 'The Gift Duo (30 Masks)', price: 42, img: 'listing-images/9.jpg' },
+      'pack-3': { name: 'Ritual Trio (45 Masks)', price: 58, img: 'listing-images/2.jpg' },
+      'gift-box': { name: 'Signature Gift Box & Ribbon', price: 5, img: 'listing-images/9.jpg' },
+      'travel-pouch': { name: 'Flight Carry-On Pouch', price: 6, img: 'listing-images/4.jpg' }
+    };
+
+    function getCart() {
+      try { return JSON.parse(localStorage.getItem('sd_cart') || '[]'); } catch { return []; }
+    }
+    function saveCart(cart) {
+      localStorage.setItem('sd_cart', JSON.stringify(cart));
+      renderCart();
+    }
+    function openCart() {
+      document.getElementById('cartBackdrop').classList.add('open');
+      document.getElementById('cartDrawer').classList.add('open');
+    }
+    function closeCart() {
+      document.getElementById('cartBackdrop').classList.remove('open');
+      document.getElementById('cartDrawer').classList.remove('open');
+    }
+
+    function renderCart() {
+      const cart = getCart();
+      const count = cart.reduce((s, i) => s + i.qty, 0);
+      const countEl = document.getElementById('headerCartCount');
+      if (countEl) countEl.textContent = count;
+
+      const wrap = document.getElementById('cartItemsWrap');
+      const subEl = document.getElementById('cartSubtotal');
+      if (!wrap || !subEl) return;
+
+      if (cart.length === 0) {
+        wrap.innerHTML = '<div style="text-align:center; padding:3rem 1rem; color:var(--color-text-muted);">Your cart is empty. Select a pack to start your pause.</div>';
+        subEl.textContent = '$0';
+        return;
+      }
+
+      let subtotal = 0;
+      wrap.innerHTML = cart.map((item, idx) => {
+        const meta = ITEM_META[item.id] || { name: item.id, price: 24, img: 'listing-images/1.jpg' };
+        subtotal += meta.price * item.qty;
+        return `
+          <div class="cart-item-row">
+            <img src="${meta.img}" alt="${meta.name}">
+            <div>
+              <div style="color:#fff; font-size:0.88rem; font-weight:600;">${meta.name}</div>
+              <div style="color:var(--color-gold); font-size:0.8rem;">$${meta.price}</div>
+              <div class="qty-box">
+                <button type="button" onclick="updateCartQty(${idx}, -1)">&minus;</button>
+                <span style="font-size:0.82rem; color:#fff;">${item.qty}</span>
+                <button type="button" onclick="updateCartQty(${idx}, 1)">+</button>
+              </div>
+            </div>
+            <button type="button" onclick="removeCartItem(${idx})" style="background:transparent; border:none; color:var(--color-text-muted); font-size:1.1rem; cursor:pointer;">&times;</button>
+          </div>
+        `;
+      }).join('');
+
+      const isDiscount = localStorage.getItem('discountClaimed') === 'true';
+      subEl.textContent = isDiscount ? `$${Math.round(subtotal * 0.85)} (15% Off)` : `$${subtotal}`;
+    }
+
+    function updateCartQty(idx, delta) {
+      const cart = getCart();
+      if (!cart[idx]) return;
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) cart.splice(idx, 1);
+      saveCart(cart);
+    }
+    function removeCartItem(idx) {
+      const cart = getCart();
+      cart.splice(idx, 1);
+      saveCart(cart);
+    }
+
+    function addSelectionToCart() {
+      const cart = getCart();
+      const packKey = `pack-${selectedPackId}`;
+      const existing = cart.find(i => i.id === packKey);
+      if (existing) existing.qty += 1; else cart.push({ id: packKey, qty: 1 });
+
+      if (document.getElementById('add-gift')?.checked) {
+        const g = cart.find(i => i.id === 'gift-box');
+        if (g) g.qty += 1; else cart.push({ id: 'gift-box', qty: 1 });
+      }
+      if (document.getElementById('add-case')?.checked) {
+        const c = cart.find(i => i.id === 'travel-pouch');
+        if (c) c.qty += 1; else cart.push({ id: 'travel-pouch', qty: 1 });
+      }
+      saveCart(cart);
+      openCart();
+    }
+
+    async function startStripeSession(payload, btn, errEl) {
+      const prev = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Redirecting to Checkout...';
+      if (errEl) errEl.style.display = 'none';
+      try {
+        const res = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (res.ok && data.url) {
+          window.location.href = data.url;
+          return;
+        }
+        throw new Error(data.error || 'Checkout unavailable');
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = prev;
+        if (errEl) {
+          errEl.style.display = 'block';
+          errEl.innerHTML = `${err.message} <a href="https://www.amazon.com/Unscented-Minutes-Warmth-Friendly-Breathable/dp/B0HBTF62ZV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.vtKydHRlMcwiglaWHAw6jQVGBY7INbyYyyyQQDvlgxRegn7zXW_IoBVR30egV5yOTKK6SFL5rbDS52LTT1Ud2CAkxAIBjYNbf4qidwwR8X0k5kLNn7bdRSO6viE970VjhWyBqkbOULE73kxF3UdNDHum3TLD0N7byTU4dSxe91I38UqwdLv-MkvqQpgCz13uR_jLXc-dxS6copuDl1ZfCduQF8Qh0knqJe2KbennwORZ2kUpcdWhmLG1AP2Tln3WclUnVIb-YZOA2i858_twRpDPMCi506LvlVWo5y5E8Vk.uUMlaBz6FwfnRR4560pK6v8s4Dz1OtTQ7D6qdtE7Yq0&dib_tag=se&keywords=Soothe+%26+Drift&qid=1795584141&sr=8-1" target="_blank" rel="noopener noreferrer" style="color:var(--color-gold); font-weight:700; margin-left:4px;">Buy on Amazon &nearr;</a>`;
+        }
+      }
+    }
+
+    function instantCheckout() {
+      startStripeSession({
+        pack: selectedPackId,
+        addGift: Boolean(document.getElementById('add-gift')?.checked),
+        addCase: Boolean(document.getElementById('add-case')?.checked),
+        discountClaimed: localStorage.getItem('discountClaimed') === 'true'
+      }, document.getElementById('buy-now-btn'), document.getElementById('checkout-confirm-msg'));
+    }
+
+    function checkoutCart() {
+      const cart = getCart();
+      if (cart.length === 0) return;
+      startStripeSession({
+        items: cart,
+        discountClaimed: localStorage.getItem('discountClaimed') === 'true'
+      }, document.getElementById('cartCheckoutBtn'), document.getElementById('cartErrorMsg'));
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+      renderCart();
+      window.addEventListener('scroll', () => {
+        const bar = document.getElementById('stickyAtc');
+        if (bar) bar.classList.toggle('visible', window.scrollY > 620);
+      });
       // 1. Mobile Menu Toggle
       const mobileToggle = document.getElementById('mobileToggle');
       const navMenu = document.getElementById('navMenu');
@@ -1682,6 +2445,7 @@
 
     let selectedPackId = 1;
     let selectedPackPrice = 24;
+    let selectedPackWas = 32;
     let selectedPackLabel = '1 Box (15 Masks)';
 
     function selectPack(packNum) {
@@ -1691,25 +2455,25 @@
         btn.classList.toggle('active', isMatch);
         if (isMatch) {
           selectedPackPrice = parseInt(btn.dataset.price, 10);
+          selectedPackWas = parseInt(btn.dataset.was || '32', 10);
           selectedPackLabel = btn.dataset.label;
         }
       });
       updateSummary();
     }
 
-    // Real-time calculator function
     function updateSummary() {
       let total = selectedPackPrice;
+      let was = selectedPackWas;
 
       const addGift = document.getElementById('add-gift');
       if (addGift) {
         const parent = addGift.closest('.config-strip');
         if (addGift.checked) {
           total += parseInt(addGift.value, 10);
+          was += parseInt(addGift.value, 10);
           if (parent) parent.classList.add('active');
-        } else {
-          if (parent) parent.classList.remove('active');
-        }
+        } else if (parent) parent.classList.remove('active');
       }
 
       const addCase = document.getElementById('add-case');
@@ -1717,60 +2481,25 @@
         const parent = addCase.closest('.config-strip');
         if (addCase.checked) {
           total += parseInt(addCase.value, 10);
+          was += parseInt(addCase.value, 10);
           if (parent) parent.classList.add('active');
-        } else {
-          if (parent) parent.classList.remove('active');
-        }
+        } else if (parent) parent.classList.remove('active');
       }
 
-      const labelEl = document.getElementById('selected-pack-label');
-      if (labelEl) {
-        labelEl.textContent = `${selectedPackLabel} \u00B7 Free Shipping`;
-      }
+      const stickyText = document.getElementById('stickyPackText');
+      if (stickyText) stickyText.textContent = `${selectedPackLabel} \u00B7 $${total}`;
+
+      const compareEl = document.getElementById('compare-price');
+      if (compareEl) compareEl.textContent = `$${was}`;
 
       const isDiscountClaimed = localStorage.getItem('discountClaimed') === 'true';
       if (isDiscountClaimed) {
         const discountedTotal = Math.round(total * 0.85);
-        document.getElementById('total-price').innerHTML = `<span style="text-decoration: line-through; opacity: 0.5; margin-right: 8px; font-size: 0.75em; font-weight: 300;">$${total}</span>$${discountedTotal}`;
-        document.getElementById('buy-now-btn').textContent = `Buy Now \u2014 $${discountedTotal} (15% Off)`;
+        document.getElementById('total-price').textContent = `$${discountedTotal}`;
+        document.getElementById('buy-now-btn').textContent = `Buy Now \u2014 $${discountedTotal}`;
       } else {
         document.getElementById('total-price').textContent = `$${total}`;
         document.getElementById('buy-now-btn').textContent = `Buy Now \u2014 $${total}`;
-      }
-    }
-
-    async function openCheckoutConfirm() {
-      const btn = document.getElementById('buy-now-btn');
-      const msg = document.getElementById('checkout-confirm-msg');
-      const prevText = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Redirecting to Checkout...';
-      if (msg) msg.style.display = 'none';
-
-      try {
-        const res = await fetch('/api/create-checkout-session', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            pack: selectedPackId,
-            addGift: Boolean(document.getElementById('add-gift')?.checked),
-            addCase: Boolean(document.getElementById('add-case')?.checked),
-            discountClaimed: localStorage.getItem('discountClaimed') === 'true'
-          })
-        });
-        const data = await res.json();
-        if (res.ok && data.url) {
-          window.location.href = data.url;
-          return;
-        }
-        throw new Error(data.error || 'Checkout unavailable');
-      } catch (err) {
-        btn.disabled = false;
-        btn.textContent = prevText;
-        if (msg) {
-          msg.style.display = 'block';
-          msg.innerHTML = `${err.message} <a href="https://www.amazon.com/Unscented-Minutes-Warmth-Friendly-Breathable/dp/B0HBTF62ZV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.vtKydHRlMcwiglaWHAw6jQVGBY7INbyYyyyQQDvlgxRegn7zXW_IoBVR30egV5yOTKK6SFL5rbDS52LTT1Ud2CAkxAIBjYNbf4qidwwR8X0k5kLNn7bdRSO6viE970VjhWyBqkbOULE73kxF3UdNDHum3TLD0N7byTU4dSxe91I38UqwdLv-MkvqQpgCz13uR_jLXc-dxS6copuDl1ZfCduQF8Qh0knqJe2KbennwORZ2kUpcdWhmLG1AP2Tln3WclUnVIb-YZOA2i858_twRpDPMCi506LvlVWo5y5E8Vk.uUMlaBz6FwfnRR4560pK6v8s4Dz1OtTQ7D6qdtE7Yq0&dib_tag=se&keywords=Soothe+%26+Drift&qid=1795584141&sr=8-1" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold); font-weight: 700; margin-left: 6px;">Buy on Amazon &nearr;</a>`;
-        }
       }
     }
   </script>
