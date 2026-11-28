@@ -1661,7 +1661,7 @@
             <div class="sanctuary-dock">
               <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap;">
                 <span id="timer-display" style="color: var(--color-gold); font-weight: 600; font-size: 0.88rem;">Session Timer: 60:00</span>
-                <a id="drive-direct-link" href="https://drive.google.com/file/d/17FX_YQxDZvTfwg-OTJ14VwAC6abR9jf8/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="font-size: 0.78rem; color: var(--color-gold-light); text-decoration: none;">Open in Google Drive &nearr;</a>
+                <span style="font-size: 0.76rem; color: var(--color-text-muted);">Press play above to stream in-page</span>
               </div>
 
               <div class="timer-pills" id="timer-pills">
@@ -1868,7 +1868,6 @@
       const activeTrackName = document.getElementById('active-track-name');
       const activeTrackBadge = document.getElementById('active-track-badge');
       const driveFrame = document.getElementById('drive-player-frame');
-      const driveDirectLink = document.getElementById('drive-direct-link');
       const timerDisplay = document.getElementById('timer-display');
       const timerPills = document.querySelectorAll('.timer-pill');
 
@@ -1927,9 +1926,6 @@
           }
           if (driveFrame && driveId) {
             driveFrame.src = `https://drive.google.com/file/d/${driveId}/preview`;
-          }
-          if (driveDirectLink && driveId) {
-            driveDirectLink.href = `https://drive.google.com/file/d/${driveId}/view?usp=sharing`;
           }
           startTimer();
         });
